@@ -1,0 +1,146 @@
+#!/bin/bash
+
+cp "$HOME/nsx-qe/scale/vmware/scale/lib/common/remote/remote_data/automation_rsa" "$HOME/.ssh"
+chmod 0600 "$HOME/.ssh/automation_rsa"
+cp "$HOME/nsx-qe/scale/vmware/scale/lib/common/remote/remote_data/automation_rsa.pub" "$HOME/.ssh"
+chmod 0600 "$HOME/.ssh/automation_rsa.pub"
+eval `keychain --eval id_rsa automation_rsa`
+PYTHONSTARTUP=~/.init.py
+export PYTHONSTARTUP
+export PYTHONPATH=/root/nsx-qe:/root/nsx-qe/scale/:~/VIPIN/debug/
+export RIAK=http://127.0.0.1:8098/
+mount build-toolchain.eng.vmware.com:/toolchain /build/toolchain
+
+
+alias r='source ~/.bashrc2' # refresh .bashrc
+alias val='vi ~/.bashrc2'  # vi aliases
+alias lal='cat ~/.bashrc2'  # vi aliases
+alias vpl='vi + /tmp/python.log'  # vi aliases
+alias rmpl='rm  /tmp/python.log'  # vi aliases
+alias sgc='update-alternatives --config gcc'  # Switch GCC
+
+# Setup related
+alias p8='pep8 ' # Pep8
+alias ap8='autopep8 -i -a -a' #autopep8
+alias l='ls -lrt'
+alias diffy='diff -y'
+alias agk='eval $(ssh-agent) ; ssh-add' # add git key
+
+
+# Work related
+# alias pee=`python -c 'import zipfile ; x = zipfile.ZipFile("./scale_rpc.egg"); x.extractall()'` # python extract egg files
+alias pee='sh -x ~/utils/pee.sh '
+# get list of python modules
+# alias psgm='python -c 'import pip ; mods = sorted(["%s==%s" % (i.key, i.version) for i in pip.get_installed_distributions()]) ; print "\n".join(mods)''
+alias pps='python debug.py -p'
+# ssh to machines
+alias rn1='ssh root@10.34.81.68'
+alias rn2='ssh root@10.34.81.72'
+alias rn3='ssh root@10.34.81.228'
+
+
+alias stc='python /root/nsx-qe/scale/vmware/scale/tools/utils/scale_unittest_check.py'
+alias rut='python ~/utils/run_test.py '
+alias rut1='python -m unittest discover -p test_ping.py vmware/scale/self_tests/unit/lib/common/bees'
+alias rut2='python -m unittest discover -p test_wait_until.py vmware/scale/self_tests/unit/tools/utils'
+alias rut3='python -m unittest discover -p test_scale_unittest_check.py vmware/scale/self_tests/unit/tools/utils'
+alias rut4='python -m unittest discover -p test_cpu_utilization.py vmware/scale/self_tests/unit/lib/operations'
+alias rut5='python -m unittest discover -p test_http_client.py vmware/scale/self_tests/unit/lib/common/bees'    # run http file upload test
+
+alias rlut='python -m unittest discover -p test_ps.py vmware/scale/self_tests/unit/lib/test/infrastructure/datatools/'
+alias rbk='python -m unittest discover -p test_beekeeper_hello_world.py vmware/scale/self_tests/unit/lib/common/bees/'
+alias rpe='python -mvmware.scale.tools.utils.inventory pack_eggs' # pack eggs, python -mvmware.scale.tools.utils.inventory pack_eggs --template esx65 , only for esx65
+
+# Scale Execution
+alias sjl='echo "Showing JSON list(s) at:  vmware/scale/test/profiles/nsx_t" ; l vmware/scale/test/profiles/nsx_t'
+alias stl='echo "Showing TEST list(s) at:  vmware/scale/test/test_lists"; l vmware/scale/test/test_lists'
+alias ahi='sh -x ~/utils/inventory_add.sh'
+alias sil='python -mvmware.scale.tools.utils.inventory show'  # scale execution: show inventory
+alias bss='python -mvmware.scale.tools.utils.setup_test -b 3788284 -t release --helper --branch=nsx-bumblebee -e -k -m 1.254.254.2' # scale execution : bumblebee setup
+alias mss='python -mvmware.scale.tools.utils.setup_test -b latest -t release --helper --branch=master -e -k -m 1.254.254.2' # scale execution : master setup
+alias tms='python -mvmware.scale.tools.utils.setup_test -b 4496518 -t beta --branch master -d all -k ubuntu -e -m 1.254.254.2  --helper' # deploy templates. find build number from http://nsbu-iris.eng.vmware.com/scat (which has all green)
+alias dst='python -mvmware.scale.tools.utils.cleanup_shvs --destroy' # scale execution : delete testbed
+alias rls1='python -i -mvmware.scale.lib.logical_setup.bumblebee.logical_setup vmware/scale/test/profiles/nsx_t/<json_file>' # scale execution : run logical setup
+alias rls='python -mvmware.scale.tools.utils.testrunner run --stages=logical_setup --topology-file=vmware/scale/test/profiles/nsx_t/dfw_test.json --logical-graph-file=topo.pkl' # run logical setup
+#alias cpl=`python -c "import commands; import json; x = json.load(open('/tmp/scale_cfg.json')); f = '/var/log/scale/scale_tests_' + str(x['test']['testid']) + '.log'; status,output = commands.getstatusoutput('cp %s ./bkp/' % f); print status, output "`  # copy current test log to a directory.
+alias rstl3='sh -x /root/utils/testrun.sh l3_2HV_esx.json'  # run simple KVM test
+alias rstl2='sh -x /root/utils/testrun.sh dk_golden_4hv_mixed.json ' # Run pre checking scale test
+alias rstl1='python -mvmware.scale.scale_tests -v -k -i --logical-topology-file="/root/nsx-qe/scale/vmware/scale/test/profiles/nsx_t/scale_dev_4hv_mixed.json" --profile-name="dbg_framework" --scale_cat=True --test-list-file="/root/nsx-qe/scale/no_test.json"' # Run simple / basic test. Assume evertything destroyed already. helpful in debugging.
+alias rsgt='sh -x /root/utils/testrun.sh dk_golden_4hv_mixed.json dev_fw_list.json'
+
+# Git related
+alias grs='git fetch origin; git pull origin master; git rebase origin/master' # git resync sandbox
+alias gpm='git pull origin master'  # git pull master
+alias gcb='git checkout -b '    # git create a local branch
+alias gbd='git branch -d '      # git delete the local branch
+alias gbD='git branch -D '      # git delete the local branch
+alias gpr='git push ssh://sharmavipin@gitreview.eng.vmware.com:29418/nsx-qe HEAD:refs/for/master' #git push review
+alias glb='git branch -vv'      # git list branches
+alias gsb='git checkout '    # git switch to branch
+alias glc='git cherry -v master '    # git list local commits
+alias glf='git show --name-only '    # git list files in commit
+alias ggg='git grep -nH '       # Git grep
+alias gtm='git branch --track  `git branch | grep \* | cut -d '' '' -f2` origin/master' #track local branch to master
+alias gdm='git diff origin/master '         # git diff with master
+alias grf='git show commit_sha1 -- file_nme.ext | git apply -R'     # git revert changes in file. even when it is in commit. Use git checkout -- <filename> if it is not part of commit yet.
+alias gch='git log --pretty=short -u -L 42,47:pre-commit'   # git show change history for file 'pre-commit' from line # 42 to 47
+alias guf='git reset --soft HEAD^ ; git reset HEAD path/to/unwanted_file ;git commit -c ORIG_HEAD ' # git uncommit file : Remove file from a git commit (local/unpushed) without undoing the changes. Source : http://stackoverflow.com/questions/12481639/remove-files-from-git-commit
+alias gs='git status'
+
+# Riak related
+# Riak write data : 'default' is default bucket type , food is bucket and favourite is key
+alias rst='curl -i http://127.0.0.1:8098/stats'         # riak status check
+alias rbs='make -C vmware/scale/test/scale_riak/'       # build riak schema
+alias rwd='curl -XPUT  $RIAK/types/default/buckets/food/keys/favourite -d "pizza"'
+alias rrd='curl -XGET $RIAK/types/default/buckets/food/keys/favourite'    # riak read data
+alias rlb='curl $RIAK/types/default/buckets?buckets=true'     # Riak list buckets
+alias rlk='curl $RIAK/types/vifmetadata/buckets/vifmetadata/keys?keys=true'   # Riak list keys
+alias rbp='curl $RIAK/types/vifmetadata/buckets/vifmetadata/props | python -m json.tool' # Riak print bucket(vipin , here) properties
+alias rcs='curl http://10.172.72.8:8098/search/schema/computeutilization'    # Riak curl schema, change IP address to one of the riak nodes
+alias rns='for i in {7,8,9,10,11,43,45,71,84,86,97}; do echo 10.172.72.$i;time curl -i http://10.172.72.$i:8098/stats;done' #riak node status
+alias rgdm='curl $RIAK/types/vifmetadata/buckets/vifmetadata/datatypes/1d14f248-85bb-4d48-bc84-24063e64bbbf_1472777312'
+alias rsoc='cd /etc/nginx/sites-enabled/ ; rm 001-riak; ln -s 001_riak_one_cloud 001-riak ; service nginx restart; cd -' # riak switch to one cloud
+alias rslb='cd /etc/nginx/sites-enabled/ ; rm 001-riak; ln -s 001_riak_load_balancers 001-riak ; service nginx restart; cd -' # riak switch to one cloud
+alias rslr='cd /etc/nginx/sites-enabled/ ; rm 001-riak; ln -s local_riak 001-riak ; service nginx restart; cd -'  # riak switch to local riak
+alias rscb='cd /etc/nginx/sites-enabled/ ; rm 001-riak; ln -s 001_riak_cluster_b 001-riak ; service nginx restart; cd -'  # riak switch to local riak
+alias rwr=' ls -lrt /etc/nginx/sites-enabled/001-riak' # riak list which riak are we using
+
+# RabbitMQ Server
+alias rmqs='service rabbitmq-sever status ' # rabbitmq server status
+alias rmqv='rabbitmqctl status'             # rabbitmq version
+alias rmqlq='sudo rabbitmqctl list_queues'   # rabbitmq list queues
+alias rmqle='sudo rabbitmqctl list_exchanges'   # rabbitmq list exchanges
+alias rmqlb='sudo rabbitmqctl list_bindings'   # rabbitmq list bindings
+alias rmql_unack='sudo rabbitmqctl list_queues name messages_ready messages_unacknowledged'   # rabbitmq list unacknowledged messages
+
+# Linux commands
+alias dte='date +%s -d ' # Date to epoch USAGE: dte "2016-09-26 17:16:12"
+alias etd='date -d @' # Epoch to Date :  etd<epoch_time> ==> PS : no spaces
+alias ppj='cat  /tmp/scale_cfg.json | python -m json.tool | tee /tmp/scale_cfg.json' # pretty / petty print JSON/json file
+alias zipf='tar -zcvf archive-name.tar.gz directory-name'   # Zip folder to a gz
+alias p23='2to3 '
+alias py3env='export PYTHONSTARTUP=""; virtualenv -p /root/INSTALL/Python_3_5_1/install/bin/python3 .env ; source .env/bin/activate'
+alias py3ext='deactivate ; rm -rf .env'
+
+# Linux System commands
+alias lpt='pstree ' # List process tree for a given process id : e.g. pstree 5234
+alias lcp='ps h --ppid  ' # List child processes for a given process ID process tree for a given process id : e.g. pstree 5234
+# strace -s PID ; gets you system calls a process gets. shows the call stuck on if process is stuck.
+
+
+# VMWare tools specific
+alias vmets='vmware-toolbox-cmd timesync enable'  # Enable time synchronization with Host VM
+alias vmcns='/etc/init.d/ntpd status'   # status of NTP daemon that synchronizes with NTP server
+alias vmdts='ntpq -p'                   # display time synchronization stats
+
+#Scale Framework debugging
+alias esxbs='/etc/init.d/beekeeper status'      # Show Beekeeper status on ESX host
+alias esxrc='/etc/init.d/scale_rpc status'      # Show Scale_RPC status on ESX host.
+
+# Go to places
+alias g2d='cd ~/VIPIN/debug'
+alias g2s='cd ~/VIPIN/SCRATCH'
+alias cds2='cd /root/VIPIN/WORK/nsx-qe/scale'
+
+#Personal
+alias cancer='python ~/VIPIN/horo.py'
