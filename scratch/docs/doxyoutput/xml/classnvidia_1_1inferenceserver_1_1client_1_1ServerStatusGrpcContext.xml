@@ -1,0 +1,259 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusGrpcContext" kind="class" language="C++" prot="public">
+    <compoundname>nvidia::inferenceserver::client::ServerStatusGrpcContext</compoundname>
+    <basecompoundref refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusContext" prot="public" virt="non-virtual">nvidia::inferenceserver::client::ServerStatusContext</basecompoundref>
+    <includes refid="request_8h" local="no">request.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusGrpcContext_1a16c035cc6bb0899650d247ca242dfd33" prot="private" static="no" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string nvidia::inferenceserver::client::ServerStatusGrpcContext::model_name_</definition>
+        <argsstring></argsstring>
+        <name>model_name_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="1059" column="1" bodyfile="src/clients/c++/request.h" bodystart="1059" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusGrpcContext_1af617ccb68d9034f4027c47d36b0f0b08" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; GRPCService::Stub &gt;</type>
+        <definition>std::unique_ptr&lt;GRPCService::Stub&gt; nvidia::inferenceserver::client::ServerStatusGrpcContext::stub_</definition>
+        <argsstring></argsstring>
+        <name>stub_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="1062" column="1" bodyfile="src/clients/c++/request.h" bodystart="1062" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusGrpcContext_1ae7ce9ca2694b29d64a41a438ec795486" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classnvidia_1_1inferenceserver_1_1client_1_1Error" kindref="compound">Error</ref></type>
+        <definition>static Error nvidia::inferenceserver::client::ServerStatusGrpcContext::Create</definition>
+        <argsstring>(std::unique_ptr&lt; ServerStatusContext &gt; *ctx, const std::string &amp;server_url, bool verbose=false)</argsstring>
+        <name>Create</name>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusContext" kindref="compound">ServerStatusContext</ref> &gt; *</type>
+          <declname>ctx</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>server_url</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>verbose</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Create a context that returns information about an inference server and all models on the server using GRPC protocol. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ctx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Returns a new <ref refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusGrpcContext" kindref="compound">ServerStatusGrpcContext</ref> object. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>server_url</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The inference server name and port. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>verbose</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true generate verbose output when contacting the inference server. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classnvidia_1_1inferenceserver_1_1client_1_1Error" kindref="compound">Error</ref> object indicating success or failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="1033" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusGrpcContext_1a67bee0616301552fe2b90a26d4d6d131" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classnvidia_1_1inferenceserver_1_1client_1_1Error" kindref="compound">Error</ref></type>
+        <definition>static Error nvidia::inferenceserver::client::ServerStatusGrpcContext::Create</definition>
+        <argsstring>(std::unique_ptr&lt; ServerStatusContext &gt; *ctx, const std::string &amp;server_url, const std::string &amp;model_name, bool verbose=false)</argsstring>
+        <name>Create</name>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusContext" kindref="compound">ServerStatusContext</ref> &gt; *</type>
+          <declname>ctx</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>server_url</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>model_name</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>verbose</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Create a context that returns information about an inference server and one model on the sever using GRPC protocol. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ctx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Returns a new <ref refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusGrpcContext" kindref="compound">ServerStatusGrpcContext</ref> object. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>server_url</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The inference server name and port. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>model_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the model to get status for. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>verbose</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true generate verbose output when contacting the inference server. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classnvidia_1_1inferenceserver_1_1client_1_1Error" kindref="compound">Error</ref> object indicating success or failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="1045" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusGrpcContext_1a140af3b6fd9c1353a444fa54a65acd74" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classnvidia_1_1inferenceserver_1_1client_1_1Error" kindref="compound">Error</ref></type>
+        <definition>Error nvidia::inferenceserver::client::ServerStatusGrpcContext::GetServerStatus</definition>
+        <argsstring>(ServerStatus *status) override</argsstring>
+        <name>GetServerStatus</name>
+        <reimplements refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusContext_1a15b5f463eb3c8315b56f21b67b151d04">GetServerStatus</reimplements>
+        <param>
+          <type>ServerStatus *</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+<para>Contact the inference server and get status. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>status</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Returns the status. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classnvidia_1_1inferenceserver_1_1client_1_1Error" kindref="compound">Error</ref> object indicating success or failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="1052" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusGrpcContext_1adf8ca56ccb663fdf1e6715af64da2a34" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>nvidia::inferenceserver::client::ServerStatusGrpcContext::ServerStatusGrpcContext</definition>
+        <argsstring>(const std::string &amp;, bool)</argsstring>
+        <name>ServerStatusGrpcContext</name>
+        <param>
+          <type>const std::string &amp;</type>
+        </param>
+        <param>
+          <type>bool</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="1055" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusGrpcContext_1a22b48352223b2d1aef832a502116015b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>nvidia::inferenceserver::client::ServerStatusGrpcContext::ServerStatusGrpcContext</definition>
+        <argsstring>(const std::string &amp;, const std::string &amp;, bool)</argsstring>
+        <name>ServerStatusGrpcContext</name>
+        <param>
+          <type>const std::string &amp;</type>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+        </param>
+        <param>
+          <type>bool</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="1056" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusGrpcContext" kindref="compound">ServerStatusGrpcContext</ref> is the GRPC instantiation of <ref refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusContext" kindref="compound">ServerStatusContext</ref>. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="150">
+        <label>nvidia::inferenceserver::client::ServerStatusGrpcContext</label>
+        <link refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusGrpcContext"/>
+        <childnode refid="151" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="151">
+        <label>nvidia::inferenceserver::client::ServerStatusContext</label>
+        <link refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusContext"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="152">
+        <label>nvidia::inferenceserver::client::ServerStatusGrpcContext</label>
+        <link refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusGrpcContext"/>
+        <childnode refid="153" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="153">
+        <label>nvidia::inferenceserver::client::ServerStatusContext</label>
+        <link refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusContext"/>
+      </node>
+    </collaborationgraph>
+    <location file="src/clients/c++/request.h" line="1024" column="1" bodyfile="src/clients/c++/request.h" bodystart="1024" bodyend="1063"/>
+    <listofallmembers>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusGrpcContext_1ae7ce9ca2694b29d64a41a438ec795486" prot="public" virt="non-virtual"><scope>nvidia::inferenceserver::client::ServerStatusGrpcContext</scope><name>Create</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusGrpcContext_1a67bee0616301552fe2b90a26d4d6d131" prot="public" virt="non-virtual"><scope>nvidia::inferenceserver::client::ServerStatusGrpcContext</scope><name>Create</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusGrpcContext_1a140af3b6fd9c1353a444fa54a65acd74" prot="public" virt="virtual"><scope>nvidia::inferenceserver::client::ServerStatusGrpcContext</scope><name>GetServerStatus</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusGrpcContext_1a16c035cc6bb0899650d247ca242dfd33" prot="private" virt="non-virtual"><scope>nvidia::inferenceserver::client::ServerStatusGrpcContext</scope><name>model_name_</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusContext_1af8209b3b4715d25a66431c1e3b9fe27e" prot="protected" virt="non-virtual"><scope>nvidia::inferenceserver::client::ServerStatusGrpcContext</scope><name>ServerStatusContext</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusGrpcContext_1adf8ca56ccb663fdf1e6715af64da2a34" prot="private" virt="non-virtual"><scope>nvidia::inferenceserver::client::ServerStatusGrpcContext</scope><name>ServerStatusGrpcContext</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusGrpcContext_1a22b48352223b2d1aef832a502116015b" prot="private" virt="non-virtual"><scope>nvidia::inferenceserver::client::ServerStatusGrpcContext</scope><name>ServerStatusGrpcContext</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusGrpcContext_1af617ccb68d9034f4027c47d36b0f0b08" prot="private" virt="non-virtual"><scope>nvidia::inferenceserver::client::ServerStatusGrpcContext</scope><name>stub_</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusContext_1aade2733abe3cf60dfa59bc9352c0fbf2" prot="protected" virt="non-virtual"><scope>nvidia::inferenceserver::client::ServerStatusGrpcContext</scope><name>verbose_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

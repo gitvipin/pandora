@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusContext" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>nvidia::inferenceserver::client::ServerStatusContext</compoundname>
+    <derivedcompoundref refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusGrpcContext" prot="public" virt="non-virtual">nvidia::inferenceserver::client::ServerStatusGrpcContext</derivedcompoundref>
+    <derivedcompoundref refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusHttpContext" prot="public" virt="non-virtual">nvidia::inferenceserver::client::ServerStatusHttpContext</derivedcompoundref>
+    <includes refid="request_8h" local="no">request.h</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusContext_1aade2733abe3cf60dfa59bc9352c0fbf2" prot="protected" static="no" mutable="no">
+        <type>const bool</type>
+        <definition>const bool nvidia::inferenceserver::client::ServerStatusContext::verbose_</definition>
+        <argsstring></argsstring>
+        <name>verbose_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="185" column="1" bodyfile="src/clients/c++/request.h" bodystart="185" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusContext_1a15b5f463eb3c8315b56f21b67b151d04" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classnvidia_1_1inferenceserver_1_1client_1_1Error" kindref="compound">Error</ref></type>
+        <definition>virtual Error nvidia::inferenceserver::client::ServerStatusContext::GetServerStatus</definition>
+        <argsstring>(ServerStatus *status)=0</argsstring>
+        <name>GetServerStatus</name>
+        <reimplementedby refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusHttpContext_1a587d9241ae9b011307592b4ce0a312d3">GetServerStatus</reimplementedby>
+        <reimplementedby refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusGrpcContext_1a140af3b6fd9c1353a444fa54a65acd74">GetServerStatus</reimplementedby>
+        <param>
+          <type>ServerStatus *</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+<para>Contact the inference server and get status. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>status</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Returns the status. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classnvidia_1_1inferenceserver_1_1client_1_1Error" kindref="compound">Error</ref> object indicating success or failure of the request. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="179" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusContext_1af8209b3b4715d25a66431c1e3b9fe27e" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>nvidia::inferenceserver::client::ServerStatusContext::ServerStatusContext</definition>
+        <argsstring>(bool)</argsstring>
+        <name>ServerStatusContext</name>
+        <param>
+          <type>bool</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="182" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A <ref refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusContext" kindref="compound">ServerStatusContext</ref> object is used to query an inference server for status information, including information about the models available on that server. </para>    </briefdescription>
+    <detaileddescription>
+<para>Once created a <ref refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusContext" kindref="compound">ServerStatusContext</ref> object can be used repeatedly to get status from the server. A <ref refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusContext" kindref="compound">ServerStatusContext</ref> object can use either HTTP protocol or GRPC protocol depending on the Create function (<ref refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusHttpContext_1ab4b5945eb886c8a4e643f249d1bee2b0" kindref="member">ServerStatusHttpContext::Create</ref> or <ref refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusGrpcContext_1ae7ce9ca2694b29d64a41a438ec795486" kindref="member">ServerStatusGrpcContext::Create</ref>). For example:</para><para><programlisting><codeline><highlight class="normal">std::unique_ptr&lt;ServerStatusContext&gt;<sp/>ctx;</highlight></codeline>
+<codeline><highlight class="normal">ServerStatusHttpContext::Create(&amp;ctx,<sp/>&quot;localhost:8000&quot;);</highlight></codeline>
+<codeline><highlight class="normal">ServerStatus<sp/>status;</highlight></codeline>
+<codeline><highlight class="normal">ctx-&gt;GetServerStatus(&amp;status);</highlight></codeline>
+<codeline><highlight class="normal">...</highlight></codeline>
+<codeline><highlight class="normal">ctx-&gt;GetServerStatus(&amp;status);</highlight></codeline>
+<codeline><highlight class="normal">...</highlight></codeline>
+</programlisting></para><para><simplesect kind="note"><para>ServerStatusContext::Create methods are thread-safe. <ref refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusContext_1a15b5f463eb3c8315b56f21b67b151d04" kindref="member">GetServerStatus()</ref> is not thread-safe. For a given <ref refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusContext" kindref="compound">ServerStatusContext</ref>, calls to <ref refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusContext_1a15b5f463eb3c8315b56f21b67b151d04" kindref="member">GetServerStatus()</ref> must be serialized. </para></simplesect>
+</para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="147">
+        <label>nvidia::inferenceserver::client::ServerStatusGrpcContext</label>
+        <link refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusGrpcContext"/>
+        <childnode refid="146" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="146">
+        <label>nvidia::inferenceserver::client::ServerStatusContext</label>
+        <link refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusContext"/>
+      </node>
+      <node id="148">
+        <label>nvidia::inferenceserver::client::ServerStatusHttpContext</label>
+        <link refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusHttpContext"/>
+        <childnode refid="146" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="src/clients/c++/request.h" line="174" column="1" bodyfile="src/clients/c++/request.h" bodystart="174" bodyend="186"/>
+    <listofallmembers>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusContext_1a15b5f463eb3c8315b56f21b67b151d04" prot="public" virt="pure-virtual"><scope>nvidia::inferenceserver::client::ServerStatusContext</scope><name>GetServerStatus</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusContext_1af8209b3b4715d25a66431c1e3b9fe27e" prot="protected" virt="non-virtual"><scope>nvidia::inferenceserver::client::ServerStatusContext</scope><name>ServerStatusContext</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusContext_1aade2733abe3cf60dfa59bc9352c0fbf2" prot="protected" virt="non-virtual"><scope>nvidia::inferenceserver::client::ServerStatusContext</scope><name>verbose_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

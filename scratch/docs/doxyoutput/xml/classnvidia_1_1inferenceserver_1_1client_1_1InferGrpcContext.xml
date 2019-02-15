@@ -1,0 +1,505 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext" kind="class" language="C++" prot="public">
+    <compoundname>nvidia::inferenceserver::client::InferGrpcContext</compoundname>
+    <basecompoundref refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext" prot="public" virt="non-virtual">nvidia::inferenceserver::client::InferContext</basecompoundref>
+    <derivedcompoundref refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcStreamContext" prot="public" virt="non-virtual">nvidia::inferenceserver::client::InferGrpcStreamContext</derivedcompoundref>
+    <includes refid="request_8h" local="no">request.h</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext_1a95e7c7274daeceb82669b9f95aef5054" prot="protected" static="no" mutable="no">
+        <type>grpc::CompletionQueue</type>
+        <definition>grpc::CompletionQueue nvidia::inferenceserver::client::InferGrpcContext::async_request_completion_queue_</definition>
+        <argsstring></argsstring>
+        <name>async_request_completion_queue_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="1132" column="1" bodyfile="src/clients/c++/request.h" bodystart="1132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext_1af175710b44ad280ec46e980228b53398" prot="protected" static="no" mutable="no">
+        <type>std::unique_ptr&lt; GRPCService::Stub &gt;</type>
+        <definition>std::unique_ptr&lt;GRPCService::Stub&gt; nvidia::inferenceserver::client::InferGrpcContext::stub_</definition>
+        <argsstring></argsstring>
+        <name>stub_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="1135" column="1" bodyfile="src/clients/c++/request.h" bodystart="1135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext_1a964d67791bbd912f2dc13b1472aaaf33" prot="protected" static="no" mutable="no">
+        <type>InferRequest</type>
+        <definition>InferRequest nvidia::inferenceserver::client::InferGrpcContext::request_</definition>
+        <argsstring></argsstring>
+        <name>request_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="1139" column="1" bodyfile="src/clients/c++/request.h" bodystart="1139" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext_1afc628d254dba38d178f8dcd606b56328" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual nvidia::inferenceserver::client::InferGrpcContext::~InferGrpcContext</definition>
+        <argsstring>() override</argsstring>
+        <name>~InferGrpcContext</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="1070" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext_1a17c4f2f5007867d9f6b5444f9088f6c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classnvidia_1_1inferenceserver_1_1client_1_1Error" kindref="compound">Error</ref></type>
+        <definition>virtual Error nvidia::inferenceserver::client::InferGrpcContext::Run</definition>
+        <argsstring>(ResultMap *results) override</argsstring>
+        <name>Run</name>
+        <reimplements refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a4cac8002817c9259851305b14c258f36">Run</reimplements>
+        <reimplementedby refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcStreamContext_1a5e42ef49aa0ed810934a18ca1dbb71e4">Run</reimplementedby>
+        <param>
+          <type>ResultMap *</type>
+          <declname>results</declname>
+        </param>
+        <briefdescription>
+<para>Send a synchronous request to the inference server to perform an inference to produce results for the outputs specified in the most recent call to <ref refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a7cf1746d814561727fd3b07b0f8349f2" kindref="member">SetRunOptions()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>results</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Returns Result objects holding inference results as a map from output name to Result object. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classnvidia_1_1inferenceserver_1_1client_1_1Error" kindref="compound">Error</ref> object indicating success or failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="1109" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext_1adcd341f23d4b3a609c2117c698522a31" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classnvidia_1_1inferenceserver_1_1client_1_1Error" kindref="compound">Error</ref></type>
+        <definition>virtual Error nvidia::inferenceserver::client::InferGrpcContext::AsyncRun</definition>
+        <argsstring>(std::shared_ptr&lt; Request &gt; *async_request) override</argsstring>
+        <name>AsyncRun</name>
+        <reimplements refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a255a59df29a53d6e45ce86663887615f">AsyncRun</reimplements>
+        <reimplementedby refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcStreamContext_1a86e4987e666b37c5493373ae1b068d2f">AsyncRun</reimplementedby>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Request" kindref="compound">Request</ref> &gt; *</type>
+          <declname>async_request</declname>
+        </param>
+        <briefdescription>
+<para>Send an asynchronous request to the inference server to perform an inference to produce results for the outputs specified in the most recent call to <ref refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a7cf1746d814561727fd3b07b0f8349f2" kindref="member">SetRunOptions()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>async_request</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Returns a Request object that can be used to retrieve the inference results for the request. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classnvidia_1_1inferenceserver_1_1client_1_1Error" kindref="compound">Error</ref> object indicating success or failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="1110" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext_1af701c02c211163d37ac940a9816cf9ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classnvidia_1_1inferenceserver_1_1client_1_1Error" kindref="compound">Error</ref></type>
+        <definition>Error nvidia::inferenceserver::client::InferGrpcContext::GetAsyncRunResults</definition>
+        <argsstring>(ResultMap *results, const std::shared_ptr&lt; Request &gt; &amp;async_request, bool wait) override</argsstring>
+        <name>GetAsyncRunResults</name>
+        <reimplements refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a6a9a45e35031ce4b0b50af8bd0c4ee8c">GetAsyncRunResults</reimplements>
+        <param>
+          <type>ResultMap *</type>
+          <declname>results</declname>
+        </param>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Request" kindref="compound">Request</ref> &gt; &amp;</type>
+          <declname>async_request</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>wait</declname>
+        </param>
+        <briefdescription>
+<para>Get the results of the asynchronous request referenced by &apos;async_request&apos;. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>results</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Returns Result objects holding inference results as a map from output name to Result object. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>async_request</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Request handle to retrieve results. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>wait</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true, block until the request completes. Otherwise, return immediately. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classnvidia_1_1inferenceserver_1_1client_1_1Error" kindref="compound">Error</ref> object indicating success or failure. Success will be returned only if the request has been completed succesfully. UNAVAILABLE will be returned if &apos;wait&apos; is false and the request is not ready. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="1111" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext_1a432bf0981eb512786263764f090ee83d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classnvidia_1_1inferenceserver_1_1client_1_1Error" kindref="compound">Error</ref></type>
+        <definition>static Error nvidia::inferenceserver::client::InferGrpcContext::Create</definition>
+        <argsstring>(std::unique_ptr&lt; InferContext &gt; *ctx, const std::string &amp;server_url, const std::string &amp;model_name, int64_t model_version=-1, bool verbose=false)</argsstring>
+        <name>Create</name>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext" kindref="compound">InferContext</ref> &gt; *</type>
+          <declname>ctx</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>server_url</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>model_name</declname>
+        </param>
+        <param>
+          <type>int64_t</type>
+          <declname>model_version</declname>
+          <defval>-1</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>verbose</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Create context that performs inference for a non-sequence model using the GRPC protocol. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ctx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Returns a new <ref refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext" kindref="compound">InferGrpcContext</ref> object. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>server_url</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The inference server name and port. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>model_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the model to get status for. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>model_version</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The version of the model to use for inference, or -1 to indicate that the latest (i.e. highest version number) version should be used. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>verbose</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true generate verbose output when contacting the inference server. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classnvidia_1_1inferenceserver_1_1client_1_1Error" kindref="compound">Error</ref> object indicating success or failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="1084" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext_1a724b50d78b302e38603fb9a7c1aa8ee0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classnvidia_1_1inferenceserver_1_1client_1_1Error" kindref="compound">Error</ref></type>
+        <definition>static Error nvidia::inferenceserver::client::InferGrpcContext::Create</definition>
+        <argsstring>(std::unique_ptr&lt; InferContext &gt; *ctx, CorrelationID correlation_id, const std::string &amp;server_url, const std::string &amp;model_name, int64_t model_version=-1, bool verbose=false)</argsstring>
+        <name>Create</name>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext" kindref="compound">InferContext</ref> &gt; *</type>
+          <declname>ctx</declname>
+        </param>
+        <param>
+          <type>CorrelationID</type>
+          <declname>correlation_id</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>server_url</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>model_name</declname>
+        </param>
+        <param>
+          <type>int64_t</type>
+          <declname>model_version</declname>
+          <defval>-1</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>verbose</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Create context that performs inference for a sequence model using a given correlation ID and the GRPC protocol. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ctx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Returns a new <ref refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext" kindref="compound">InferGrpcContext</ref> object. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>correlation_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The correlation ID to use for all inferences performed with this context. A value of 0 (zero) indicates that no correlation ID should be used. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>server_url</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The inference server name and port. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>model_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the model to get status for. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>model_version</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The version of the model to use for inference, or -1 to indicate that the latest (i.e. highest version number) version should be used. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>verbose</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true generate verbose output when contacting the inference server. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classnvidia_1_1inferenceserver_1_1client_1_1Error" kindref="compound">Error</ref> object indicating success or failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="1104" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext_1abcd04c87e15144a95f81dceb54f5dd28" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>nvidia::inferenceserver::client::InferGrpcContext::InferGrpcContext</definition>
+        <argsstring>(const std::string &amp;, const std::string &amp;, int64_t, CorrelationID, bool)</argsstring>
+        <name>InferGrpcContext</name>
+        <param>
+          <type>const std::string &amp;</type>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+        </param>
+        <param>
+          <type>int64_t</type>
+        </param>
+        <param>
+          <type>CorrelationID</type>
+        </param>
+        <param>
+          <type>bool</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="1116" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext_1a9b1f7432db5b39108de896b41f5300cd" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classnvidia_1_1inferenceserver_1_1client_1_1Error" kindref="compound">Error</ref></type>
+        <definition>Error nvidia::inferenceserver::client::InferGrpcContext::InitHelper</definition>
+        <argsstring>(const std::string &amp;server_url, const std::string &amp;model_name, bool verbose)</argsstring>
+        <name>InitHelper</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>server_url</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>model_name</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>verbose</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="1120" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext_1a3f4f41c57b4e74c9ad6e8803c2514ec0" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void nvidia::inferenceserver::client::InferGrpcContext::AsyncTransfer</definition>
+        <argsstring>() override</argsstring>
+        <name>AsyncTransfer</name>
+        <reimplements refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1ae32e8e83bf498b4e91452703dd12cca0">AsyncTransfer</reimplements>
+        <reimplementedby refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcStreamContext_1ac0b79bc8230741c954ba5901e0ea330c">AsyncTransfer</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="1125" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext_1a5902b0ce9b16f0a055bbc0fc09c69031" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classnvidia_1_1inferenceserver_1_1client_1_1Error" kindref="compound">Error</ref></type>
+        <definition>Error nvidia::inferenceserver::client::InferGrpcContext::PreRunProcessing</definition>
+        <argsstring>(std::shared_ptr&lt; Request &gt; &amp;request) override</argsstring>
+        <name>PreRunProcessing</name>
+        <reimplements refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1ad2c7af868ffbb1a2e24f47d9ae0093a5">PreRunProcessing</reimplements>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Request" kindref="compound">Request</ref> &gt; &amp;</type>
+          <declname>request</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="1128" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext" kindref="compound">InferGrpcContext</ref> is the GRPC instantiation of <ref refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext" kindref="compound">InferContext</ref>. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="93">
+        <label>nvidia::inferenceserver::client::InferContext</label>
+        <link refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext"/>
+      </node>
+      <node id="92">
+        <label>nvidia::inferenceserver::client::InferGrpcContext</label>
+        <link refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext"/>
+        <childnode refid="93" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="94">
+        <label>nvidia::inferenceserver::client::InferGrpcStreamContext</label>
+        <link refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcStreamContext"/>
+        <childnode refid="92" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="97">
+        <label>nvidia::inferenceserver::client::InferContext::Stat</label>
+        <link refid="structnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Stat"/>
+      </node>
+      <node id="96">
+        <label>nvidia::inferenceserver::client::InferContext</label>
+        <link refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext"/>
+        <childnode refid="97" relation="usage">
+          <edgelabel>context_stat_</edgelabel>
+        </childnode>
+      </node>
+      <node id="95">
+        <label>nvidia::inferenceserver::client::InferGrpcContext</label>
+        <link refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext"/>
+        <childnode refid="96" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/clients/c++/request.h" line="1068" column="1" bodyfile="src/clients/c++/request.h" bodystart="1068" bodyend="1140"/>
+    <listofallmembers>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext_1a95e7c7274daeceb82669b9f95aef5054" prot="protected" virt="non-virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>async_request_completion_queue_</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1aeb3741fc43d18b9cd7abab193f7ffca0" prot="protected" virt="non-virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>async_request_id_</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a6e1d2a28514245af5f71557a18be70c6" prot="protected" virt="non-virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>AsyncReqMap</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext_1adcd341f23d4b3a609c2117c698522a31" prot="public" virt="virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>AsyncRun</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext_1a3f4f41c57b4e74c9ad6e8803c2514ec0" prot="protected" virt="virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>AsyncTransfer</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a12cc5d7a5db6437fe9fdc4ccc60874a9" prot="protected" virt="non-virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>batch_size_</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a5fde4cd588ca640d2b17e1768406eb1c" prot="protected" virt="non-virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>context_stat_</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a1836d4a88fbfa609def01ee59a675f4c" prot="protected" virt="non-virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>correlation_id_</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext_1a432bf0981eb512786263764f090ee83d" prot="public" virt="non-virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>Create</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext_1a724b50d78b302e38603fb9a7c1aa8ee0" prot="public" virt="non-virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>Create</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a685dfb2b9634c050b2d552f1613d0bc0" prot="protected" virt="non-virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>cv_</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a5f6d75086a6155fba595351c4e7abdd6" prot="protected" virt="non-virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>exiting_</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext_1af701c02c211163d37ac940a9816cf9ab" prot="public" virt="virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>GetAsyncRunResults</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1ac8ca982d9c589b2c27c9a279699ac884" prot="public" virt="non-virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>GetInput</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a0d3e9e6e55f3162c7148574af7aec251" prot="public" virt="non-virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>GetOutput</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a27512d1f8f7099d20b2e0eaaac90c3f0" prot="public" virt="non-virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>GetReadyAsyncRequest</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1aa083c81909e7a6d10725306d231ea0cb" prot="public" virt="non-virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>GetStat</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1ad65a99fa3c6afcf961de531f4421a73d" prot="protected" virt="non-virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>infer_request_</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a1ad0ced372d23d1ed5a0af511ab7aa21" prot="protected" virt="non-virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>InferContext</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext_1abcd04c87e15144a95f81dceb54f5dd28" prot="protected" virt="non-virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>InferGrpcContext</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext_1a9b1f7432db5b39108de896b41f5300cd" prot="protected" virt="non-virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>InitHelper</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a7b98f4f0fa2fe0f948f2a06d91ec92f3" prot="public" virt="non-virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>Inputs</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a2959c35ac38d06693ee9e3482f4b344b" prot="protected" virt="non-virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>inputs_</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1ab7437e029e942557e2d11f8c22ae6d6b" prot="protected" virt="non-virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>IsRequestReady</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1abfc00d0d8175ac030d881365b7030efd" prot="protected" virt="non-virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>max_batch_size_</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1ac9bd9ba3234a0c282383cdd939ca16dc" prot="public" virt="non-virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>MaxBatchSize</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1aca65f4b17c14e3c25350c8af3571f86c" prot="protected" virt="non-virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>model_name_</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1aea092ac954441e636316644bd94b5979" prot="protected" virt="non-virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>model_version_</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a6b01d3aece1500914c773fb9d88cb44b" prot="public" virt="non-virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>ModelName</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a88642030870fb82b452a48a1676755d0" prot="public" virt="non-virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>ModelVersion</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a1baafc5376df1a6e16de58633c93b4cc" prot="protected" virt="non-virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>mutex_</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1aa2dda0b94a39e54ce2d07a3b5b6988b2" prot="protected" virt="non-virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>ongoing_async_requests_</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a4a783616ac9f48e21bd89abb69d0b21a" prot="public" virt="non-virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>Outputs</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a21c9f59353ef1d4215e033f5a4b5d86a" prot="protected" virt="non-virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>outputs_</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext_1a5902b0ce9b16f0a055bbc0fc09c69031" prot="protected" virt="virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>PreRunProcessing</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext_1a964d67791bbd912f2dc13b1472aaaf33" prot="protected" virt="non-virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>request_</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a8540194150819719c190049fab1e125c" prot="public" virt="non-virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>ResultMap</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext_1a17c4f2f5007867d9f6b5444f9088f6c5" prot="public" virt="virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>Run</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a7cf1746d814561727fd3b07b0f8349f2" prot="public" virt="non-virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>SetRunOptions</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext_1af175710b44ad280ec46e980228b53398" prot="protected" virt="non-virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>stub_</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a6b2d7784bcf85ee225b574f73d6059ca" prot="protected" virt="non-virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>sync_request_</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a11eff835f49b4d9126e1606a3b2c8615" prot="protected" virt="non-virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>UpdateStat</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a69b72d3b61b07468f5a13c97f36c5e6a" prot="protected" virt="non-virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>verbose_</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a39fdbf2a953b23d0005aef8e2618fcaf" prot="protected" virt="non-virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>worker_</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a3a996794a2f69c24ab50391fcc36ceec" prot="public" virt="virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>~InferContext</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext_1afc628d254dba38d178f8dcd606b56328" prot="public" virt="virtual"><scope>nvidia::inferenceserver::client::InferGrpcContext</scope><name>~InferGrpcContext</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

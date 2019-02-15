@@ -1,0 +1,262 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>nvidia::inferenceserver::client::InferContext::Options</compoundname>
+    <includes refid="request_8h" local="no">request.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options_1abcaa16202fc4751a7657808cc4d71884" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual nvidia::inferenceserver::client::InferContext::Options::~Options</definition>
+        <argsstring>()</argsstring>
+        <name>~Options</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="456" column="1" bodyfile="src/clients/c++/request.h" bodystart="456" bodyend="456"/>
+      </memberdef>
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options_1a23b1ac6a7393c1bad21fc8e7a3373ead" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool nvidia::inferenceserver::client::InferContext::Options::Flag</definition>
+        <argsstring>(InferRequestHeader::Flag flag) const =0</argsstring>
+        <name>Flag</name>
+        <param>
+          <type>InferRequestHeader::Flag</type>
+          <declname>flag</declname>
+        </param>
+        <briefdescription>
+<para>Get the value of a request flag being used for all subsequent inferences. </para>        </briefdescription>
+        <detaileddescription>
+<para>Cannot be used with FLAG_NONE. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>flag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The flag to get the value for. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The true/false value currently set for the flag. If &apos;flag&apos; is FLAG_NONE then return false. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="467" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options_1ae12fc02abb1e1f42d1de0e0d4f88c03d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void nvidia::inferenceserver::client::InferContext::Options::SetFlag</definition>
+        <argsstring>(InferRequestHeader::Flag flag, bool value)=0</argsstring>
+        <name>SetFlag</name>
+        <param>
+          <type>InferRequestHeader::Flag</type>
+          <declname>flag</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Set a request flag to be used for all subsequent inferences. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>flag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The flag to set. Cannot be used with FLAG_NONE. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The true/false value to set for the flag. If &apos;flag&apos; is FLAG_NONE then do nothing. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="473" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options_1a51f46889d0f436185379def5a99b67fc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>uint32_t</type>
+        <definition>virtual uint32_t nvidia::inferenceserver::client::InferContext::Options::Flags</definition>
+        <argsstring>() const =0</argsstring>
+        <name>Flags</name>
+        <briefdescription>
+<para>Get the value of all request flags being used for all subsequent inferences. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The bitwise-or of flag values as a single uint32_t value. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="479" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options_1a06defa0f160399a6e81d31bde89cbcc0" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void nvidia::inferenceserver::client::InferContext::Options::SetFlags</definition>
+        <argsstring>(uint32_t flags)=0</argsstring>
+        <name>SetFlags</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>flags</declname>
+        </param>
+        <briefdescription>
+<para>Set all request flags to be used for all subsequent inferences. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>flags</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The bitwise-or of flag values to set. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="483" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options_1a6546eb56589394cc4222272afcc23d89" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>size_t</type>
+        <definition>virtual size_t nvidia::inferenceserver::client::InferContext::Options::BatchSize</definition>
+        <argsstring>() const =0</argsstring>
+        <name>BatchSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The batch size to use for all subsequent inferences. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="486" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options_1a6f390b31a0a8a265c8e15a77f6f9e7c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void nvidia::inferenceserver::client::InferContext::Options::SetBatchSize</definition>
+        <argsstring>(size_t batch_size)=0</argsstring>
+        <name>SetBatchSize</name>
+        <param>
+          <type>size_t</type>
+          <declname>batch_size</declname>
+        </param>
+        <briefdescription>
+<para>Set the batch size to use for all subsequent inferences. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>batch_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The batch size. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="490" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options_1abb0dceb3499c833684e0dfbe608b3360" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classnvidia_1_1inferenceserver_1_1client_1_1Error" kindref="compound">Error</ref></type>
+        <definition>virtual Error nvidia::inferenceserver::client::InferContext::Options::AddRawResult</definition>
+        <argsstring>(const std::shared_ptr&lt; InferContext::Output &gt; &amp;output)=0</argsstring>
+        <name>AddRawResult</name>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Output" kindref="compound">InferContext::Output</ref> &gt; &amp;</type>
+          <declname>output</declname>
+        </param>
+        <briefdescription>
+<para>Add &apos;output&apos; to the list of requested RAW results. </para>        </briefdescription>
+        <detaileddescription>
+<para><ref refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a4cac8002817c9259851305b14c258f36" kindref="member">Run()</ref> will return the output&apos;s full tensor as a result. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The output. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classnvidia_1_1inferenceserver_1_1client_1_1Error" kindref="compound">Error</ref> object indicating success or failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="496" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options_1a5b584e6fa3d2867d1ec4ce7a0bfee809" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classnvidia_1_1inferenceserver_1_1client_1_1Error" kindref="compound">Error</ref></type>
+        <definition>virtual Error nvidia::inferenceserver::client::InferContext::Options::AddClassResult</definition>
+        <argsstring>(const std::shared_ptr&lt; InferContext::Output &gt; &amp;output, uint64_t k)=0</argsstring>
+        <name>AddClassResult</name>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Output" kindref="compound">InferContext::Output</ref> &gt; &amp;</type>
+          <declname>output</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>k</declname>
+        </param>
+        <briefdescription>
+<para>Add &apos;output&apos; to the list of requested CLASS results. </para>        </briefdescription>
+        <detaileddescription>
+<para><ref refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a4cac8002817c9259851305b14c258f36" kindref="member">Run()</ref> will return the highest &apos;k&apos; values of &apos;output&apos; as a result. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The output. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>k</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Set how many class results to return for the output. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classnvidia_1_1inferenceserver_1_1client_1_1Error" kindref="compound">Error</ref> object indicating success or failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="504" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options_1a63d97ebc1993c0034ea6822c1d7600b1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classnvidia_1_1inferenceserver_1_1client_1_1Error" kindref="compound">Error</ref></type>
+        <definition>static Error nvidia::inferenceserver::client::InferContext::Options::Create</definition>
+        <argsstring>(std::unique_ptr&lt; Options &gt; *options)</argsstring>
+        <name>Create</name>
+        <param>
+          <type>std::unique_ptr&lt; <ref refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options" kindref="compound">Options</ref> &gt; *</type>
+          <declname>options</declname>
+        </param>
+        <briefdescription>
+<para>Create a new <ref refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options" kindref="compound">Options</ref> object with default values. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="classnvidia_1_1inferenceserver_1_1client_1_1Error" kindref="compound">Error</ref> object indicating success or failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="460" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Run options to be applied to all subsequent <ref refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a4cac8002817c9259851305b14c258f36" kindref="member">Run()</ref> invocations. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/clients/c++/request.h" line="454" column="1" bodyfile="src/clients/c++/request.h" bodystart="454" bodyend="506"/>
+    <listofallmembers>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options_1a5b584e6fa3d2867d1ec4ce7a0bfee809" prot="public" virt="pure-virtual"><scope>nvidia::inferenceserver::client::InferContext::Options</scope><name>AddClassResult</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options_1abb0dceb3499c833684e0dfbe608b3360" prot="public" virt="pure-virtual"><scope>nvidia::inferenceserver::client::InferContext::Options</scope><name>AddRawResult</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options_1a6546eb56589394cc4222272afcc23d89" prot="public" virt="pure-virtual"><scope>nvidia::inferenceserver::client::InferContext::Options</scope><name>BatchSize</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options_1a63d97ebc1993c0034ea6822c1d7600b1" prot="public" virt="non-virtual"><scope>nvidia::inferenceserver::client::InferContext::Options</scope><name>Create</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options_1a23b1ac6a7393c1bad21fc8e7a3373ead" prot="public" virt="pure-virtual"><scope>nvidia::inferenceserver::client::InferContext::Options</scope><name>Flag</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options_1a51f46889d0f436185379def5a99b67fc" prot="public" virt="pure-virtual"><scope>nvidia::inferenceserver::client::InferContext::Options</scope><name>Flags</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options_1a6f390b31a0a8a265c8e15a77f6f9e7c1" prot="public" virt="pure-virtual"><scope>nvidia::inferenceserver::client::InferContext::Options</scope><name>SetBatchSize</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options_1ae12fc02abb1e1f42d1de0e0d4f88c03d" prot="public" virt="pure-virtual"><scope>nvidia::inferenceserver::client::InferContext::Options</scope><name>SetFlag</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options_1a06defa0f160399a6e81d31bde89cbcc0" prot="public" virt="pure-virtual"><scope>nvidia::inferenceserver::client::InferContext::Options</scope><name>SetFlags</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options_1abcaa16202fc4751a7657808cc4d71884" prot="public" virt="virtual"><scope>nvidia::inferenceserver::client::InferContext::Options</scope><name>~Options</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

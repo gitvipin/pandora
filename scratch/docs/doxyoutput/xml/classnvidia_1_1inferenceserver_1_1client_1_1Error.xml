@@ -1,0 +1,286 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classnvidia_1_1inferenceserver_1_1client_1_1Error" kind="class" language="C++" prot="public">
+    <compoundname>nvidia::inferenceserver::client::Error</compoundname>
+    <includes refid="request_8h" local="no">request.h</includes>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classnvidia_1_1inferenceserver_1_1client_1_1Error_1a5cd97dd0cb13fae9dcf2ff392f46d127" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classnvidia_1_1inferenceserver_1_1client_1_1Error" kindref="compound">Error</ref></type>
+        <definition>const Error nvidia::inferenceserver::client::Error::Success</definition>
+        <argsstring></argsstring>
+        <name>Success</name>
+        <briefdescription>
+<para>Convenience &quot;success&quot; value. </para>        </briefdescription>
+        <detaileddescription>
+<para>Can be used as <ref refid="classnvidia_1_1inferenceserver_1_1client_1_1Error_1a5cd97dd0cb13fae9dcf2ff392f46d127" kindref="member">Error::Success</ref> to indicate no error. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="94" column="1" bodyfile="src/clients/c++/request.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classnvidia_1_1inferenceserver_1_1client_1_1Error_1a7239e3fd18861a4f3f56609017bcd511" prot="private" static="no" mutable="no">
+        <type>RequestStatusCode</type>
+        <definition>RequestStatusCode nvidia::inferenceserver::client::Error::code_</definition>
+        <argsstring></argsstring>
+        <name>code_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="98" column="1" bodyfile="src/clients/c++/request.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnvidia_1_1inferenceserver_1_1client_1_1Error_1a1dda3bce358cba5191afd9924a0fb40d" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string nvidia::inferenceserver::client::Error::msg_</definition>
+        <argsstring></argsstring>
+        <name>msg_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="99" column="1" bodyfile="src/clients/c++/request.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnvidia_1_1inferenceserver_1_1client_1_1Error_1a961ee8b0228a1a0567034e2ee766b676" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string nvidia::inferenceserver::client::Error::server_id_</definition>
+        <argsstring></argsstring>
+        <name>server_id_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="100" column="1" bodyfile="src/clients/c++/request.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnvidia_1_1inferenceserver_1_1client_1_1Error_1afc2edaba196c4fdf778e56728b79c3b9" prot="private" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t nvidia::inferenceserver::client::Error::request_id_</definition>
+        <argsstring></argsstring>
+        <name>request_id_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="101" column="1" bodyfile="src/clients/c++/request.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1Error_1abd0e1c07fa0d178b5f9c468a772de6e7" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>nvidia::inferenceserver::client::Error::Error</definition>
+        <argsstring>(const RequestStatus &amp;status)</argsstring>
+        <name>Error</name>
+        <param>
+          <type>const RequestStatus &amp;</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+<para>Create an error from a RequestStatus. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>status</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The RequestStatus object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="55" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1Error_1ab28352e8abccc6c246c06b817c071924" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>nvidia::inferenceserver::client::Error::Error</definition>
+        <argsstring>(RequestStatusCode code=RequestStatusCode::SUCCESS)</argsstring>
+        <name>Error</name>
+        <param>
+          <type>RequestStatusCode</type>
+          <declname>code</declname>
+          <defval>RequestStatusCode::SUCCESS</defval>
+        </param>
+        <briefdescription>
+<para>Create an error from a RequestStatusCode. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>code</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The status code for the error </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="59" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1Error_1a61c56c1f9b3112ffae6c1573a015e29f" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>nvidia::inferenceserver::client::Error::Error</definition>
+        <argsstring>(RequestStatusCode code, const std::string &amp;msg)</argsstring>
+        <name>Error</name>
+        <param>
+          <type>RequestStatusCode</type>
+          <declname>code</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+<para>Create an error from a RequestStatusCode and a detailed message. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>code</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The status code for the error </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The detailed message for the error </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="64" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1Error_1a1f4a3b6c8519dd1decea149546da93d0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>RequestStatusCode</type>
+        <definition>RequestStatusCode nvidia::inferenceserver::client::Error::Code</definition>
+        <argsstring>() const </argsstring>
+        <name>Code</name>
+        <briefdescription>
+<para>Accessor for the RequestStatusCode of this error. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The RequestStatusCode for the error. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="68" column="1" bodyfile="src/clients/c++/request.h" bodystart="68" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1Error_1a6aa771500474272751705b9ceab0df69" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string&amp; nvidia::inferenceserver::client::Error::Message</definition>
+        <argsstring>() const </argsstring>
+        <name>Message</name>
+        <briefdescription>
+<para>Accessor for the message of this error. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The detailed messsage for the error. Empty if no detailed message. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="73" column="1" bodyfile="src/clients/c++/request.h" bodystart="73" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1Error_1a46d23219fef60a764ad9ba638321179a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string&amp; nvidia::inferenceserver::client::Error::ServerId</definition>
+        <argsstring>() const </argsstring>
+        <name>ServerId</name>
+        <briefdescription>
+<para>Accessor for the ID of the inference server associated with this error. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The ID of the inference server associated with this error, or empty-string if no inference server is associated with the error. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="80" column="1" bodyfile="src/clients/c++/request.h" bodystart="80" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1Error_1ad3f77dde3f3a2c3ea8230ca85a6b19ce" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint64_t</type>
+        <definition>uint64_t nvidia::inferenceserver::client::Error::RequestId</definition>
+        <argsstring>() const </argsstring>
+        <name>RequestId</name>
+        <briefdescription>
+<para>Accessor for the ID of the request associated with this error. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The ID of the request associated with this error, or 0 (zero) if no request ID is associated with the error. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="85" column="1" bodyfile="src/clients/c++/request.h" bodystart="85" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1Error_1ae9f38b1f7ff0986190433ec2f8d97602" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool nvidia::inferenceserver::client::Error::IsOk</definition>
+        <argsstring>() const </argsstring>
+        <name>IsOk</name>
+        <briefdescription>
+<para>Does this error indicate OK status? </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if this error indicates &quot;ok&quot;/&quot;success&quot;, false if error indicates a failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="90" column="1" bodyfile="src/clients/c++/request.h" bodystart="90" bodyend="90"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classnvidia_1_1inferenceserver_1_1client_1_1Error_1ad321131e190ac3fb1c93c0b16f2aa3ca" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;, const Error &amp;)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+        </param>
+        <param>
+          <type>const <ref refid="classnvidia_1_1inferenceserver_1_1client_1_1Error" kindref="compound">Error</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="97" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classnvidia_1_1inferenceserver_1_1client_1_1Error" kindref="compound">Error</ref> status reported by client API. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="85">
+        <label>nvidia::inferenceserver::client::Error</label>
+        <link refid="classnvidia_1_1inferenceserver_1_1client_1_1Error"/>
+        <childnode refid="85" relation="usage">
+          <edgelabel>Success</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/clients/c++/request.h" line="51" column="1" bodyfile="src/clients/c++/request.h" bodystart="51" bodyend="102"/>
+    <listofallmembers>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1Error_1a1f4a3b6c8519dd1decea149546da93d0" prot="public" virt="non-virtual"><scope>nvidia::inferenceserver::client::Error</scope><name>Code</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1Error_1a7239e3fd18861a4f3f56609017bcd511" prot="private" virt="non-virtual"><scope>nvidia::inferenceserver::client::Error</scope><name>code_</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1Error_1abd0e1c07fa0d178b5f9c468a772de6e7" prot="public" virt="non-virtual"><scope>nvidia::inferenceserver::client::Error</scope><name>Error</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1Error_1ab28352e8abccc6c246c06b817c071924" prot="public" virt="non-virtual"><scope>nvidia::inferenceserver::client::Error</scope><name>Error</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1Error_1a61c56c1f9b3112ffae6c1573a015e29f" prot="public" virt="non-virtual"><scope>nvidia::inferenceserver::client::Error</scope><name>Error</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1Error_1ae9f38b1f7ff0986190433ec2f8d97602" prot="public" virt="non-virtual"><scope>nvidia::inferenceserver::client::Error</scope><name>IsOk</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1Error_1a6aa771500474272751705b9ceab0df69" prot="public" virt="non-virtual"><scope>nvidia::inferenceserver::client::Error</scope><name>Message</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1Error_1a1dda3bce358cba5191afd9924a0fb40d" prot="private" virt="non-virtual"><scope>nvidia::inferenceserver::client::Error</scope><name>msg_</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1Error_1ad321131e190ac3fb1c93c0b16f2aa3ca" prot="private" virt="non-virtual"><scope>nvidia::inferenceserver::client::Error</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1Error_1afc2edaba196c4fdf778e56728b79c3b9" prot="private" virt="non-virtual"><scope>nvidia::inferenceserver::client::Error</scope><name>request_id_</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1Error_1ad3f77dde3f3a2c3ea8230ca85a6b19ce" prot="public" virt="non-virtual"><scope>nvidia::inferenceserver::client::Error</scope><name>RequestId</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1Error_1a961ee8b0228a1a0567034e2ee766b676" prot="private" virt="non-virtual"><scope>nvidia::inferenceserver::client::Error</scope><name>server_id_</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1Error_1a46d23219fef60a764ad9ba638321179a" prot="public" virt="non-virtual"><scope>nvidia::inferenceserver::client::Error</scope><name>ServerId</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1Error_1a5cd97dd0cb13fae9dcf2ff392f46d127" prot="public" virt="non-virtual"><scope>nvidia::inferenceserver::client::Error</scope><name>Success</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

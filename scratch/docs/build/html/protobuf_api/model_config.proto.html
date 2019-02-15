@@ -1,0 +1,1123 @@
+<!--
+# Copyright (c) 2018, NVIDIA CORPORATION. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+#  * Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+#  * Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+#  * Neither the name of NVIDIA CORPORATION nor the names of its
+#    contributors may be used to endorse or promote products derived
+#    from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS ``AS IS'' AND ANY
+# EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+# PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+# CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+# EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+# PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+# PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+# OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+# (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+# OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>model_config.proto &mdash; NVIDIA TensorRT Inference Server 0.12.0dev
+ documentation</title>
+  
+
+  
+  
+  
+  
+    <link rel="canonical" href="https://docs.nvidia.com/deeplearning/sdk/tensorrt-inference-server-guide/docs/index.htmlprotobuf_api/model_config.proto.html"/>
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+           
+
+          
+            <a href="../index.html" class="icon icon-home"> NVIDIA TensorRT Inference Server
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.12.0dev
+-ad20b82<br/>
+Version select: <select onChange="window.location.href = this.value" onFocus="this.selectedIndex = -1">
+    <option value="https://docs.nvidia.com/deeplearning/sdk/tensorrt-inference-server-guide/docs/index.html">Current release</option>
+    <option value="https://docs.nvidia.com/deeplearning/sdk/tensorrt-inference-server-master-branch-guide/docs/index.html">master (unstable)</option>
+    <option value="https://docs.nvidia.com/deeplearning/sdk/inference-server-archived/index.html">Older releases</option>
+</select>
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #76b900;
+    }
+
+    .wy-side-nav-search a:link, .wy-nav-top a:link {
+      color: #fff;
+    }
+    .wy-side-nav-search a:visited, .wy-nav-top a:visited {
+      color: #fff;
+    }
+    .wy-side-nav-search a:hover, .wy-nav-top a:hover {
+      color: #fff;
+    }
+
+    .wy-menu-vertical a:link, .wy-menu-vertical a:visited {
+      color: #d9d9d9
+    }
+
+    .wy-menu-vertical a:active {
+      background-color: #76b900
+    }
+
+    .wy-side-nav-search>div.version {
+      color: rgba(0, 0, 0, 0.3)
+    }
+  </style>
+  
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation home</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart.html#using-a-prebuilt-docker-container">Using A Prebuilt Docker Container</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart.html#building-from-source-code">Building From Source Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart.html#run-tensorrt-inference-server">Run TensorRT Inference Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart.html#verify-inference-server-is-running-correctly">Verify Inference Server Is Running Correctly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart.html#building-the-client-examples">Building The Client Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart.html#running-the-image-classification-example">Running The Image Classification Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installing the Server</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../install.html#installing-prebuilt-containers">Installing Prebuilt Containers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../run.html">Running the Server</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../run.html#example-model-repository">Example Model Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../run.html#running-the-inference-server">Running The Inference Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../run.html#running-the-inference-server-on-a-system-without-a-gpu">Running The Inference Server On A System Without A GPU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../run.html#checking-inference-server-status">Checking Inference Server Status</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../client.html">Client Libraries and Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../client.html#building-the-client-libraries-and-examples">Building the Client Libraries and Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../client.html#image-classification-example-application">Image Classification Example Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../client.html#performance-example-application">Performance Example Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../client.html#client-api">Client API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../client.html#string-datatype">String Datatype</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../client.html#stream-inference">Stream Inference</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../model_repository.html">Model Repository</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../model_repository.html#modifying-the-model-repository">Modifying the Model Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model_repository.html#model-versions">Model Versions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model_repository.html#framework-model-definition">Framework Model Definition</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../model_repository.html#tensorrt-models">TensorRT Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../model_repository.html#tensorflow-models">TensorFlow Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../model_repository.html#caffe2-models">Caffe2 Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../model_repository.html#tensorrt-tensorflow-models">TensorRT/TensorFlow Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../model_repository.html#onnx-models">ONNX Models</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../model_repository.html#custom-backends">Custom Backends</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../model_repository.html#custom-backend-api">Custom Backend API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../model_repository.html#example-custom-backend">Example Custom Backend</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../model_configuration.html">Model Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../model_configuration.html#generated-model-configuration">Generated Model Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model_configuration.html#datatypes">Datatypes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model_configuration.html#version-policy">Version Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model_configuration.html#instance-groups">Instance Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model_configuration.html#dynamic-batching">Dynamic Batching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model_configuration.html#optimization-policy">Optimization Policy</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../http_grpc_api.html">Inference Server API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../http_grpc_api.html#health">Health</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../http_grpc_api.html#status">Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../http_grpc_api.html#inference">Inference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../http_grpc_api.html#stream-inference">Stream Inference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../metrics.html">Metrics</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../architecture.html#concurrent-model-execution">Concurrent Model Execution</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contribute.html#coding-convention">Coding Convention</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../build.html">Building</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../build.html#building-the-server">Building the Server</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../build.html#incremental-builds">Incremental Builds</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../build.html#building-the-client-libraries-and-examples">Building the Client Libraries and Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build.html#building-the-documentation">Building the Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../build.html#html-documentation">HTML Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../build.html#pdf-documentation">PDF Documentation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../test.html">Testing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../test.html#generate-qa-model-repositories">Generate QA Model Repositories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../test.html#build-qa-container">Build QA Container</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../test.html#run-qa-container">Run QA Container</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="protobuf_api_root.html">Protobuf API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="protobuf_api_root.html#http-grpc-api">HTTP/GRPC API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="protobuf_api_root.html#model-configuration">Model Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="protobuf_api_root.html#status">Status</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cpp_api/cpp_api_root.html">C++ API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cpp_api/cpp_api_root.html#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cpp_api/cpp_api_root.html#file-hierarchy">File Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cpp_api/cpp_api_root.html#full-api">Full API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../cpp_api/cpp_api_root.html#namespaces">Namespaces</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/namespace_nvidia.html">Namespace nvidia</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/namespace_nvidia__inferenceserver.html">Namespace nvidia::inferenceserver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/namespace_nvidia__inferenceserver__client.html">Namespace nvidia::inferenceserver::client</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../cpp_api/cpp_api_root.html#classes-and-structs">Classes and Structs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/structcustom__payload__struct.html">Struct custom_payload_struct</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/structnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1_1ClassResult.html">Struct Result::ClassResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/structnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Stat.html">Struct InferContext::Stat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/classnvidia_1_1inferenceserver_1_1client_1_1Error.html">Class Error</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/classnvidia_1_1inferenceserver_1_1client_1_1InferContext.html">Class InferContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input.html">Class InferContext::Input</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options.html">Class InferContext::Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Output.html">Class InferContext::Output</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Request.html">Class InferContext::Request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1RequestTimers.html">Class InferContext::RequestTimers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result.html">Class InferContext::Result</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext.html">Class InferGrpcContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcStreamContext.html">Class InferGrpcStreamContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/classnvidia_1_1inferenceserver_1_1client_1_1InferHttpContext.html">Class InferHttpContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/classnvidia_1_1inferenceserver_1_1client_1_1ProfileContext.html">Class ProfileContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/classnvidia_1_1inferenceserver_1_1client_1_1ProfileGrpcContext.html">Class ProfileGrpcContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/classnvidia_1_1inferenceserver_1_1client_1_1ProfileHttpContext.html">Class ProfileHttpContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/classnvidia_1_1inferenceserver_1_1client_1_1ServerHealthContext.html">Class ServerHealthContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/classnvidia_1_1inferenceserver_1_1client_1_1ServerHealthGrpcContext.html">Class ServerHealthGrpcContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/classnvidia_1_1inferenceserver_1_1client_1_1ServerHealthHttpContext.html">Class ServerHealthHttpContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusContext.html">Class ServerStatusContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusGrpcContext.html">Class ServerStatusGrpcContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusHttpContext.html">Class ServerStatusHttpContext</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../cpp_api/cpp_api_root.html#functions">Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/function_custom_8h_1aedfdcb69f8eaab594173b197b10dc804.html">Function CustomErrorString</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/function_custom_8h_1afc75c0a4e1a169562586c2d4ff09ba40.html">Function CustomExecute</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/function_custom_8h_1a9cd799dfef77db82babc6ddd4a4be707.html">Function CustomFinalize</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/function_custom_8h_1ad384f6af9bfb11b82b2b4e411f799b6f.html">Function CustomInitialize</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/function_request_8h_1a19d352bb13848c14b5f03274b25ecee3.html">Function nvidia::inferenceserver::client::operator&lt;&lt;</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../cpp_api/cpp_api_root.html#defines">Defines</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/define_custom_8h_1aaf537da73bb55fda05fb4e39defe1949.html">Define CUSTOM_NO_GPU_DEVICE</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../cpp_api/cpp_api_root.html#typedefs">Typedefs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/typedef_custom_8h_1aa6616d50105d3441ba277c6dbce66286.html">Typedef CustomErrorStringFn_t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/typedef_custom_8h_1ac0c3508cd00e9db56912ff40deecf9d2.html">Typedef CustomExecuteFn_t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/typedef_custom_8h_1aa32f51734df1f217cc7c2b07f31f8f3f.html">Typedef CustomFinalizeFn_t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/typedef_custom_8h_1aee3723f1a17ff4664691655e056a309c.html">Typedef CustomGetNextInputFn_t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/typedef_custom_8h_1a71cb419d6e7feee902115438973d02f8.html">Typedef CustomGetOutputFn_t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/typedef_custom_8h_1a11fea108abb0b28f86a96e6b7cd92a20.html">Typedef CustomInitializeFn_t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/typedef_custom_8h_1a99a7b9dcc756702784a869d9afb59df4.html">Typedef CustomPayload</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../cpp_api/cpp_api_root.html#directories">Directories</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/dir_src.html">Directory src</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/dir_src_clients.html">Directory clients</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/dir_src_clients_c++.html">Directory c++</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/dir_src_servables.html">Directory servables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/dir_src_servables_custom.html">Directory custom</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../cpp_api/cpp_api_root.html#files">Files</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/file_src_servables_custom_custom.h.html">File custom.h</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cpp_api/file_src_clients_c++_request.h.html">File request.h</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../python_api.html">Python API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python_api.html#client">Client</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">NVIDIA TensorRT Inference Server</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>model_config.proto</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/protobuf_api/model_config.proto.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="model-config-proto">
+<h1>model_config.proto<a class="headerlink" href="#model-config-proto" title="Permalink to this headline">¶</a></h1>
+<dl class="enum">
+<dt id="_CPPv4N6nvidia15inferenceserver8DataTypeE">
+<em class="property">enum </em><code class="descname">DataType</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver8DataTypeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><blockquote>
+<div>Data types supported for input and output tensors.</div></blockquote>
+<dl class="enumerator">
+<dt id="_CPPv4N6nvidia15inferenceserver8DataType8DataType7INVALIDE">
+<em class="property">enumerator </em><code class="descclassname">DataType<code class="descclassname">::</code></code><code class="descname">INVALID</code> = 0<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver8DataType8DataType7INVALIDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6nvidia15inferenceserver8DataType8DataType4BOOLE">
+<em class="property">enumerator </em><code class="descclassname">DataType<code class="descclassname">::</code></code><code class="descname">BOOL</code> = 1<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver8DataType8DataType4BOOLE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6nvidia15inferenceserver8DataType8DataType5UINT8E">
+<em class="property">enumerator </em><code class="descclassname">DataType<code class="descclassname">::</code></code><code class="descname">UINT8</code> = 2<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver8DataType8DataType5UINT8E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6nvidia15inferenceserver8DataType8DataType6UINT16E">
+<em class="property">enumerator </em><code class="descclassname">DataType<code class="descclassname">::</code></code><code class="descname">UINT16</code> = 3<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver8DataType8DataType6UINT16E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6nvidia15inferenceserver8DataType8DataType6UINT32E">
+<em class="property">enumerator </em><code class="descclassname">DataType<code class="descclassname">::</code></code><code class="descname">UINT32</code> = 4<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver8DataType8DataType6UINT32E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6nvidia15inferenceserver8DataType8DataType6UINT64E">
+<em class="property">enumerator </em><code class="descclassname">DataType<code class="descclassname">::</code></code><code class="descname">UINT64</code> = 5<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver8DataType8DataType6UINT64E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6nvidia15inferenceserver8DataType8DataType4INT8E">
+<em class="property">enumerator </em><code class="descclassname">DataType<code class="descclassname">::</code></code><code class="descname">INT8</code> = 6<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver8DataType8DataType4INT8E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6nvidia15inferenceserver8DataType8DataType5INT16E">
+<em class="property">enumerator </em><code class="descclassname">DataType<code class="descclassname">::</code></code><code class="descname">INT16</code> = 7<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver8DataType8DataType5INT16E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6nvidia15inferenceserver8DataType8DataType5INT32E">
+<em class="property">enumerator </em><code class="descclassname">DataType<code class="descclassname">::</code></code><code class="descname">INT32</code> = 8<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver8DataType8DataType5INT32E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6nvidia15inferenceserver8DataType8DataType5INT64E">
+<em class="property">enumerator </em><code class="descclassname">DataType<code class="descclassname">::</code></code><code class="descname">INT64</code> = 9<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver8DataType8DataType5INT64E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6nvidia15inferenceserver8DataType8DataType4FP16E">
+<em class="property">enumerator </em><code class="descclassname">DataType<code class="descclassname">::</code></code><code class="descname">FP16</code> = 10<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver8DataType8DataType4FP16E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6nvidia15inferenceserver8DataType8DataType4FP32E">
+<em class="property">enumerator </em><code class="descclassname">DataType<code class="descclassname">::</code></code><code class="descname">FP32</code> = 11<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver8DataType8DataType4FP32E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6nvidia15inferenceserver8DataType8DataType4FP64E">
+<em class="property">enumerator </em><code class="descclassname">DataType<code class="descclassname">::</code></code><code class="descname">FP64</code> = 12<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver8DataType8DataType4FP64E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6nvidia15inferenceserver8DataType8DataType6STRINGE">
+<em class="property">enumerator </em><code class="descclassname">DataType<code class="descclassname">::</code></code><code class="descname">STRING</code> = 13<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver8DataType8DataType6STRINGE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver18ModelInstanceGroupE">
+message <code class="descname">ModelInstanceGroup</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver18ModelInstanceGroupE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><blockquote>
+<div>A group of one or more instances of a model and resources made
+available for those instances.</div></blockquote>
+<dl class="enum">
+<dt id="_CPPv4N6nvidia15inferenceserver18ModelInstanceGroup4KindE">
+<em class="property">enum </em><code class="descname">Kind</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver18ModelInstanceGroup4KindE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><blockquote>
+<div>Kind of this instance group.</div></blockquote>
+<dl class="enumerator">
+<dt id="_CPPv4N6nvidia15inferenceserver18ModelInstanceGroup4Kind4Kind9KIND_AUTOE">
+<em class="property">enumerator </em><code class="descclassname">Kind<code class="descclassname">::</code></code><code class="descname">KIND_AUTO</code> = 0<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver18ModelInstanceGroup4Kind4Kind9KIND_AUTOE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This instance group represents instances that can run on either
+CPU or GPU. If all GPUs listed in ‘gpus’ are available then
+instances will be created on GPU(s), otherwise instances will
+be created on CPU.</p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6nvidia15inferenceserver18ModelInstanceGroup4Kind4Kind8KIND_GPUE">
+<em class="property">enumerator </em><code class="descclassname">Kind<code class="descclassname">::</code></code><code class="descname">KIND_GPU</code> = 1<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver18ModelInstanceGroup4Kind4Kind8KIND_GPUE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This instance group represents instances that must run on the
+GPU.</p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6nvidia15inferenceserver18ModelInstanceGroup4Kind4Kind8KIND_CPUE">
+<em class="property">enumerator </em><code class="descclassname">Kind<code class="descclassname">::</code></code><code class="descname">KIND_CPU</code> = 2<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver18ModelInstanceGroup4Kind4Kind8KIND_CPUE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This instance group represents instances that must run on the
+CPU.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver18ModelInstanceGroup4nameE">
+string <code class="descname">name</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver18ModelInstanceGroup4nameE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Optional name of this group of instances. If not specified the
+name will be formed as &lt;model name&gt;_&lt;group number&gt;. The name of
+individual instances will be further formed by a unique instance
+number and GPU index:</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver18ModelInstanceGroup4kindE">
+<a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver18ModelInstanceGroup4KindE" title="nvidia::inferenceserver::ModelInstanceGroup::Kind">Kind</a> <code class="descname">kind</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver18ModelInstanceGroup4kindE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The kind of this instance group. Default is KIND_AUTO. If
+KIND_AUTO or KIND_GPU then both ‘count’ and ‘gpu’ are valid and
+may be specified. If KIND_CPU only ‘count’ is valid and ‘gpu’
+cannot be specified.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver18ModelInstanceGroup5countE">
+int32 <code class="descname">count</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver18ModelInstanceGroup5countE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>For a group assigned to GPU, the number of instances created for
+each GPU listed in ‘gpus’. For a group assigned to CPU the number
+of instances created. Default is 1.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver18ModelInstanceGroup4gpusE">
+int32 <code class="descname">gpus</code><span class="sig-paren">(</span>repeated<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver18ModelInstanceGroup4gpusE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>GPU(s) where instances should be available. For each GPU listed,
+‘count’ instances of the model will be available. Setting ‘gpus’
+to empty (or not specifying at all) is eqivalent to listing all
+available GPUs.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver10ModelInputE">
+message <code class="descname">ModelInput</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver10ModelInputE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><blockquote>
+<div>An input required by the model.</div></blockquote>
+<dl class="enum">
+<dt id="_CPPv4N6nvidia15inferenceserver10ModelInput6FormatE">
+<em class="property">enum </em><code class="descname">Format</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver10ModelInput6FormatE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><blockquote>
+<div>The format for the input.</div></blockquote>
+<dl class="enumerator">
+<dt id="_CPPv4N6nvidia15inferenceserver10ModelInput6Format6Format11FORMAT_NONEE">
+<em class="property">enumerator </em><code class="descclassname">Format<code class="descclassname">::</code></code><code class="descname">FORMAT_NONE</code> = 0<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver10ModelInput6Format6Format11FORMAT_NONEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The input has no specific format. This is the default.</p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6nvidia15inferenceserver10ModelInput6Format6Format11FORMAT_NHWCE">
+<em class="property">enumerator </em><code class="descclassname">Format<code class="descclassname">::</code></code><code class="descname">FORMAT_NHWC</code> = 1<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver10ModelInput6Format6Format11FORMAT_NHWCE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>HWC image format. Tensors with this format require 3 dimensions
+if the model does not support batching (max_batch_size = 0) or 4
+dimensions if the model does support batching (max_batch_size
+&gt;= 1). In either case the ‘dims’ below should only specify the
+3 non-batch dimensions (i.e. HWC or CHW).</p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6nvidia15inferenceserver10ModelInput6Format6Format11FORMAT_NCHWE">
+<em class="property">enumerator </em><code class="descclassname">Format<code class="descclassname">::</code></code><code class="descname">FORMAT_NCHW</code> = 2<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver10ModelInput6Format6Format11FORMAT_NCHWE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>CHW image format. Tensors with this format require 3 dimensions
+if the model does not support batching (max_batch_size = 0) or 4
+dimensions if the model does support batching (max_batch_size
+&gt;= 1). In either case the ‘dims’ below should only specify the
+3 non-batch dimensions (i.e. HWC or CHW).</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver10ModelInput4nameE">
+string <code class="descname">name</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver10ModelInput4nameE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The name of the input.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver10ModelInput9data_typeE">
+<a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver8DataTypeE" title="nvidia::inferenceserver::DataType">DataType</a> <code class="descname">data_type</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver10ModelInput9data_typeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The data-type of the input.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver10ModelInput6formatE">
+<a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver10ModelInput6FormatE" title="nvidia::inferenceserver::ModelInput::Format">Format</a> <code class="descname">format</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver10ModelInput6formatE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The format of the input. Optional.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver10ModelInput4dimsE">
+int64 <code class="descname">dims</code><span class="sig-paren">(</span>repeated<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver10ModelInput4dimsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The dimensions/shape of the input tensor.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver11ModelOutputE">
+message <code class="descname">ModelOutput</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver11ModelOutputE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><blockquote>
+<div>An output produced by the model.</div></blockquote>
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver11ModelOutput4nameE">
+string <code class="descname">name</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver11ModelOutput4nameE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The name of the output.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver11ModelOutput9data_typeE">
+<a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver8DataTypeE" title="nvidia::inferenceserver::DataType">DataType</a> <code class="descname">data_type</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver11ModelOutput9data_typeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The data-type of the output.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver11ModelOutput4dimsE">
+int64 <code class="descname">dims</code><span class="sig-paren">(</span>repeated<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver11ModelOutput4dimsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The dimensions/shape of the output tensor.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver11ModelOutput14label_filenameE">
+string <code class="descname">label_filename</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver11ModelOutput14label_filenameE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The label file associated with this output. Should be specified only
+for outputs that represent classifications. Optional.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver18ModelVersionPolicyE">
+message <code class="descname">ModelVersionPolicy</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver18ModelVersionPolicyE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><blockquote>
+<div>Policy indicating which versions of a model should be made
+available by the inference server.</div></blockquote>
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver18ModelVersionPolicy6LatestE">
+message <code class="descname">Latest</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver18ModelVersionPolicy6LatestE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><blockquote>
+<div>Serve only the latest version(s) of a model. This is
+the default policy.</div></blockquote>
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver18ModelVersionPolicy6Latest12num_versionsE">
+uint32 <code class="descname">num_versions</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver18ModelVersionPolicy6Latest12num_versionsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Serve only the ‘num_versions’ highest-numbered versions. T
+The default value of ‘num_versions’ is 1, indicating that by
+default only the single highest-number version of a
+model will be served.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver18ModelVersionPolicy3AllE">
+message <code class="descname">All</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver18ModelVersionPolicy3AllE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Serve all versions of the model.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver18ModelVersionPolicy8SpecificE">
+message <code class="descname">Specific</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver18ModelVersionPolicy8SpecificE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><blockquote>
+<div>Serve only specific versions of the model.</div></blockquote>
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver18ModelVersionPolicy8Specific8versionsE">
+int64 <code class="descname">versions</code><span class="sig-paren">(</span>repeated<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver18ModelVersionPolicy8Specific8versionsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The specific versions of the model that will be served.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver18ModelVersionPolicy13policy_choiceE">
+oneof <code class="descname">policy_choice</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver18ModelVersionPolicy13policy_choiceE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><blockquote>
+<div>Each model must implement only a single version policy. The
+default policy is ‘Latest’.</div></blockquote>
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver18ModelVersionPolicy13policy_choice6latestE">
+<a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver18ModelVersionPolicy6LatestE" title="nvidia::inferenceserver::ModelVersionPolicy::Latest">Latest</a> <code class="descname">latest</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver18ModelVersionPolicy13policy_choice6latestE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Serve only latest version(s) of the model.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver18ModelVersionPolicy13policy_choice3allE">
+<a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver18ModelVersionPolicy3AllE" title="nvidia::inferenceserver::ModelVersionPolicy::All">All</a> <code class="descname">all</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver18ModelVersionPolicy13policy_choice3allE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Serve all versions of the model.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver18ModelVersionPolicy13policy_choice8specificE">
+<a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver18ModelVersionPolicy8SpecificE" title="nvidia::inferenceserver::ModelVersionPolicy::Specific">Specific</a> <code class="descname">specific</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver18ModelVersionPolicy13policy_choice8specificE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Serve only specific version(s) of the model.</p>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver23ModelOptimizationPolicyE">
+message <code class="descname">ModelOptimizationPolicy</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver23ModelOptimizationPolicyE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><blockquote>
+<div>Optimization settings for a model. These settings control if/how a
+model is optimized and prioritized by the backend framework when
+it is loaded.</div></blockquote>
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver23ModelOptimizationPolicy5GraphE">
+message <code class="descname">Graph</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver23ModelOptimizationPolicy5GraphE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><blockquote>
+<div>Enable generic graph optimization of the model. If not specified
+the framework’s default level of optimization is used. Currently
+only supported for TensorFlow graphdef and savedmodel models and
+causes XLA to be enabled/disabled for the model.</div></blockquote>
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver23ModelOptimizationPolicy5Graph5levelE">
+int32 <code class="descname">level</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver23ModelOptimizationPolicy5Graph5levelE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The optimization level. Defaults to 0 (zero) if not specified.</p>
+<blockquote>
+<div><ul class="simple">
+<li>-1: Disabled</li>
+<li>0: Framework default</li>
+<li>1+: Enable optimization level (greater values indicate
+higher optimization levels)</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="enum">
+<dt id="_CPPv4N6nvidia15inferenceserver23ModelOptimizationPolicy13ModelPriorityE">
+<em class="property">enum </em><code class="descname">ModelPriority</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver23ModelOptimizationPolicy13ModelPriorityE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><blockquote>
+<div>Model priorities. A model will be given scheduling and execution
+preference over models at lower priorities. Current model
+priorities only work for TensorRT models.</div></blockquote>
+<dl class="enumerator">
+<dt id="_CPPv4N6nvidia15inferenceserver23ModelOptimizationPolicy13ModelPriority13ModelPriority16PRIORITY_DEFAULTE">
+<em class="property">enumerator </em><code class="descclassname">ModelPriority<code class="descclassname">::</code></code><code class="descname">PRIORITY_DEFAULT</code> = 0<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver23ModelOptimizationPolicy13ModelPriority13ModelPriority16PRIORITY_DEFAULTE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The default model priority.</p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6nvidia15inferenceserver23ModelOptimizationPolicy13ModelPriority13ModelPriority12PRIORITY_MAXE">
+<em class="property">enumerator </em><code class="descclassname">ModelPriority<code class="descclassname">::</code></code><code class="descname">PRIORITY_MAX</code> = 1<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver23ModelOptimizationPolicy13ModelPriority13ModelPriority12PRIORITY_MAXE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The maximum model priority.</p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6nvidia15inferenceserver23ModelOptimizationPolicy13ModelPriority13ModelPriority12PRIORITY_MINE">
+<em class="property">enumerator </em><code class="descclassname">ModelPriority<code class="descclassname">::</code></code><code class="descname">PRIORITY_MIN</code> = 2<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver23ModelOptimizationPolicy13ModelPriority13ModelPriority12PRIORITY_MINE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The minimum model priority.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver23ModelOptimizationPolicy5graphE">
+<a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver23ModelOptimizationPolicy5GraphE" title="nvidia::inferenceserver::ModelOptimizationPolicy::Graph">Graph</a> <code class="descname">graph</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver23ModelOptimizationPolicy5graphE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The graph optimization setting for the model. Optional.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver23ModelOptimizationPolicy8priorityE">
+<a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver23ModelOptimizationPolicy13ModelPriorityE" title="nvidia::inferenceserver::ModelOptimizationPolicy::ModelPriority">ModelPriority</a> <code class="descname">priority</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver23ModelOptimizationPolicy8priorityE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The priority setting for the model. Optional.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver20ModelDynamicBatchingE">
+message <code class="descname">ModelDynamicBatching</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver20ModelDynamicBatchingE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><blockquote>
+<div>Dynamic batching configuration. These settings control how dynamic
+batching operates for the model.</div></blockquote>
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver20ModelDynamicBatching20preferred_batch_sizeE">
+int32 <code class="descname">preferred_batch_size</code><span class="sig-paren">(</span>repeated<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver20ModelDynamicBatching20preferred_batch_sizeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Preferred batch sizes for dynamic batching. If a batch of one of
+these sizes can be formed it will be executed immediately.  If
+not specified a preferred batch size will be chosen automatically
+based on model and GPU characteristics.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver20ModelDynamicBatching28max_queue_delay_microsecondsE">
+int32 <code class="descname">max_queue_delay_microseconds</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver20ModelDynamicBatching28max_queue_delay_microsecondsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The maximum time, in microseconds, a request will be delayed in
+the scheduling queue to wait for additional requests for
+batching. Default is 0.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver21ModelSequenceBatchingE">
+message <code class="descname">ModelSequenceBatching</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver21ModelSequenceBatchingE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><blockquote>
+<div>Sequence batching configuration. These settings control how sequence
+batching operates for the model.</div></blockquote>
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver21ModelSequenceBatching28max_queue_delay_microsecondsE">
+uint32 <code class="descname">max_queue_delay_microseconds</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver21ModelSequenceBatching28max_queue_delay_microsecondsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The maximum time, in microseconds, a request will be delayed in
+the scheduling queue to wait for additional requests for
+batching. Default is 0.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver21ModelSequenceBatching7ControlE">
+message <code class="descname">Control</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver21ModelSequenceBatching7ControlE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><blockquote>
+<div>A control is a binary signal to a backend.</div></blockquote>
+<dl class="enum">
+<dt id="_CPPv4N6nvidia15inferenceserver21ModelSequenceBatching7Control4KindE">
+<em class="property">enum </em><code class="descname">Kind</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver21ModelSequenceBatching7Control4KindE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><blockquote>
+<div>The kind of the control.</div></blockquote>
+<dl class="enumerator">
+<dt id="_CPPv4N6nvidia15inferenceserver21ModelSequenceBatching7Control4Kind4Kind22CONTROL_SEQUENCE_STARTE">
+<em class="property">enumerator </em><code class="descclassname">Kind<code class="descclassname">::</code></code><code class="descname">CONTROL_SEQUENCE_START</code> = 0<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver21ModelSequenceBatching7Control4Kind4Kind22CONTROL_SEQUENCE_STARTE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>A new sequence is/is-not starting. If true a sequence is
+starting, if false a sequence is continuing.</p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6nvidia15inferenceserver21ModelSequenceBatching7Control4Kind4Kind22CONTROL_SEQUENCE_READYE">
+<em class="property">enumerator </em><code class="descclassname">Kind<code class="descclassname">::</code></code><code class="descname">CONTROL_SEQUENCE_READY</code> = 1<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver21ModelSequenceBatching7Control4Kind4Kind22CONTROL_SEQUENCE_READYE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>A sequence is/is-not ready for inference. If true the
+input tensor data is valid and should be used. If false
+the input tensor data is invalid and inferencing should
+be “skipped”.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver21ModelSequenceBatching7Control4kindE">
+<a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver21ModelSequenceBatching7Control4KindE" title="nvidia::inferenceserver::ModelSequenceBatching::Control::Kind">Kind</a> <code class="descname">kind</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver21ModelSequenceBatching7Control4kindE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The kind of this control.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver21ModelSequenceBatching7Control16int32_false_trueE">
+int32 <code class="descname">int32_false_true</code><span class="sig-paren">(</span>repeated<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver21ModelSequenceBatching7Control16int32_false_trueE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The control’s true and false setting is indicated by setting
+an int32 value in a tensor. The tensor must be a
+1-dimensional tensor with size equal to the batch size of
+the request. ‘int32_false_true’ must have two entries: the
+first the false value and the second the true value.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver21ModelSequenceBatching12ControlInputE">
+message <code class="descname">ControlInput</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver21ModelSequenceBatching12ControlInputE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><blockquote>
+<div>The sequence control values to communicate by a model input.</div></blockquote>
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver21ModelSequenceBatching12ControlInput4nameE">
+string <code class="descname">name</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver21ModelSequenceBatching12ControlInput4nameE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The name of the model input.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver21ModelSequenceBatching12ControlInput7controlE">
+<a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver21ModelSequenceBatching7ControlE" title="nvidia::inferenceserver::ModelSequenceBatching::Control">Control</a> <code class="descname">control</code><span class="sig-paren">(</span>repeated<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver21ModelSequenceBatching12ControlInput7controlE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The control value(s) that should be communicated to the
+model using this model input.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver21ModelSequenceBatching13control_inputE">
+<a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver21ModelSequenceBatching12ControlInputE" title="nvidia::inferenceserver::ModelSequenceBatching::ControlInput">ControlInput</a> <code class="descname">control_input</code><span class="sig-paren">(</span>repeated<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver21ModelSequenceBatching13control_inputE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The model input(s) that the server should use to communicate
+sequence start, stop, ready and similar control values to the
+model.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver11ModelConfigE">
+message <code class="descname">ModelConfig</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver11ModelConfigE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><blockquote>
+<div>A model configuration.</div></blockquote>
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver11ModelConfig4nameE">
+string <code class="descname">name</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver11ModelConfig4nameE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The name of the model.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver11ModelConfig8platformE">
+string <code class="descname">platform</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver11ModelConfig8platformE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The framework for the model. Possible values are
+“tensorrt_plan”, “tensorflow_graphdef”,
+“tensorflow_savedmodel”, and “caffe2_netdef”.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver11ModelConfig14version_policyE">
+<a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver18ModelVersionPolicyE" title="nvidia::inferenceserver::ModelVersionPolicy">ModelVersionPolicy</a> <code class="descname">version_policy</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver11ModelConfig14version_policyE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Policy indicating which version(s) of the model will be served.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver11ModelConfig14max_batch_sizeE">
+int32 <code class="descname">max_batch_size</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver11ModelConfig14max_batch_sizeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Maximum batch size allowed for inference. This can only decrease
+what is allowed by the model itself. A max_batch_size value of 0
+indicates that batching is not allowed for the model and the
+dimension/shape of the input and output tensors must exactly
+match what is specified in the input and output configuration. A
+max_batch_size value &gt; 0 indicates that batching is allowed and
+so the model expects the input tensors to have an additional
+initial dimension for the batching that is not specified in the
+input (for example, if the model supports batched inputs of
+2-dimensional tensors then the model configuration will specify
+the input shape as [ X, Y ] but the model will expect the actual
+input tensors to have shape [ N, X, Y ]). For max_batch_size &gt; 0
+returned outputs will also have an additional initial dimension
+for the batch.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver11ModelConfig5inputE">
+<a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver10ModelInputE" title="nvidia::inferenceserver::ModelInput">ModelInput</a> <code class="descname">input</code><span class="sig-paren">(</span>repeated<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver11ModelConfig5inputE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The inputs request by the model.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver11ModelConfig6outputE">
+<a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver11ModelOutputE" title="nvidia::inferenceserver::ModelOutput">ModelOutput</a> <code class="descname">output</code><span class="sig-paren">(</span>repeated<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver11ModelConfig6outputE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The outputs produced by the model.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver11ModelConfig12optimizationE">
+<a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver23ModelOptimizationPolicyE" title="nvidia::inferenceserver::ModelOptimizationPolicy">ModelOptimizationPolicy</a> <code class="descname">optimization</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver11ModelConfig12optimizationE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Optimization configuration for the model. If not specified
+then default optimization policy is used.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver11ModelConfig17scheduling_choiceE">
+oneof <code class="descname">scheduling_choice</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver11ModelConfig17scheduling_choiceE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><blockquote>
+<div>The scheduling policy for the model. If not specified the
+default scheduling policy is used for the model. The default
+policy is to execute each inference request independently.</div></blockquote>
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver11ModelConfig17scheduling_choice16dynamic_batchingE">
+<a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver20ModelDynamicBatchingE" title="nvidia::inferenceserver::ModelDynamicBatching">ModelDynamicBatching</a> <code class="descname">dynamic_batching</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver11ModelConfig17scheduling_choice16dynamic_batchingE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>If specified, enables the dynamic-batching scheduling
+policy. With dynamic-batching the scheduler may group
+together independent requests into a single batch to
+improve inference throughput.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver11ModelConfig17scheduling_choice17sequence_batchingE">
+<a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver21ModelSequenceBatchingE" title="nvidia::inferenceserver::ModelSequenceBatching">ModelSequenceBatching</a> <code class="descname">sequence_batching</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver11ModelConfig17scheduling_choice17sequence_batchingE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>If specified, enables the sequence-batching scheduling
+policy. With sequence-batching, inference requests
+with the same correlation ID are routed to the same
+model instance. Multiple sequences of inference requests
+may be batched together into a single batch to
+improve inference throughput.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver11ModelConfig14instance_groupE">
+<a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver18ModelInstanceGroupE" title="nvidia::inferenceserver::ModelInstanceGroup">ModelInstanceGroup</a> <code class="descname">instance_group</code><span class="sig-paren">(</span>repeated<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver11ModelConfig14instance_groupE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Instances of this model. If not specified, one instance
+of the model will be instantiated on each available GPU.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver11ModelConfig22default_model_filenameE">
+string <code class="descname">default_model_filename</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver11ModelConfig22default_model_filenameE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Optional filename of the model file to use if a
+compute-capability specific model is not specified in
+<code class="xref cpp cpp-var docutils literal notranslate"><span class="pre">cc_model_names</span></code>. If not specified the default name
+is ‘model.graphdef’, ‘model.savedmodel’, ‘model.plan’ or
+‘model.netdef’ depending on the model type.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver11ModelConfig18cc_model_filenamesE">
+map&lt;string, string&gt; <code class="descname">cc_model_filenames</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver11ModelConfig18cc_model_filenamesE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Optional map from CUDA compute capability to the filename of
+the model that supports that compute capability. The filename
+refers to a file within the model version directory.</p>
+</dd></dl>
+
+<dl class="var">
+<dt id="_CPPv4N6nvidia15inferenceserver11ModelConfig4tagsE">
+map&lt;string, string&gt; <code class="descname">tags</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver11ModelConfig4tagsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Optional model tags. User-specific key-value pairs for this
+model. These tags are applied to the metrics reported on the HTTP
+metrics port.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, NVIDIA Corporation
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    
+
+  <style>
+  a:link, a:visited {
+    color: #76b900;
+  }
+
+  a:hover {
+    color: #8c0;
+  }
+
+  .rst-content dl:not(.docutils) dt {
+    background: rgba(118, 185, 0, 0.1);
+    color: rgba(59,93,0,1);
+    border-top: solid 3px rgba(59,93,0,1);
+  }
+  </style>
+  
+
+</body>
+</html>

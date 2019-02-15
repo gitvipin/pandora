@@ -1,0 +1,306 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.11">
+  <compound refid="structnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1_1ClassResult" kind="struct"><name>nvidia::inferenceserver::client::InferContext::Result::ClassResult</name>
+    <member refid="structnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1_1ClassResult_1a8480131c8f15b37e32f19400ec5a3d5d" kind="variable"><name>idx</name></member>
+    <member refid="structnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1_1ClassResult_1af0c1a1ef9932a40cd1fbbea3e5ae7b38" kind="variable"><name>value</name></member>
+    <member refid="structnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1_1ClassResult_1a517c52eae642ee9a37102070da66972a" kind="variable"><name>label</name></member>
+  </compound>
+  <compound refid="structcustom__payload__struct" kind="struct"><name>custom_payload_struct</name>
+    <member refid="structcustom__payload__struct_1ade508a785f227e1b75cda7e9b243ba7c" kind="variable"><name>batch_size</name></member>
+    <member refid="structcustom__payload__struct_1a15758b19c2bd946fd4db9252441ef92d" kind="variable"><name>input_cnt</name></member>
+    <member refid="structcustom__payload__struct_1a073a407347690555e3e17730465bad13" kind="variable"><name>input_names</name></member>
+    <member refid="structcustom__payload__struct_1a0681cfa6856b6ec8d092157fc2bcf0ea" kind="variable"><name>input_shape_dim_cnts</name></member>
+    <member refid="structcustom__payload__struct_1a861c79460be64f41742867fa07657b85" kind="variable"><name>input_shape_dims</name></member>
+    <member refid="structcustom__payload__struct_1afdeb3c627c80586d06719ca202f4011e" kind="variable"><name>output_cnt</name></member>
+    <member refid="structcustom__payload__struct_1a53eaa3fc131599bc84944a407844e93c" kind="variable"><name>required_output_names</name></member>
+    <member refid="structcustom__payload__struct_1a4e032638d78e9885b1f5e41f01f0463e" kind="variable"><name>input_context</name></member>
+    <member refid="structcustom__payload__struct_1a4f2283e50e0e827f0f20193f578445d6" kind="variable"><name>output_context</name></member>
+    <member refid="structcustom__payload__struct_1abc47d48363b2b6a175588fb570a128de" kind="variable"><name>error_code</name></member>
+  </compound>
+  <compound refid="classnvidia_1_1inferenceserver_1_1client_1_1Error" kind="class"><name>nvidia::inferenceserver::client::Error</name>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1Error_1a5cd97dd0cb13fae9dcf2ff392f46d127" kind="variable"><name>Success</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1Error_1a7239e3fd18861a4f3f56609017bcd511" kind="variable"><name>code_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1Error_1a1dda3bce358cba5191afd9924a0fb40d" kind="variable"><name>msg_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1Error_1a961ee8b0228a1a0567034e2ee766b676" kind="variable"><name>server_id_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1Error_1afc2edaba196c4fdf778e56728b79c3b9" kind="variable"><name>request_id_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1Error_1abd0e1c07fa0d178b5f9c468a772de6e7" kind="function"><name>Error</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1Error_1ab28352e8abccc6c246c06b817c071924" kind="function"><name>Error</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1Error_1a61c56c1f9b3112ffae6c1573a015e29f" kind="function"><name>Error</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1Error_1a1f4a3b6c8519dd1decea149546da93d0" kind="function"><name>Code</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1Error_1a6aa771500474272751705b9ceab0df69" kind="function"><name>Message</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1Error_1a46d23219fef60a764ad9ba638321179a" kind="function"><name>ServerId</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1Error_1ad3f77dde3f3a2c3ea8230ca85a6b19ce" kind="function"><name>RequestId</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1Error_1ae9f38b1f7ff0986190433ec2f8d97602" kind="function"><name>IsOk</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1Error_1ad321131e190ac3fb1c93c0b16f2aa3ca" kind="friend"><name>operator&lt;&lt;</name></member>
+  </compound>
+  <compound refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext" kind="class"><name>nvidia::inferenceserver::client::InferContext</name>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a8540194150819719c190049fab1e125c" kind="typedef"><name>ResultMap</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a6e1d2a28514245af5f71557a18be70c6" kind="typedef"><name>AsyncReqMap</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1aa2dda0b94a39e54ce2d07a3b5b6988b2" kind="variable"><name>ongoing_async_requests_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1aca65f4b17c14e3c25350c8af3571f86c" kind="variable"><name>model_name_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1aea092ac954441e636316644bd94b5979" kind="variable"><name>model_version_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a1836d4a88fbfa609def01ee59a675f4c" kind="variable"><name>correlation_id_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a69b72d3b61b07468f5a13c97f36c5e6a" kind="variable"><name>verbose_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1abfc00d0d8175ac030d881365b7030efd" kind="variable"><name>max_batch_size_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a12cc5d7a5db6437fe9fdc4ccc60874a9" kind="variable"><name>batch_size_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1aeb3741fc43d18b9cd7abab193f7ffca0" kind="variable"><name>async_request_id_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a2959c35ac38d06693ee9e3482f4b344b" kind="variable"><name>inputs_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a21c9f59353ef1d4215e033f5a4b5d86a" kind="variable"><name>outputs_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1ad65a99fa3c6afcf961de531f4421a73d" kind="variable"><name>infer_request_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a6b2d7784bcf85ee225b574f73d6059ca" kind="variable"><name>sync_request_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a5fde4cd588ca640d2b17e1768406eb1c" kind="variable"><name>context_stat_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a39fdbf2a953b23d0005aef8e2618fcaf" kind="variable"><name>worker_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a1baafc5376df1a6e16de58633c93b4cc" kind="variable"><name>mutex_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a685dfb2b9634c050b2d552f1613d0bc0" kind="variable"><name>cv_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a5f6d75086a6155fba595351c4e7abdd6" kind="variable"><name>exiting_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a3a996794a2f69c24ab50391fcc36ceec" kind="function"><name>~InferContext</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a6b01d3aece1500914c773fb9d88cb44b" kind="function"><name>ModelName</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a88642030870fb82b452a48a1676755d0" kind="function"><name>ModelVersion</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1ac9bd9ba3234a0c282383cdd939ca16dc" kind="function"><name>MaxBatchSize</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a7b98f4f0fa2fe0f948f2a06d91ec92f3" kind="function"><name>Inputs</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a4a783616ac9f48e21bd89abb69d0b21a" kind="function"><name>Outputs</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1ac8ca982d9c589b2c27c9a279699ac884" kind="function"><name>GetInput</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a0d3e9e6e55f3162c7148574af7aec251" kind="function"><name>GetOutput</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a7cf1746d814561727fd3b07b0f8349f2" kind="function"><name>SetRunOptions</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1aa083c81909e7a6d10725306d231ea0cb" kind="function"><name>GetStat</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a4cac8002817c9259851305b14c258f36" kind="function"><name>Run</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a255a59df29a53d6e45ce86663887615f" kind="function"><name>AsyncRun</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a6a9a45e35031ce4b0b50af8bd0c4ee8c" kind="function"><name>GetAsyncRunResults</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a27512d1f8f7099d20b2e0eaaac90c3f0" kind="function"><name>GetReadyAsyncRequest</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a1ad0ced372d23d1ed5a0af511ab7aa21" kind="function"><name>InferContext</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1ae32e8e83bf498b4e91452703dd12cca0" kind="function"><name>AsyncTransfer</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1ad2c7af868ffbb1a2e24f47d9ae0093a5" kind="function"><name>PreRunProcessing</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1ab7437e029e942557e2d11f8c22ae6d6b" kind="function"><name>IsRequestReady</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a11eff835f49b4d9126e1606a3b2c8615" kind="function"><name>UpdateStat</name></member>
+  </compound>
+  <compound refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext" kind="class"><name>nvidia::inferenceserver::client::InferGrpcContext</name>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext_1a95e7c7274daeceb82669b9f95aef5054" kind="variable"><name>async_request_completion_queue_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext_1af175710b44ad280ec46e980228b53398" kind="variable"><name>stub_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext_1a964d67791bbd912f2dc13b1472aaaf33" kind="variable"><name>request_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext_1afc628d254dba38d178f8dcd606b56328" kind="function"><name>~InferGrpcContext</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext_1a17c4f2f5007867d9f6b5444f9088f6c5" kind="function"><name>Run</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext_1adcd341f23d4b3a609c2117c698522a31" kind="function"><name>AsyncRun</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext_1af701c02c211163d37ac940a9816cf9ab" kind="function"><name>GetAsyncRunResults</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext_1a432bf0981eb512786263764f090ee83d" kind="function"><name>Create</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext_1a724b50d78b302e38603fb9a7c1aa8ee0" kind="function"><name>Create</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext_1abcd04c87e15144a95f81dceb54f5dd28" kind="function"><name>InferGrpcContext</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext_1a9b1f7432db5b39108de896b41f5300cd" kind="function"><name>InitHelper</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext_1a3f4f41c57b4e74c9ad6e8803c2514ec0" kind="function"><name>AsyncTransfer</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext_1a5902b0ce9b16f0a055bbc0fc09c69031" kind="function"><name>PreRunProcessing</name></member>
+  </compound>
+  <compound refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcStreamContext" kind="class"><name>nvidia::inferenceserver::client::InferGrpcStreamContext</name>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcStreamContext_1af1929f62ca9d2e2818034ee1705dbbd6" kind="variable"><name>context_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcStreamContext_1a0ac6456b2f6817ebaefe3008cef51f62" kind="variable"><name>stream_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcStreamContext_1a378f8f70646b1256db2e78266b08b1c1" kind="function"><name>~InferGrpcStreamContext</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcStreamContext_1a5e42ef49aa0ed810934a18ca1dbb71e4" kind="function"><name>Run</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcStreamContext_1a86e4987e666b37c5493373ae1b068d2f" kind="function"><name>AsyncRun</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcStreamContext_1a6a356d8b5495f6ba471ed989712c8e64" kind="function"><name>Create</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcStreamContext_1aa1f3dc161b5bed3a3e4d73ea997f898c" kind="function"><name>Create</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcStreamContext_1aa8b4a62d25916a9fd405591739a6b847" kind="function"><name>InferGrpcStreamContext</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcStreamContext_1ac0b79bc8230741c954ba5901e0ea330c" kind="function"><name>AsyncTransfer</name></member>
+  </compound>
+  <compound refid="classnvidia_1_1inferenceserver_1_1client_1_1InferHttpContext" kind="class"><name>nvidia::inferenceserver::client::InferHttpContext</name>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferHttpContext_1a1fb8739cc7fb8021b16207b14122286f" kind="variable"><name>multi_handle_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferHttpContext_1a6d089cda0592c997c5046167e8a20e75" kind="variable"><name>url_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferHttpContext_1a2e79bb4348ba903099c7cf57272d6f0e" kind="variable"><name>infer_request_str_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferHttpContext_1a7ed61d8774275c4b9e0910ead0f42326" kind="variable"><name>curl_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferHttpContext_1a0f1905f3c0e275655dadc2ea9fe074c0" kind="function"><name>~InferHttpContext</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferHttpContext_1a9d2e82db48e7a11ea2ee21e39113e267" kind="function"><name>Run</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferHttpContext_1a625d8c3a79b6d3cf08fd442b0d0b2540" kind="function"><name>AsyncRun</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferHttpContext_1a646ec6ca28f8c38a23b4e85c3ad8e8ec" kind="function"><name>GetAsyncRunResults</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferHttpContext_1a7c210c15455fde64a31c6925f3a8b906" kind="function"><name>Create</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferHttpContext_1ab59a20c6f183e55f0791d07e3d8c223b" kind="function"><name>Create</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferHttpContext_1a227f476a78ad517007610268d8867719" kind="function"><name>RequestProvider</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferHttpContext_1aff39cc0dbd3d152b57c7a24a5a3d9420" kind="function"><name>ResponseHeaderHandler</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferHttpContext_1ad87b9f3ba4b4516f576a4453fac710ae" kind="function"><name>ResponseHandler</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferHttpContext_1ac3b159dca6c95b4b0367bea6705a4a11" kind="function"><name>InferHttpContext</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferHttpContext_1abb46a65e4952b7fa15c575dedae8f54c" kind="function"><name>AsyncTransfer</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferHttpContext_1af1a63b2ce2c49270eaab14ed71fd803a" kind="function"><name>PreRunProcessing</name></member>
+  </compound>
+  <compound refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input" kind="class"><name>nvidia::inferenceserver::client::InferContext::Input</name>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1aeb32510fa7e86063d3341302ff5cc322" kind="function"><name>~Input</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a66b20a9167b8eeb9ddde10430b37fd01" kind="function"><name>Name</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a34951a4f1c906bf3c147ee84549d8667" kind="function"><name>ByteSize</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a07c715257ed5ed2feab0982d9c6fd941" kind="function"><name>TotalByteSize</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1ab90380c6a46ea973a08f86c5a1bb3ea8" kind="function"><name>DType</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a9ab3e04fbb0ad181fd74bf7675249fef" kind="function"><name>Format</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a500ee9536afa9d6286cd23ee1308ebda" kind="function"><name>Dims</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a3dee261f7bed6cb3840db299c6b1d246" kind="function"><name>Reset</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1aedd9cacfe4e87008521ed63c1eb8e035" kind="function"><name>Shape</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a0e2c4e3813ebfda6ecef7e23a7f00de5" kind="function"><name>SetShape</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a414fe9afbb60a48f162bac5439beee4d" kind="function"><name>SetRaw</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a094ec9eece1e10d877db9af69867090e" kind="function"><name>SetRaw</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a73495802b757c43b67edd334fec341d7" kind="function"><name>SetFromString</name></member>
+  </compound>
+  <compound refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options" kind="class"><name>nvidia::inferenceserver::client::InferContext::Options</name>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options_1abcaa16202fc4751a7657808cc4d71884" kind="function"><name>~Options</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options_1a23b1ac6a7393c1bad21fc8e7a3373ead" kind="function"><name>Flag</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options_1ae12fc02abb1e1f42d1de0e0d4f88c03d" kind="function"><name>SetFlag</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options_1a51f46889d0f436185379def5a99b67fc" kind="function"><name>Flags</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options_1a06defa0f160399a6e81d31bde89cbcc0" kind="function"><name>SetFlags</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options_1a6546eb56589394cc4222272afcc23d89" kind="function"><name>BatchSize</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options_1a6f390b31a0a8a265c8e15a77f6f9e7c1" kind="function"><name>SetBatchSize</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options_1abb0dceb3499c833684e0dfbe608b3360" kind="function"><name>AddRawResult</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options_1a5b584e6fa3d2867d1ec4ce7a0bfee809" kind="function"><name>AddClassResult</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options_1a63d97ebc1993c0034ea6822c1d7600b1" kind="function"><name>Create</name></member>
+  </compound>
+  <compound refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Output" kind="class"><name>nvidia::inferenceserver::client::InferContext::Output</name>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Output_1a8a685059d16e4a77fb8692dd82de0ba0" kind="function"><name>~Output</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Output_1a72fd5ea270c62500d6c182c4f2a035ab" kind="function"><name>Name</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Output_1a66c02cfce60941e575c6583ad160896c" kind="function"><name>DType</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Output_1a21f73c9cf17d65831cdbecf904993d05" kind="function"><name>Dims</name></member>
+  </compound>
+  <compound refid="classnvidia_1_1inferenceserver_1_1client_1_1ProfileContext" kind="class"><name>nvidia::inferenceserver::client::ProfileContext</name>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ProfileContext_1a37bff4c6755f5c2be784b195658781e0" kind="variable"><name>verbose_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ProfileContext_1a1ab52943642937237a61474900c3e063" kind="function"><name>StartProfile</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ProfileContext_1a70de85f4829ce4042c3696a3fdf2f091" kind="function"><name>StopProfile</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ProfileContext_1a7781bbb5753b2fe3df63b2c67f481bda" kind="function"><name>ProfileContext</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ProfileContext_1a9e56d2aaa5f73cbc20a17c189cdbecff" kind="function"><name>SendCommand</name></member>
+  </compound>
+  <compound refid="classnvidia_1_1inferenceserver_1_1client_1_1ProfileGrpcContext" kind="class"><name>nvidia::inferenceserver::client::ProfileGrpcContext</name>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ProfileGrpcContext_1af322c998fba2365140438fedf5b9e942" kind="variable"><name>stub_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ProfileGrpcContext_1aea9bbc1359b9e491afcbe066386a8baa" kind="function"><name>Create</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ProfileGrpcContext_1a29a5298ddd2c3662eb7bac13297088c9" kind="function"><name>ProfileGrpcContext</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ProfileGrpcContext_1a7565ede170689175cb6236801716dc3f" kind="function"><name>SendCommand</name></member>
+  </compound>
+  <compound refid="classnvidia_1_1inferenceserver_1_1client_1_1ProfileHttpContext" kind="class"><name>nvidia::inferenceserver::client::ProfileHttpContext</name>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ProfileHttpContext_1af82718964414858e226c50d3b4c23d32" kind="variable"><name>url_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ProfileHttpContext_1ab55dfbfe2cc3b890b008bc99196fc260" kind="variable"><name>request_status_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ProfileHttpContext_1a5a4cab76d0a3f8af074883be690ca8d5" kind="function"><name>Create</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ProfileHttpContext_1ae569d8c8888eaf1118ba7c88bea08be3" kind="function"><name>ResponseHeaderHandler</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ProfileHttpContext_1a1dd8a053cf78c04c6373d04df0de4449" kind="function"><name>ProfileHttpContext</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ProfileHttpContext_1aa7528d100f641dd78b9ccb14c439330f" kind="function"><name>SendCommand</name></member>
+  </compound>
+  <compound refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Request" kind="class"><name>nvidia::inferenceserver::client::InferContext::Request</name>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Request_1a3146daca9aed389d56fcbd71123f7206" kind="function"><name>~Request</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Request_1a796b6c3cac55f00c822f3c1ced007509" kind="function"><name>Id</name></member>
+  </compound>
+  <compound refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1RequestTimers" kind="class"><name>nvidia::inferenceserver::client::InferContext::RequestTimers</name>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1RequestTimers_1ad3d72a1b49c1e9ebb2bbeb15e04401f8" kind="enum"><name>Kind</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1RequestTimers_1ad3d72a1b49c1e9ebb2bbeb15e04401f8a2ca0e66d9f91476f9f00f61c5a834cbb" kind="enumvalue"><name>REQUEST_START</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1RequestTimers_1ad3d72a1b49c1e9ebb2bbeb15e04401f8ad793ca80c1d0010ecc2f269b6a4b621a" kind="enumvalue"><name>REQUEST_END</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1RequestTimers_1ad3d72a1b49c1e9ebb2bbeb15e04401f8a4cb619f22003a3f9334144b07c71d1f3" kind="enumvalue"><name>SEND_START</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1RequestTimers_1ad3d72a1b49c1e9ebb2bbeb15e04401f8a8330cc174bf610d2c3afaa2d68e535b2" kind="enumvalue"><name>SEND_END</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1RequestTimers_1ad3d72a1b49c1e9ebb2bbeb15e04401f8aec6eb4b12033d2b794c2a0f3d31c2930" kind="enumvalue"><name>RECEIVE_START</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1RequestTimers_1ad3d72a1b49c1e9ebb2bbeb15e04401f8a66feb30d6ad2348be0c107324aceb3b7" kind="enumvalue"><name>RECEIVE_END</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1RequestTimers_1aefdc1b3b184cb2c657e337a5e51385ad" kind="friend"><name>InferContext</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1RequestTimers_1acd5e48d87588457a5b6f532563a9c151" kind="friend"><name>InferHttpContext</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1RequestTimers_1a34c710dfa70d097e53c9cdf91063b4ce" kind="friend"><name>InferGrpcContext</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1RequestTimers_1a1ce142253e14aa918f0d542afe9256a7" kind="friend"><name>InferGrpcStreamContext</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1RequestTimers_1a2415de77985d9351e457fa48b8a5649b" kind="variable"><name>request_start_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1RequestTimers_1a0474d30586334fdd9f4186e14d1422ea" kind="variable"><name>request_end_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1RequestTimers_1a9fb12729f1da1e2cc38b5841e8a26b74" kind="variable"><name>send_start_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1RequestTimers_1aed2c53707e84e73d71d0e7e05a8912ba" kind="variable"><name>send_end_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1RequestTimers_1af2c12eb724a7070d89e4e53e4d93b656" kind="variable"><name>receive_start_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1RequestTimers_1ae070fa23be27b3ec33f54ed3b4a4a666" kind="variable"><name>receive_end_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1RequestTimers_1ac2935983f1de4bd33820357823c36e2f" kind="function"><name>RequestTimers</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1RequestTimers_1aa5ace810b5d34b9f6c3a9ae9a3d21dda" kind="function"><name>Reset</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1RequestTimers_1ab15f971203dcbd5ed114709318f2232b" kind="function"><name>Record</name></member>
+  </compound>
+  <compound refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result" kind="class"><name>nvidia::inferenceserver::client::InferContext::Result</name>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1a8bb9d36d1808a030dda919af87746dad" kind="enum"><name>ResultFormat</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1a8bb9d36d1808a030dda919af87746dadada3b38eab85f839509454eb2f3df8ea6" kind="enumvalue"><name>RAW</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1a8bb9d36d1808a030dda919af87746dada9f91171ba1a8902be2821d6ba488dbd4" kind="enumvalue"><name>CLASS</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1aa87dddd7be7a18f787946a6548398d3b" kind="function"><name>~Result</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1a78206cf92579339875ad3a44318a28f7" kind="function"><name>ModelName</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1a9a81d8a1588920dc784fcb4b2520f566" kind="function"><name>ModelVersion</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1a7687d7d07c181ba27f32654341390a92" kind="function"><name>GetOutput</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1aeeec1b3448cf681e3ec8ac3c3c589374" kind="function"><name>GetRawShape</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1af97122884c92553992261c501dbe3095" kind="function"><name>GetRaw</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1a2a13887812b025896d569f041db7e2c8" kind="function"><name>GetRawAtCursor</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1a64d951fd64068b9d2e3da103f47390fe" kind="function"><name>GetRawAtCursor</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1ac50ae04862c58a004547cac5debc7c98" kind="function"><name>GetClassCount</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1a0b78337cb9b55608b310f226dd6e8287" kind="function"><name>GetClassAtCursor</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1a304de867ffb5121c21874e11a4e9d34a" kind="function"><name>ResetCursors</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1adb27437d415b569a3a4b7700c56002bf" kind="function"><name>ResetCursor</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1a742f381607b9915cb2fc558511f491c1" kind="function"><name>GetRawAtCursor</name></member>
+  </compound>
+  <compound refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerHealthContext" kind="class"><name>nvidia::inferenceserver::client::ServerHealthContext</name>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerHealthContext_1a85f64722e02a0a62a76984e10e4c43d4" kind="variable"><name>verbose_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerHealthContext_1a487bfc16d869317d0f4cb93144311054" kind="function"><name>GetReady</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerHealthContext_1abf7c75af3e61a2f92b481c47b0617c9c" kind="function"><name>GetLive</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerHealthContext_1ac70a31c16337c59f1ace99658a7e8d37" kind="function"><name>ServerHealthContext</name></member>
+  </compound>
+  <compound refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerHealthGrpcContext" kind="class"><name>nvidia::inferenceserver::client::ServerHealthGrpcContext</name>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerHealthGrpcContext_1a2badfd47318e3b8839611c4b3fadc22d" kind="variable"><name>stub_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerHealthGrpcContext_1a2929e161d9d4886b48423a48eb83e21a" kind="function"><name>Create</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerHealthGrpcContext_1ab7eb83267e0b344b688afd3b70c1498d" kind="function"><name>GetReady</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerHealthGrpcContext_1a6015f1c052eb2a7a8d161a128d8c62b1" kind="function"><name>GetLive</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerHealthGrpcContext_1aa70bf21271a1e54737b1e105d8b8a566" kind="function"><name>ServerHealthGrpcContext</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerHealthGrpcContext_1a2de86e7a9dd37ef16c90f57270073950" kind="function"><name>GetHealth</name></member>
+  </compound>
+  <compound refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerHealthHttpContext" kind="class"><name>nvidia::inferenceserver::client::ServerHealthHttpContext</name>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerHealthHttpContext_1a94958b95c1ca1f533814113588bbfd52" kind="variable"><name>url_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerHealthHttpContext_1a8646eed51789a020f617fe030fa8b1c4" kind="function"><name>Create</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerHealthHttpContext_1afb0a65b3486407f7ab33f1a43af115da" kind="function"><name>GetReady</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerHealthHttpContext_1ad6c96a9a3dcc20400ce3d610f80497b4" kind="function"><name>GetLive</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerHealthHttpContext_1abc7c702bdb79ca5d3c11892208fefde4" kind="function"><name>ServerHealthHttpContext</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerHealthHttpContext_1aa28cd75c8a00ba2137d7b3686cec308e" kind="function"><name>GetHealth</name></member>
+  </compound>
+  <compound refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusContext" kind="class"><name>nvidia::inferenceserver::client::ServerStatusContext</name>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusContext_1aade2733abe3cf60dfa59bc9352c0fbf2" kind="variable"><name>verbose_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusContext_1a15b5f463eb3c8315b56f21b67b151d04" kind="function"><name>GetServerStatus</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusContext_1af8209b3b4715d25a66431c1e3b9fe27e" kind="function"><name>ServerStatusContext</name></member>
+  </compound>
+  <compound refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusGrpcContext" kind="class"><name>nvidia::inferenceserver::client::ServerStatusGrpcContext</name>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusGrpcContext_1a16c035cc6bb0899650d247ca242dfd33" kind="variable"><name>model_name_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusGrpcContext_1af617ccb68d9034f4027c47d36b0f0b08" kind="variable"><name>stub_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusGrpcContext_1ae7ce9ca2694b29d64a41a438ec795486" kind="function"><name>Create</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusGrpcContext_1a67bee0616301552fe2b90a26d4d6d131" kind="function"><name>Create</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusGrpcContext_1a140af3b6fd9c1353a444fa54a65acd74" kind="function"><name>GetServerStatus</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusGrpcContext_1adf8ca56ccb663fdf1e6715af64da2a34" kind="function"><name>ServerStatusGrpcContext</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusGrpcContext_1a22b48352223b2d1aef832a502116015b" kind="function"><name>ServerStatusGrpcContext</name></member>
+  </compound>
+  <compound refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusHttpContext" kind="class"><name>nvidia::inferenceserver::client::ServerStatusHttpContext</name>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusHttpContext_1abfe3a356d18bba71bbfb3c6a51669acd" kind="variable"><name>url_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusHttpContext_1a62fdc6f56d34f7f38d82ceca58434889" kind="variable"><name>request_status_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusHttpContext_1a3082656fbb2bb6dcab49f60552963658" kind="variable"><name>response_</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusHttpContext_1ab4b5945eb886c8a4e643f249d1bee2b0" kind="function"><name>Create</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusHttpContext_1ac0cb2c45a1d73ab6f45c1397f14ba6f9" kind="function"><name>Create</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusHttpContext_1a587d9241ae9b011307592b4ce0a312d3" kind="function"><name>GetServerStatus</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusHttpContext_1aff997f89b5e55f4d654b18bbc629440e" kind="function"><name>ResponseHeaderHandler</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusHttpContext_1a4fc9f5e9ba49c5e7c77a3f767c02eb67" kind="function"><name>ResponseHandler</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusHttpContext_1a0f425167e8ae244b39d2246ab718c6a4" kind="function"><name>ServerStatusHttpContext</name></member>
+    <member refid="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusHttpContext_1a39c3af77607c56c90f922788f1707333" kind="function"><name>ServerStatusHttpContext</name></member>
+  </compound>
+  <compound refid="structnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Stat" kind="struct"><name>nvidia::inferenceserver::client::InferContext::Stat</name>
+    <member refid="structnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Stat_1ad76e90f2ef845eb146acab963bbffd1a" kind="variable"><name>completed_request_count</name></member>
+    <member refid="structnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Stat_1abf5e228bd9de072b92cdbfd06b10c8cf" kind="variable"><name>cumulative_total_request_time_ns</name></member>
+    <member refid="structnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Stat_1a5b8451d591204705cfb9d8854f132b18" kind="variable"><name>cumulative_send_time_ns</name></member>
+    <member refid="structnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Stat_1ae113efbf699abdd52d45996dcc7d4689" kind="variable"><name>cumulative_receive_time_ns</name></member>
+    <member refid="structnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Stat_1aa1c18a68160ee9ccb7002fdb40e7b15c" kind="function"><name>Stat</name></member>
+  </compound>
+  <compound refid="namespacenvidia" kind="namespace"><name>nvidia</name>
+  </compound>
+  <compound refid="namespacenvidia_1_1inferenceserver" kind="namespace"><name>nvidia::inferenceserver</name>
+  </compound>
+  <compound refid="namespacenvidia_1_1inferenceserver_1_1client" kind="namespace"><name>nvidia::inferenceserver::client</name>
+    <member refid="request_8h_1a19d352bb13848c14b5f03274b25ecee3" kind="function"><name>operator&lt;&lt;</name></member>
+  </compound>
+  <compound refid="request_8h" kind="file"><name>request.h</name>
+  </compound>
+  <compound refid="custom_8h" kind="file"><name>custom.h</name>
+    <member refid="custom_8h_1aaf537da73bb55fda05fb4e39defe1949" kind="define"><name>CUSTOM_NO_GPU_DEVICE</name></member>
+    <member refid="custom_8h_1a99a7b9dcc756702784a869d9afb59df4" kind="typedef"><name>CustomPayload</name></member>
+    <member refid="custom_8h_1aee3723f1a17ff4664691655e056a309c" kind="typedef"><name>CustomGetNextInputFn_t</name></member>
+    <member refid="custom_8h_1a71cb419d6e7feee902115438973d02f8" kind="typedef"><name>CustomGetOutputFn_t</name></member>
+    <member refid="custom_8h_1a11fea108abb0b28f86a96e6b7cd92a20" kind="typedef"><name>CustomInitializeFn_t</name></member>
+    <member refid="custom_8h_1aa32f51734df1f217cc7c2b07f31f8f3f" kind="typedef"><name>CustomFinalizeFn_t</name></member>
+    <member refid="custom_8h_1aa6616d50105d3441ba277c6dbce66286" kind="typedef"><name>CustomErrorStringFn_t</name></member>
+    <member refid="custom_8h_1ac0c3508cd00e9db56912ff40deecf9d2" kind="typedef"><name>CustomExecuteFn_t</name></member>
+    <member refid="custom_8h_1ad384f6af9bfb11b82b2b4e411f799b6f" kind="function"><name>CustomInitialize</name></member>
+    <member refid="custom_8h_1a9cd799dfef77db82babc6ddd4a4be707" kind="function"><name>CustomFinalize</name></member>
+    <member refid="custom_8h_1aedfdcb69f8eaab594173b197b10dc804" kind="function"><name>CustomErrorString</name></member>
+    <member refid="custom_8h_1afc75c0a4e1a169562586c2d4ff09ba40" kind="function"><name>CustomExecute</name></member>
+  </compound>
+  <compound refid="dir_62829fc8700b13df7e4910d4f9ff4e15" kind="dir"><name>src/clients/c++</name>
+  </compound>
+  <compound refid="dir_44454380e89751d088dd05c94905df2f" kind="dir"><name>src/clients</name>
+  </compound>
+  <compound refid="dir_95cb94a0b1b4f90614c6e3b785114363" kind="dir"><name>src/servables/custom</name>
+  </compound>
+  <compound refid="dir_357dcbc798aeb547c80a168e42ebbb53" kind="dir"><name>src/servables</name>
+  </compound>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>src</name>
+  </compound>
+</doxygenindex>

@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Request" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>nvidia::inferenceserver::client::InferContext::Request</compoundname>
+    <includes refid="request_8h" local="no">request.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Request_1a3146daca9aed389d56fcbd71123f7206" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual nvidia::inferenceserver::client::InferContext::Request::~Request</definition>
+        <argsstring>()=default</argsstring>
+        <name>~Request</name>
+        <briefdescription>
+<para>Destroy the request handle. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="514" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Request_1a796b6c3cac55f00c822f3c1ced007509" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>uint64_t</type>
+        <definition>virtual uint64_t nvidia::inferenceserver::client::InferContext::Request::Id</definition>
+        <argsstring>() const =0</argsstring>
+        <name>Id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The unique identifier of the request. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="517" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Handle to a inference request. </para>    </briefdescription>
+    <detaileddescription>
+<para>The request handle is used to get request results if the request is sent by <ref refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a255a59df29a53d6e45ce86663887615f" kindref="member">AsyncRun()</ref>. </para>    </detaileddescription>
+    <location file="src/clients/c++/request.h" line="511" column="1" bodyfile="src/clients/c++/request.h" bodystart="511" bodyend="518"/>
+    <listofallmembers>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Request_1a796b6c3cac55f00c822f3c1ced007509" prot="public" virt="pure-virtual"><scope>nvidia::inferenceserver::client::InferContext::Request</scope><name>Id</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Request_1a3146daca9aed389d56fcbd71123f7206" prot="public" virt="virtual"><scope>nvidia::inferenceserver::client::InferContext::Request</scope><name>~Request</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

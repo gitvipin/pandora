@@ -1,0 +1,865 @@
+<!--
+# Copyright (c) 2018, NVIDIA CORPORATION. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+#  * Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+#  * Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+#  * Neither the name of NVIDIA CORPORATION nor the names of its
+#    contributors may be used to endorse or promote products derived
+#    from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS ``AS IS'' AND ANY
+# EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+# PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+# CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+# EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+# PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+# PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+# OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+# (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+# OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Model Configuration &mdash; NVIDIA TensorRT Inference Server 0.12.0dev
+ documentation</title>
+  
+
+  
+  
+  
+  
+    <link rel="canonical" href="https://docs.nvidia.com/deeplearning/sdk/tensorrt-inference-server-guide/docs/index.htmlmodel_configuration.html"/>
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Inference Server API" href="http_grpc_api.html" />
+    <link rel="prev" title="Model Repository" href="model_repository.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+           
+
+          
+            <a href="index.html" class="icon icon-home"> NVIDIA TensorRT Inference Server
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.12.0dev
+-ad20b82<br/>
+Version select: <select onChange="window.location.href = this.value" onFocus="this.selectedIndex = -1">
+    <option value="https://docs.nvidia.com/deeplearning/sdk/tensorrt-inference-server-guide/docs/index.html">Current release</option>
+    <option value="https://docs.nvidia.com/deeplearning/sdk/tensorrt-inference-server-master-branch-guide/docs/index.html">master (unstable)</option>
+    <option value="https://docs.nvidia.com/deeplearning/sdk/inference-server-archived/index.html">Older releases</option>
+</select>
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #76b900;
+    }
+
+    .wy-side-nav-search a:link, .wy-nav-top a:link {
+      color: #fff;
+    }
+    .wy-side-nav-search a:visited, .wy-nav-top a:visited {
+      color: #fff;
+    }
+    .wy-side-nav-search a:hover, .wy-nav-top a:hover {
+      color: #fff;
+    }
+
+    .wy-menu-vertical a:link, .wy-menu-vertical a:visited {
+      color: #d9d9d9
+    }
+
+    .wy-menu-vertical a:active {
+      background-color: #76b900
+    }
+
+    .wy-side-nav-search>div.version {
+      color: rgba(0, 0, 0, 0.3)
+    }
+  </style>
+  
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Documentation home</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#using-a-prebuilt-docker-container">Using A Prebuilt Docker Container</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#building-from-source-code">Building From Source Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#run-tensorrt-inference-server">Run TensorRT Inference Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#verify-inference-server-is-running-correctly">Verify Inference Server Is Running Correctly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#building-the-client-examples">Building The Client Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#running-the-image-classification-example">Running The Image Classification Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installing the Server</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="install.html#installing-prebuilt-containers">Installing Prebuilt Containers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="run.html">Running the Server</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="run.html#example-model-repository">Example Model Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="run.html#running-the-inference-server">Running The Inference Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="run.html#running-the-inference-server-on-a-system-without-a-gpu">Running The Inference Server On A System Without A GPU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="run.html#checking-inference-server-status">Checking Inference Server Status</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="client.html">Client Libraries and Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="client.html#building-the-client-libraries-and-examples">Building the Client Libraries and Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client.html#image-classification-example-application">Image Classification Example Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client.html#performance-example-application">Performance Example Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="client.html#client-api">Client API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="client.html#string-datatype">String Datatype</a></li>
+<li class="toctree-l3"><a class="reference internal" href="client.html#stream-inference">Stream Inference</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="model_repository.html">Model Repository</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="model_repository.html#modifying-the-model-repository">Modifying the Model Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_repository.html#model-versions">Model Versions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_repository.html#framework-model-definition">Framework Model Definition</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="model_repository.html#tensorrt-models">TensorRT Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="model_repository.html#tensorflow-models">TensorFlow Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="model_repository.html#caffe2-models">Caffe2 Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="model_repository.html#tensorrt-tensorflow-models">TensorRT/TensorFlow Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="model_repository.html#onnx-models">ONNX Models</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="model_repository.html#custom-backends">Custom Backends</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="model_repository.html#custom-backend-api">Custom Backend API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="model_repository.html#example-custom-backend">Example Custom Backend</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Model Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#generated-model-configuration">Generated Model Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#datatypes">Datatypes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version-policy">Version Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#instance-groups">Instance Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dynamic-batching">Dynamic Batching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#optimization-policy">Optimization Policy</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="http_grpc_api.html">Inference Server API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="http_grpc_api.html#health">Health</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http_grpc_api.html#status">Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http_grpc_api.html#inference">Inference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http_grpc_api.html#stream-inference">Stream Inference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="metrics.html">Metrics</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Architecture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="architecture.html#concurrent-model-execution">Concurrent Model Execution</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contribute.html#coding-convention">Coding Convention</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="build.html">Building</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="build.html#building-the-server">Building the Server</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="build.html#incremental-builds">Incremental Builds</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="build.html#building-the-client-libraries-and-examples">Building the Client Libraries and Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build.html#building-the-documentation">Building the Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="build.html#html-documentation">HTML Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="build.html#pdf-documentation">PDF Documentation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="test.html">Testing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="test.html#generate-qa-model-repositories">Generate QA Model Repositories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="test.html#build-qa-container">Build QA Container</a></li>
+<li class="toctree-l2"><a class="reference internal" href="test.html#run-qa-container">Run QA Container</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="protobuf_api/protobuf_api_root.html">Protobuf API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="protobuf_api/protobuf_api_root.html#http-grpc-api">HTTP/GRPC API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="protobuf_api/protobuf_api_root.html#model-configuration">Model Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="protobuf_api/protobuf_api_root.html#status">Status</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cpp_api/cpp_api_root.html">C++ API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cpp_api/cpp_api_root.html#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpp_api/cpp_api_root.html#file-hierarchy">File Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpp_api/cpp_api_root.html#full-api">Full API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cpp_api/cpp_api_root.html#namespaces">Namespaces</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/namespace_nvidia.html">Namespace nvidia</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/namespace_nvidia__inferenceserver.html">Namespace nvidia::inferenceserver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/namespace_nvidia__inferenceserver__client.html">Namespace nvidia::inferenceserver::client</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_api/cpp_api_root.html#classes-and-structs">Classes and Structs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/structcustom__payload__struct.html">Struct custom_payload_struct</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/structnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1_1ClassResult.html">Struct Result::ClassResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/structnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Stat.html">Struct InferContext::Stat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/classnvidia_1_1inferenceserver_1_1client_1_1Error.html">Class Error</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/classnvidia_1_1inferenceserver_1_1client_1_1InferContext.html">Class InferContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input.html">Class InferContext::Input</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options.html">Class InferContext::Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Output.html">Class InferContext::Output</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Request.html">Class InferContext::Request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1RequestTimers.html">Class InferContext::RequestTimers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result.html">Class InferContext::Result</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext.html">Class InferGrpcContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcStreamContext.html">Class InferGrpcStreamContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/classnvidia_1_1inferenceserver_1_1client_1_1InferHttpContext.html">Class InferHttpContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/classnvidia_1_1inferenceserver_1_1client_1_1ProfileContext.html">Class ProfileContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/classnvidia_1_1inferenceserver_1_1client_1_1ProfileGrpcContext.html">Class ProfileGrpcContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/classnvidia_1_1inferenceserver_1_1client_1_1ProfileHttpContext.html">Class ProfileHttpContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/classnvidia_1_1inferenceserver_1_1client_1_1ServerHealthContext.html">Class ServerHealthContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/classnvidia_1_1inferenceserver_1_1client_1_1ServerHealthGrpcContext.html">Class ServerHealthGrpcContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/classnvidia_1_1inferenceserver_1_1client_1_1ServerHealthHttpContext.html">Class ServerHealthHttpContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusContext.html">Class ServerStatusContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusGrpcContext.html">Class ServerStatusGrpcContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusHttpContext.html">Class ServerStatusHttpContext</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_api/cpp_api_root.html#functions">Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/function_custom_8h_1aedfdcb69f8eaab594173b197b10dc804.html">Function CustomErrorString</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/function_custom_8h_1afc75c0a4e1a169562586c2d4ff09ba40.html">Function CustomExecute</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/function_custom_8h_1a9cd799dfef77db82babc6ddd4a4be707.html">Function CustomFinalize</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/function_custom_8h_1ad384f6af9bfb11b82b2b4e411f799b6f.html">Function CustomInitialize</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/function_request_8h_1a19d352bb13848c14b5f03274b25ecee3.html">Function nvidia::inferenceserver::client::operator&lt;&lt;</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_api/cpp_api_root.html#defines">Defines</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/define_custom_8h_1aaf537da73bb55fda05fb4e39defe1949.html">Define CUSTOM_NO_GPU_DEVICE</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_api/cpp_api_root.html#typedefs">Typedefs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/typedef_custom_8h_1aa6616d50105d3441ba277c6dbce66286.html">Typedef CustomErrorStringFn_t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/typedef_custom_8h_1ac0c3508cd00e9db56912ff40deecf9d2.html">Typedef CustomExecuteFn_t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/typedef_custom_8h_1aa32f51734df1f217cc7c2b07f31f8f3f.html">Typedef CustomFinalizeFn_t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/typedef_custom_8h_1aee3723f1a17ff4664691655e056a309c.html">Typedef CustomGetNextInputFn_t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/typedef_custom_8h_1a71cb419d6e7feee902115438973d02f8.html">Typedef CustomGetOutputFn_t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/typedef_custom_8h_1a11fea108abb0b28f86a96e6b7cd92a20.html">Typedef CustomInitializeFn_t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/typedef_custom_8h_1a99a7b9dcc756702784a869d9afb59df4.html">Typedef CustomPayload</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_api/cpp_api_root.html#directories">Directories</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/dir_src.html">Directory src</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/dir_src_clients.html">Directory clients</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/dir_src_clients_c++.html">Directory c++</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/dir_src_servables.html">Directory servables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/dir_src_servables_custom.html">Directory custom</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_api/cpp_api_root.html#files">Files</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/file_src_servables_custom_custom.h.html">File custom.h</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_api/file_src_clients_c++_request.h.html">File request.h</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python_api.html">Python API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python_api.html#client">Client</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">NVIDIA TensorRT Inference Server</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Model Configuration</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/model_configuration.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="model-configuration">
+<span id="section-model-configuration"></span><h1>Model Configuration<a class="headerlink" href="#model-configuration" title="Permalink to this headline">¶</a></h1>
+<p>Each model in a <a class="reference internal" href="model_repository.html#section-model-repository"><span class="std std-ref">Model Repository</span></a> must include a model
+configuration that provides required and optional information about
+the model. Typically, this configuration is provided in a config.pbtxt
+file specified as <a class="reference internal" href="protobuf_api/model_config.proto.html"><span class="doc">ModelConfig</span></a>
+protobuf. In some cases, discussed in
+<a class="reference internal" href="#section-generated-model-configuration"><span class="std std-ref">Generated Model Configuration</span></a>, the model configuration
+can be generated automatically by the inference server and so does not
+need to be provided explicitly.</p>
+<p>A minimal model configuration must specify <a class="reference internal" href="protobuf_api/model_config.proto.html#_CPPv4N6nvidia15inferenceserver11ModelConfig4nameE" title="nvidia::inferenceserver::ModelConfig::name"><code class="xref cpp cpp-var docutils literal notranslate"><span class="pre">name</span></code></a>, <a class="reference internal" href="protobuf_api/model_config.proto.html#_CPPv4N6nvidia15inferenceserver11ModelConfig8platformE" title="nvidia::inferenceserver::ModelConfig::platform"><code class="xref cpp cpp-var docutils literal notranslate"><span class="pre">platform</span></code></a>,
+<a class="reference internal" href="protobuf_api/model_config.proto.html#_CPPv4N6nvidia15inferenceserver11ModelConfig14max_batch_sizeE" title="nvidia::inferenceserver::ModelConfig::max_batch_size"><code class="xref cpp cpp-var docutils literal notranslate"><span class="pre">max_batch_size</span></code></a>,
+<a class="reference internal" href="protobuf_api/model_config.proto.html#_CPPv4N6nvidia15inferenceserver11ModelConfig5inputE" title="nvidia::inferenceserver::ModelConfig::input"><code class="xref cpp cpp-var docutils literal notranslate"><span class="pre">input</span></code></a>, and
+<a class="reference internal" href="protobuf_api/model_config.proto.html#_CPPv4N6nvidia15inferenceserver11ModelConfig6outputE" title="nvidia::inferenceserver::ModelConfig::output"><code class="xref cpp cpp-var docutils literal notranslate"><span class="pre">output</span></code></a>.</p>
+<p>As a running example consider a TensorRT model called <em>mymodel</em> that
+has two inputs, <em>input0</em> and <em>input1</em>, and one output, <em>output0</em>, all
+of which are 16 entry float32 tensors. The minimal configuration is:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>name: &quot;mymodel&quot;
+platform: &quot;tensorrt_plan&quot;
+max_batch_size: 8
+input [
+  {
+    name: &quot;input0&quot;
+    data_type: TYPE_FP32
+    dims: [ 16 ]
+  },
+  {
+    name: &quot;input1&quot;
+    data_type: TYPE_FP32
+    dims: [ 16 ]
+  }
+]
+output [
+  {
+    name: &quot;output0&quot;
+    data_type: TYPE_FP32
+    dims: [ 16 ]
+  }
+]
+</pre></div>
+</div>
+<p>The name of the model must match the <a class="reference internal" href="protobuf_api/model_config.proto.html#_CPPv4N6nvidia15inferenceserver11ModelConfig4nameE" title="nvidia::inferenceserver::ModelConfig::name"><code class="xref cpp cpp-var docutils literal notranslate"><span class="pre">name</span></code></a> of the model repository
+directory containing the model. The <a class="reference internal" href="protobuf_api/model_config.proto.html#_CPPv4N6nvidia15inferenceserver11ModelConfig8platformE" title="nvidia::inferenceserver::ModelConfig::platform"><code class="xref cpp cpp-var docutils literal notranslate"><span class="pre">platform</span></code></a> must be one of
+<strong>tensorrt_plan</strong>, <strong>tensorflow_graphdef</strong>, <strong>tensorflow_savedmodel</strong>,
+<strong>caffe2_netdef</strong>, or <strong>custom</strong>.</p>
+<p>The datatypes allowed for input and output tensors varies based on the
+type of the model. Section <a class="reference internal" href="#section-datatypes"><span class="std std-ref">Datatypes</span></a> describes the
+allowed datatypes and how they map to the datatypes of each model
+type.</p>
+<p>For models that support batched inputs the <a class="reference internal" href="protobuf_api/model_config.proto.html#_CPPv4N6nvidia15inferenceserver11ModelConfig14max_batch_sizeE" title="nvidia::inferenceserver::ModelConfig::max_batch_size"><code class="xref cpp cpp-var docutils literal notranslate"><span class="pre">max_batch_size</span></code></a> value must be
+&gt;= 1. The TensorRT Inference Server assumes that the batching occurs
+along a first dimension that is not listed in the inputs or
+outputs. For the above example, the server expects to receive input
+tensors with shape <strong>[ x, 16 ]</strong> and produces an output tensor with
+shape <strong>[ x, 16 ]</strong>, where <strong>x</strong> is the batch size of the request.</p>
+<p>For models that do not support batched inputs the
+<a class="reference internal" href="protobuf_api/model_config.proto.html#_CPPv4N6nvidia15inferenceserver11ModelConfig14max_batch_sizeE" title="nvidia::inferenceserver::ModelConfig::max_batch_size"><code class="xref cpp cpp-var docutils literal notranslate"><span class="pre">max_batch_size</span></code></a> value must be
+zero. If the above example specified a <a class="reference internal" href="protobuf_api/model_config.proto.html#_CPPv4N6nvidia15inferenceserver11ModelConfig14max_batch_sizeE" title="nvidia::inferenceserver::ModelConfig::max_batch_size"><code class="xref cpp cpp-var docutils literal notranslate"><span class="pre">max_batch_size</span></code></a> of zero, the
+inference server would expect to receive input tensors with shape <strong>[
+16 ]</strong>, and would produce an output tensor with shape <strong>[ 16 ]</strong>.</p>
+<p>For models that support input and output tensors with variable-size
+dimensions, those dimensions can be listed as -1 in the input and
+output configuration. For example, if a model requires a 2-dimensional
+input tensor where the first dimension must be size 4 but the second
+dimension can be any size, the model configuration for that input
+would include <strong>dims: [ 4, -1 ]</strong>. The inference server would then
+accept inference requests where that input tensor’s second dimension
+was any value &gt;= 1. The model configuration can be more restrictive
+than what is allowed by the underlying model. For example, even though
+the model allows the second dimension to be any size, the model
+configuration could be specific as <strong>dims: [ 4, 4 ]</strong>. In this case,
+the inference server would only accept inference requests where the
+input tensor’s shape was exactly <strong>[ 4, 4 ]</strong>.</p>
+<div class="section" id="generated-model-configuration">
+<span id="section-generated-model-configuration"></span><h2>Generated Model Configuration<a class="headerlink" href="#generated-model-configuration" title="Permalink to this headline">¶</a></h2>
+<p>By default, the model configuration file containing the required
+settings must be provided with each model. However, if the server is
+started with the --strict-model-config=false option, then in some
+cases the required portions of the model configuration file can be
+generated automatically by the inference server. The required portion
+of the model configuration are those settings shown in the example
+minimal configuration above. Specifically:</p>
+<ul class="simple">
+<li><a class="reference internal" href="model_repository.html#section-tensorrt-models"><span class="std std-ref">TensorRT Plan</span></a> models do not require
+a model configuration file because the inference server can derive
+all the required settings automatically.</li>
+<li>Some <a class="reference internal" href="model_repository.html#section-tensorflow-models"><span class="std std-ref">TensorFlow SavedModel</span></a> models
+do not require a model configuration file. The models must specify
+all inputs and outputs as fixed-size tensors (with an optional
+initial batch dimension) for the model configuration to be generated
+automatically. The easiest way to determine if a particular
+SavedModel is supported is to try it with the server and check the
+console log and <a class="reference internal" href="http_grpc_api.html#section-api-status"><span class="std std-ref">Status API</span></a> to determine
+if the model loaded successfully.</li>
+</ul>
+<p>When using --strict-model-config=false you can see the model
+configuration that was generated for a model by using the <a class="reference internal" href="http_grpc_api.html#section-api-status"><span class="std std-ref">Status
+API</span></a>.</p>
+<p>The TensorRT Inference Server only generates the required portion of
+the model configuration file. You must still provide the optional
+portions of the model configuration if necessary, such as
+<a class="reference internal" href="protobuf_api/model_config.proto.html#_CPPv4N6nvidia15inferenceserver11ModelConfig14version_policyE" title="nvidia::inferenceserver::ModelConfig::version_policy"><code class="xref cpp cpp-var docutils literal notranslate"><span class="pre">version_policy</span></code></a>,
+<a class="reference internal" href="protobuf_api/model_config.proto.html#_CPPv4N6nvidia15inferenceserver11ModelConfig12optimizationE" title="nvidia::inferenceserver::ModelConfig::optimization"><code class="xref cpp cpp-var docutils literal notranslate"><span class="pre">optimization</span></code></a>,
+<code class="xref cpp cpp-var docutils literal notranslate"><span class="pre">dynamic_batching</span></code>,
+<a class="reference internal" href="protobuf_api/model_config.proto.html#_CPPv4N6nvidia15inferenceserver11ModelConfig14instance_groupE" title="nvidia::inferenceserver::ModelConfig::instance_group"><code class="xref cpp cpp-var docutils literal notranslate"><span class="pre">instance_group</span></code></a>,
+<a class="reference internal" href="protobuf_api/model_config.proto.html#_CPPv4N6nvidia15inferenceserver11ModelConfig22default_model_filenameE" title="nvidia::inferenceserver::ModelConfig::default_model_filename"><code class="xref cpp cpp-var docutils literal notranslate"><span class="pre">default_model_filename</span></code></a>,
+<a class="reference internal" href="protobuf_api/model_config.proto.html#_CPPv4N6nvidia15inferenceserver11ModelConfig18cc_model_filenamesE" title="nvidia::inferenceserver::ModelConfig::cc_model_filenames"><code class="xref cpp cpp-var docutils literal notranslate"><span class="pre">cc_model_filenames</span></code></a>, and
+<a class="reference internal" href="protobuf_api/model_config.proto.html#_CPPv4N6nvidia15inferenceserver11ModelConfig4tagsE" title="nvidia::inferenceserver::ModelConfig::tags"><code class="xref cpp cpp-var docutils literal notranslate"><span class="pre">tags</span></code></a>.</p>
+</div>
+<div class="section" id="datatypes">
+<span id="section-datatypes"></span><h2>Datatypes<a class="headerlink" href="#datatypes" title="Permalink to this headline">¶</a></h2>
+<p>The following table shows the tensor datatypes supported by the
+TensorRT Inference Server. The first column shows the name of the
+datatype as it appears in the model configuration file. The other
+columns show the corresponding datatype for the model frameworks
+supported by the server and for the Python numpy library. If a model
+framework does not have an entry for a given datatype, then the
+inference server does not support that datatype for that model.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Type</th>
+<th class="head">TensorRT</th>
+<th class="head">TensorFlow</th>
+<th class="head">Caffe2</th>
+<th class="head">NumPy</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>TYPE_BOOL</td>
+<td>&#160;</td>
+<td>DT_BOOL</td>
+<td>BOOL</td>
+<td>bool</td>
+</tr>
+<tr class="row-odd"><td>TYPE_UINT8</td>
+<td>&#160;</td>
+<td>DT_UINT8</td>
+<td>UINT8</td>
+<td>uint8</td>
+</tr>
+<tr class="row-even"><td>TYPE_UINT16</td>
+<td>&#160;</td>
+<td>DT_UINT16</td>
+<td>UINT16</td>
+<td>uint16</td>
+</tr>
+<tr class="row-odd"><td>TYPE_UINT32</td>
+<td>&#160;</td>
+<td>DT_UINT32</td>
+<td>&#160;</td>
+<td>uint32</td>
+</tr>
+<tr class="row-even"><td>TYPE_UINT64</td>
+<td>&#160;</td>
+<td>DT_UINT64</td>
+<td>&#160;</td>
+<td>uint64</td>
+</tr>
+<tr class="row-odd"><td>TYPE_INT8</td>
+<td>kINT8</td>
+<td>DT_INT8</td>
+<td>INT8</td>
+<td>int8</td>
+</tr>
+<tr class="row-even"><td>TYPE_INT16</td>
+<td>&#160;</td>
+<td>DT_INT16</td>
+<td>INT16</td>
+<td>int16</td>
+</tr>
+<tr class="row-odd"><td>TYPE_INT32</td>
+<td>kINT32</td>
+<td>DT_INT32</td>
+<td>INT32</td>
+<td>int32</td>
+</tr>
+<tr class="row-even"><td>TYPE_INT64</td>
+<td>&#160;</td>
+<td>DT_INT64</td>
+<td>INT64</td>
+<td>int64</td>
+</tr>
+<tr class="row-odd"><td>TYPE_FP16</td>
+<td>kHALF</td>
+<td>DT_HALF</td>
+<td>FLOAT16</td>
+<td>float16</td>
+</tr>
+<tr class="row-even"><td>TYPE_FP32</td>
+<td>kFLOAT</td>
+<td>DT_FLOAT</td>
+<td>FLOAT</td>
+<td>float32</td>
+</tr>
+<tr class="row-odd"><td>TYPE_FP64</td>
+<td>&#160;</td>
+<td>DT_DOUBLE</td>
+<td>DOUBLE</td>
+<td>float64</td>
+</tr>
+<tr class="row-even"><td>TYPE_STRING</td>
+<td>&#160;</td>
+<td>DT_STRING</td>
+<td>&#160;</td>
+<td>dtype(object)</td>
+</tr>
+</tbody>
+</table>
+<p>For TensorRT each value is in the nvinfer1::DataType namespace. For
+example, nvinfer1::DataType::kFLOAT is the 32-bit floating-point
+datatype.</p>
+<p>For TensorFlow each value is in the tensorflow namespace. For example,
+tensorflow::DT_FLOAT is the 32-bit floating-point value.</p>
+<p>For Caffe2 each value is in the caffe2 namespace and is prepended with
+<a href="#id1"><span class="problematic" id="id2">TensorProto_DataType_</span></a>. For example, caffe2::TensorProto_DataType_FLOAT
+is the 32-bit floating-point datatype.</p>
+<p>For Numpy each value is in the numpy module. For example, numpy.float32
+is the 32-bit floating-point datatype.</p>
+</div>
+<div class="section" id="version-policy">
+<span id="section-version-policy"></span><h2>Version Policy<a class="headerlink" href="#version-policy" title="Permalink to this headline">¶</a></h2>
+<p>Each model can have one or more <a class="reference internal" href="model_repository.html#section-model-versions"><span class="std std-ref">versions available in the model
+repository</span></a>. The
+<a class="reference internal" href="protobuf_api/model_config.proto.html#_CPPv4N6nvidia15inferenceserver18ModelVersionPolicyE" title="nvidia::inferenceserver::ModelVersionPolicy"><code class="xref cpp cpp-var docutils literal notranslate"><span class="pre">nvidia::inferenceserver::ModelVersionPolicy</span></code></a> schema allows
+the following policies.</p>
+<ul class="simple">
+<li><a class="reference internal" href="protobuf_api/model_config.proto.html#_CPPv4N6nvidia15inferenceserver18ModelVersionPolicy3AllE" title="nvidia::inferenceserver::ModelVersionPolicy::All"><code class="xref cpp cpp-var docutils literal notranslate"><span class="pre">All</span></code></a>: All versions
+of the model that are available in the model repository are
+available for inferencing.</li>
+<li><a class="reference internal" href="protobuf_api/model_config.proto.html#_CPPv4N6nvidia15inferenceserver18ModelVersionPolicy6LatestE" title="nvidia::inferenceserver::ModelVersionPolicy::Latest"><code class="xref cpp cpp-var docutils literal notranslate"><span class="pre">Latest</span></code></a>: Only the
+latest ‘n’ versions of the model in the repository are available for
+inferencing. The latest versions of the model are the numerically
+greatest version numbers.</li>
+<li><a class="reference internal" href="protobuf_api/model_config.proto.html#_CPPv4N6nvidia15inferenceserver18ModelVersionPolicy8SpecificE" title="nvidia::inferenceserver::ModelVersionPolicy::Specific"><code class="xref cpp cpp-var docutils literal notranslate"><span class="pre">Specific</span></code></a>: Only the
+specifically listed versions of the model are available for
+inferencing.</li>
+</ul>
+<p>If no version policy is specified, then <a class="reference internal" href="protobuf_api/model_config.proto.html#_CPPv4N6nvidia15inferenceserver18ModelVersionPolicy6LatestE" title="nvidia::inferenceserver::ModelVersionPolicy::Latest"><code class="xref cpp cpp-var docutils literal notranslate"><span class="pre">Latest</span></code></a> (with
+num_version = 1) is used as the default, indicating that only the most
+recent version of the model is made available by the inference
+server. In all cases, the addition or removal of version
+subdirectories from the model repository can change which model
+version is used on subsequent inference requests.</p>
+<p>Continuing the above example, the following configuration specifies
+that all versions of the model will be available from the server:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>name: &quot;mymodel&quot;
+platform: &quot;tensorrt_plan&quot;
+max_batch_size: 8
+input [
+  {
+    name: &quot;input0&quot;
+    data_type: TYPE_FP32
+    dims: [ 16 ]
+  },
+  {
+    name: &quot;input1&quot;
+    data_type: TYPE_FP32
+    dims: [ 16 ]
+  }
+]
+output [
+  {
+    name: &quot;output0&quot;
+    data_type: TYPE_FP32
+    dims: [ 16 ]
+  }
+]
+version_policy: { all { }}
+</pre></div>
+</div>
+</div>
+<div class="section" id="instance-groups">
+<span id="section-instance-groups"></span><h2>Instance Groups<a class="headerlink" href="#instance-groups" title="Permalink to this headline">¶</a></h2>
+<p>The TensorRT Inference Server can provide multiple <a class="reference internal" href="architecture.html#section-concurrent-model-execution"><span class="std std-ref">execution
+instances</span></a> of a model so that
+multiple simultaneous inference requests for that model can be handled
+simultaneously. The model configuration <a class="reference internal" href="protobuf_api/model_config.proto.html#_CPPv4N6nvidia15inferenceserver18ModelInstanceGroupE" title="nvidia::inferenceserver::ModelInstanceGroup"><code class="xref cpp cpp-var docutils literal notranslate"><span class="pre">ModelInstanceGroup</span></code></a> is used to specify the
+number of execution instances that should be made available and what
+compute resource should be used for those instances.</p>
+<p>By default, a single execution instance of the model is created for
+each GPU available in the system. The instance-group setting can be
+used to place multiple execution instances of a model on every GPU or
+on only certain GPUs. For example, the following configuration will
+place two execution instances of the model to be available on each
+system GPU:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>instance_group [
+  {
+    count: 2
+    kind: KIND_GPU
+  }
+]
+</pre></div>
+</div>
+<p>And the following configuration will place one execution instance on
+GPU 0 and two execution instances on GPUs 1 and 2:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>instance_group [
+  {
+    count: 1
+    kind: KIND_GPU
+    gpus: [ 0 ]
+  },
+  {
+    count: 2
+    kind: KIND_GPU
+    gpus: [ 1, 2 ]
+  }
+]
+</pre></div>
+</div>
+<p>The instance group setting is also used to enable exection of a model
+on the CPU. The following places two execution instances on the CPU:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>instance_group [
+  {
+    count: 2
+    kind: KIND_CPU
+  }
+]
+</pre></div>
+</div>
+</div>
+<div class="section" id="dynamic-batching">
+<span id="section-dynamic-batching"></span><h2>Dynamic Batching<a class="headerlink" href="#dynamic-batching" title="Permalink to this headline">¶</a></h2>
+<p>The TensorRT Inference Server supports batch inferencing by allowing
+individual inference requests to specify a batch of inputs. The
+inferencing for a batch of inputs is processed at the same time which
+is especially important for GPUs since it can greatly increase
+inferencing throughput. In many use-cases the individual inference
+requests are not batched, therefore, they do not benefit from the
+throughput benefits of batching.</p>
+<p>Dynamic batching is a feature of the inference server that allows
+non-batched inference requests to be combined by the server, so that a
+batch is created dynamically, resulting in the same increased
+throughput seen for batched inference requests.</p>
+<p>Dynamic batching is enabled and configured independently for each
+model using the <a class="reference internal" href="protobuf_api/model_config.proto.html#_CPPv4N6nvidia15inferenceserver20ModelDynamicBatchingE" title="nvidia::inferenceserver::ModelDynamicBatching"><code class="xref cpp cpp-var docutils literal notranslate"><span class="pre">ModelDynamicBatching</span></code></a> settings in the model
+configuration. These settings control the preferred size(s) of the
+dynamically created batches as well as a maximum time that requests
+can be delayed in the scheduler to allow other requests to join the
+dynamic batch.</p>
+<p>The following configuration enables dynamic batching with preferred
+batch sizes of 4 and 8, and a maximum delay time of 100 microseconds:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>dynamic_batching {
+  preferred_batch_size: [ 4, 8 ]
+  max_queue_delay_microseconds: 100
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="optimization-policy">
+<span id="section-optimization-policy"></span><h2>Optimization Policy<a class="headerlink" href="#optimization-policy" title="Permalink to this headline">¶</a></h2>
+<p>The model configuration <a class="reference internal" href="protobuf_api/model_config.proto.html#_CPPv4N6nvidia15inferenceserver23ModelOptimizationPolicyE" title="nvidia::inferenceserver::ModelOptimizationPolicy"><code class="xref cpp cpp-var docutils literal notranslate"><span class="pre">ModelOptimizationPolicy</span></code></a> is used to specify
+optimization and prioritization settings for a model. These settings
+control if/how a model is optimized by the backend framework and how
+it is scheduled and executed by the inference server. See the protobuf
+documentation for the currently available settings.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="http_grpc_api.html" class="btn btn-neutral float-right" title="Inference Server API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="model_repository.html" class="btn btn-neutral float-left" title="Model Repository" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, NVIDIA Corporation
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    
+
+  <style>
+  a:link, a:visited {
+    color: #76b900;
+  }
+
+  a:hover {
+    color: #8c0;
+  }
+
+  .rst-content dl:not(.docutils) dt {
+    background: rgba(118, 185, 0, 0.1);
+    color: rgba(59,93,0,1);
+    border-top: solid 3px rgba(59,93,0,1);
+  }
+  </style>
+  
+
+</body>
+</html>

@@ -1,0 +1,1644 @@
+<!--
+# Copyright (c) 2018, NVIDIA CORPORATION. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+#  * Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+#  * Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+#  * Neither the name of NVIDIA CORPORATION nor the names of its
+#    contributors may be used to endorse or promote products derived
+#    from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS ``AS IS'' AND ANY
+# EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+# PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+# CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+# EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+# PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+# PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+# OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+# (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+# OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Class InferContext &mdash; NVIDIA TensorRT Inference Server 0.12.0dev
+ documentation</title>
+  
+
+  
+  
+  
+  
+    <link rel="canonical" href="https://docs.nvidia.com/deeplearning/sdk/tensorrt-inference-server-guide/docs/index.htmlcpp_api/classnvidia_1_1inferenceserver_1_1client_1_1InferContext.html"/>
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Class InferContext::Input" href="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input.html" />
+    <link rel="prev" title="Class Error" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+           
+
+          
+            <a href="../index.html" class="icon icon-home"> NVIDIA TensorRT Inference Server
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.12.0dev
+-ad20b82<br/>
+Version select: <select onChange="window.location.href = this.value" onFocus="this.selectedIndex = -1">
+    <option value="https://docs.nvidia.com/deeplearning/sdk/tensorrt-inference-server-guide/docs/index.html">Current release</option>
+    <option value="https://docs.nvidia.com/deeplearning/sdk/tensorrt-inference-server-master-branch-guide/docs/index.html">master (unstable)</option>
+    <option value="https://docs.nvidia.com/deeplearning/sdk/inference-server-archived/index.html">Older releases</option>
+</select>
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #76b900;
+    }
+
+    .wy-side-nav-search a:link, .wy-nav-top a:link {
+      color: #fff;
+    }
+    .wy-side-nav-search a:visited, .wy-nav-top a:visited {
+      color: #fff;
+    }
+    .wy-side-nav-search a:hover, .wy-nav-top a:hover {
+      color: #fff;
+    }
+
+    .wy-menu-vertical a:link, .wy-menu-vertical a:visited {
+      color: #d9d9d9
+    }
+
+    .wy-menu-vertical a:active {
+      background-color: #76b900
+    }
+
+    .wy-side-nav-search>div.version {
+      color: rgba(0, 0, 0, 0.3)
+    }
+  </style>
+  
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Documentation home</a></li>
+</ul>
+<p class="caption"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart.html#using-a-prebuilt-docker-container">Using A Prebuilt Docker Container</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart.html#building-from-source-code">Building From Source Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart.html#run-tensorrt-inference-server">Run TensorRT Inference Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart.html#verify-inference-server-is-running-correctly">Verify Inference Server Is Running Correctly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart.html#building-the-client-examples">Building The Client Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../quickstart.html#running-the-image-classification-example">Running The Image Classification Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installing the Server</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../install.html#installing-prebuilt-containers">Installing Prebuilt Containers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../run.html">Running the Server</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../run.html#example-model-repository">Example Model Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../run.html#running-the-inference-server">Running The Inference Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../run.html#running-the-inference-server-on-a-system-without-a-gpu">Running The Inference Server On A System Without A GPU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../run.html#checking-inference-server-status">Checking Inference Server Status</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../client.html">Client Libraries and Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../client.html#building-the-client-libraries-and-examples">Building the Client Libraries and Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../client.html#image-classification-example-application">Image Classification Example Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../client.html#performance-example-application">Performance Example Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../client.html#client-api">Client API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../client.html#string-datatype">String Datatype</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../client.html#stream-inference">Stream Inference</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../model_repository.html">Model Repository</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../model_repository.html#modifying-the-model-repository">Modifying the Model Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model_repository.html#model-versions">Model Versions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model_repository.html#framework-model-definition">Framework Model Definition</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../model_repository.html#tensorrt-models">TensorRT Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../model_repository.html#tensorflow-models">TensorFlow Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../model_repository.html#caffe2-models">Caffe2 Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../model_repository.html#tensorrt-tensorflow-models">TensorRT/TensorFlow Models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../model_repository.html#onnx-models">ONNX Models</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../model_repository.html#custom-backends">Custom Backends</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../model_repository.html#custom-backend-api">Custom Backend API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../model_repository.html#example-custom-backend">Example Custom Backend</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../model_configuration.html">Model Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../model_configuration.html#generated-model-configuration">Generated Model Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model_configuration.html#datatypes">Datatypes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model_configuration.html#version-policy">Version Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model_configuration.html#instance-groups">Instance Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model_configuration.html#dynamic-batching">Dynamic Batching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../model_configuration.html#optimization-policy">Optimization Policy</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../http_grpc_api.html">Inference Server API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../http_grpc_api.html#health">Health</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../http_grpc_api.html#status">Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../http_grpc_api.html#inference">Inference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../http_grpc_api.html#stream-inference">Stream Inference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../metrics.html">Metrics</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../architecture.html">Architecture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../architecture.html#concurrent-model-execution">Concurrent Model Execution</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contribute.html#coding-convention">Coding Convention</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../build.html">Building</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../build.html#building-the-server">Building the Server</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../build.html#incremental-builds">Incremental Builds</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../build.html#building-the-client-libraries-and-examples">Building the Client Libraries and Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build.html#building-the-documentation">Building the Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../build.html#html-documentation">HTML Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../build.html#pdf-documentation">PDF Documentation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../test.html">Testing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../test.html#generate-qa-model-repositories">Generate QA Model Repositories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../test.html#build-qa-container">Build QA Container</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../test.html#run-qa-container">Run QA Container</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../protobuf_api/protobuf_api_root.html">Protobuf API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../protobuf_api/protobuf_api_root.html#http-grpc-api">HTTP/GRPC API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protobuf_api/protobuf_api_root.html#model-configuration">Model Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protobuf_api/protobuf_api_root.html#status">Status</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="cpp_api_root.html">C++ API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="cpp_api_root.html#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpp_api_root.html#file-hierarchy">File Hierarchy</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="cpp_api_root.html#full-api">Full API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="cpp_api_root.html#namespaces">Namespaces</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="namespace_nvidia.html">Namespace nvidia</a></li>
+<li class="toctree-l4"><a class="reference internal" href="namespace_nvidia__inferenceserver.html">Namespace nvidia::inferenceserver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="namespace_nvidia__inferenceserver__client.html">Namespace nvidia::inferenceserver::client</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="reference internal" href="cpp_api_root.html#classes-and-structs">Classes and Structs</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="structcustom__payload__struct.html">Struct custom_payload_struct</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1_1ClassResult.html">Struct Result::ClassResult</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Stat.html">Struct InferContext::Stat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html">Class Error</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Class InferContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input.html">Class InferContext::Input</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options.html">Class InferContext::Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Output.html">Class InferContext::Output</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Request.html">Class InferContext::Request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1RequestTimers.html">Class InferContext::RequestTimers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result.html">Class InferContext::Result</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext.html">Class InferGrpcContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcStreamContext.html">Class InferGrpcStreamContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1InferHttpContext.html">Class InferHttpContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1ProfileContext.html">Class ProfileContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1ProfileGrpcContext.html">Class ProfileGrpcContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1ProfileHttpContext.html">Class ProfileHttpContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1ServerHealthContext.html">Class ServerHealthContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1ServerHealthGrpcContext.html">Class ServerHealthGrpcContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1ServerHealthHttpContext.html">Class ServerHealthHttpContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusContext.html">Class ServerStatusContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusGrpcContext.html">Class ServerStatusGrpcContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1ServerStatusHttpContext.html">Class ServerStatusHttpContext</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_api_root.html#functions">Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="function_custom_8h_1aedfdcb69f8eaab594173b197b10dc804.html">Function CustomErrorString</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_custom_8h_1afc75c0a4e1a169562586c2d4ff09ba40.html">Function CustomExecute</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_custom_8h_1a9cd799dfef77db82babc6ddd4a4be707.html">Function CustomFinalize</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_custom_8h_1ad384f6af9bfb11b82b2b4e411f799b6f.html">Function CustomInitialize</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_request_8h_1a19d352bb13848c14b5f03274b25ecee3.html">Function nvidia::inferenceserver::client::operator&lt;&lt;</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_api_root.html#defines">Defines</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="define_custom_8h_1aaf537da73bb55fda05fb4e39defe1949.html">Define CUSTOM_NO_GPU_DEVICE</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_api_root.html#typedefs">Typedefs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="typedef_custom_8h_1aa6616d50105d3441ba277c6dbce66286.html">Typedef CustomErrorStringFn_t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="typedef_custom_8h_1ac0c3508cd00e9db56912ff40deecf9d2.html">Typedef CustomExecuteFn_t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="typedef_custom_8h_1aa32f51734df1f217cc7c2b07f31f8f3f.html">Typedef CustomFinalizeFn_t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="typedef_custom_8h_1aee3723f1a17ff4664691655e056a309c.html">Typedef CustomGetNextInputFn_t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="typedef_custom_8h_1a71cb419d6e7feee902115438973d02f8.html">Typedef CustomGetOutputFn_t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="typedef_custom_8h_1a11fea108abb0b28f86a96e6b7cd92a20.html">Typedef CustomInitializeFn_t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="typedef_custom_8h_1a99a7b9dcc756702784a869d9afb59df4.html">Typedef CustomPayload</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_api_root.html#directories">Directories</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dir_src.html">Directory src</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dir_src_clients.html">Directory clients</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dir_src_clients_c++.html">Directory c++</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dir_src_servables.html">Directory servables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dir_src_servables_custom.html">Directory custom</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_api_root.html#files">Files</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="file_src_servables_custom_custom.h.html">File custom.h</a></li>
+<li class="toctree-l4"><a class="reference internal" href="file_src_clients_c++_request.h.html">File request.h</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../python_api.html">Python API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python_api.html#client">Client</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">NVIDIA TensorRT Inference Server</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="cpp_api_root.html">C++ API</a> &raquo;</li>
+        
+      <li>Class InferContext</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/cpp_api/classnvidia_1_1inferenceserver_1_1client_1_1InferContext.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="class-infercontext">
+<span id="exhale-class-classnvidia-1-1inferenceserver-1-1client-1-1infercontext"></span><h1>Class InferContext<a class="headerlink" href="#class-infercontext" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Defined in <a class="reference internal" href="file_src_clients_c++_request.h.html#file-src-clients-c-request-h"><span class="std std-ref">File request.h</span></a></li>
+</ul>
+<div class="section" id="nested-relationships">
+<h2>Nested Relationships<a class="headerlink" href="#nested-relationships" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="nested-types">
+<h3>Nested Types<a class="headerlink" href="#nested-types" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input.html#exhale-class-classnvidia-1-1inferenceserver-1-1client-1-1infercontext-1-1input"><span class="std std-ref">Class InferContext::Input</span></a></li>
+<li><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options.html#exhale-class-classnvidia-1-1inferenceserver-1-1client-1-1infercontext-1-1options"><span class="std std-ref">Class InferContext::Options</span></a></li>
+<li><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Output.html#exhale-class-classnvidia-1-1inferenceserver-1-1client-1-1infercontext-1-1output"><span class="std std-ref">Class InferContext::Output</span></a></li>
+<li><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Request.html#exhale-class-classnvidia-1-1inferenceserver-1-1client-1-1infercontext-1-1request"><span class="std std-ref">Class InferContext::Request</span></a></li>
+<li><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1RequestTimers.html#exhale-class-classnvidia-1-1inferenceserver-1-1client-1-1infercontext-1-1requesttimers"><span class="std std-ref">Class InferContext::RequestTimers</span></a></li>
+<li><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result.html#exhale-class-classnvidia-1-1inferenceserver-1-1client-1-1infercontext-1-1result"><span class="std std-ref">Class InferContext::Result</span></a></li>
+<li><a class="reference internal" href="structnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1_1ClassResult.html#exhale-struct-structnvidia-1-1inferenceserver-1-1client-1-1infercontext-1-1result-1-1classresult"><span class="std std-ref">Struct Result::ClassResult</span></a></li>
+<li><a class="reference internal" href="structnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Stat.html#exhale-struct-structnvidia-1-1inferenceserver-1-1client-1-1infercontext-1-1stat"><span class="std std-ref">Struct InferContext::Stat</span></a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="inheritance-relationships">
+<h2>Inheritance Relationships<a class="headerlink" href="#inheritance-relationships" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="derived-types">
+<h3>Derived Types<a class="headerlink" href="#derived-types" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">nvidia::inferenceserver::client::InferGrpcContext</span></code> (<a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext.html#exhale-class-classnvidia-1-1inferenceserver-1-1client-1-1infergrpccontext"><span class="std std-ref">Class InferGrpcContext</span></a>)</li>
+<li><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">nvidia::inferenceserver::client::InferHttpContext</span></code> (<a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1InferHttpContext.html#exhale-class-classnvidia-1-1inferenceserver-1-1client-1-1inferhttpcontext"><span class="std std-ref">Class InferHttpContext</span></a>)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContextE">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext"></span><em class="property">class </em><code class="descname">InferContext</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContextE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>An <a class="reference internal" href="#classnvidia_1_1inferenceserver_1_1client_1_1InferContext"><span class="std std-ref">InferContext</span></a> object is used to run inference on an inference server for a specific model. </p>
+<p>Once created an <a class="reference internal" href="#classnvidia_1_1inferenceserver_1_1client_1_1InferContext"><span class="std std-ref">InferContext</span></a> object can be used repeatedly to perform inference using the model. <a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options.html#classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options"><span class="std std-ref">Options</span></a> that control how inference is performed can be changed in between inference runs.</p>
+<p>A <a class="reference internal" href="#classnvidia_1_1inferenceserver_1_1client_1_1InferContext"><span class="std std-ref">InferContext</span></a> object can use either HTTP protocol or GRPC protocol depending on the Create function (<a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1InferHttpContext.html#classnvidia_1_1inferenceserver_1_1client_1_1InferHttpContext_1a7c210c15455fde64a31c6925f3a8b906"><span class="std std-ref">InferHttpContext::Create</span></a> or <a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext.html#classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext_1a432bf0981eb512786263764f090ee83d"><span class="std std-ref">InferGrpcContext::Create</span></a>). For example:</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>std::unique_ptr&lt;InferContext&gt; ctx;
+InferHttpContext::Create(&amp;ctx, &quot;localhost:8000&quot;, &quot;mnist&quot;);
+...
+std::unique_ptr&lt;Options&gt; options0;
+Options::Create(&amp;options0);
+options-&gt;SetBatchSize(b);
+options-&gt;AddClassResult(output, topk);
+ctx-&gt;SetRunOptions(*options0);
+...
+ctx-&gt;Run(&amp;results0);  // run using options0
+ctx-&gt;Run(&amp;results1);  // run using options0
+...
+std::unique_ptr&lt;Options&gt; options1;
+Options::Create(&amp;options1);
+options-&gt;AddRawResult(output);
+ctx-&gt;SetRunOptions(*options);
+...
+ctx-&gt;Run(&amp;results2);  // run using options1
+ctx-&gt;Run(&amp;results3);  // run using options1
+...
+</pre></div>
+</div>
+</p>
+<p><dl class="docutils">
+<dt><strong>Note</strong></dt>
+<dd>InferContext::Create methods are thread-safe. All other <a class="reference internal" href="#classnvidia_1_1inferenceserver_1_1client_1_1InferContext"><span class="std std-ref">InferContext</span></a> methods, and nested class methods are not thread-safe. </dd>
+<dt><strong></strong></dt>
+<dd>The <a class="reference internal" href="#classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a4cac8002817c9259851305b14c258f36"><span class="std std-ref">Run()</span></a> calls are not thread-safe but a new <a class="reference internal" href="#classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a4cac8002817c9259851305b14c258f36"><span class="std std-ref">Run()</span></a> can be invoked as soon as the previous completes. The returned result objects are owned by the caller and may be retained and accessed even after the <a class="reference internal" href="#classnvidia_1_1inferenceserver_1_1client_1_1InferContext"><span class="std std-ref">InferContext</span></a> object is destroyed. </dd>
+<dt><strong></strong></dt>
+<dd><a class="reference internal" href="#classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a255a59df29a53d6e45ce86663887615f"><span class="std std-ref">AsyncRun()</span></a> and GetAsyncRunStatus() calls are not thread-safe. What’s more, calling one method while the other one is running will result in undefined behavior given that they will modify the shared data internally. </dd>
+<dt><strong></strong></dt>
+<dd>For more parallelism multiple <a class="reference internal" href="#classnvidia_1_1inferenceserver_1_1client_1_1InferContext"><span class="std std-ref">InferContext</span></a> objects can access the same inference server with no serialization requirements across those objects.  </dd>
+</dl>
+</p>
+<p>Subclassed by <a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext.html#classnvidia_1_1inferenceserver_1_1client_1_1InferGrpcContext"><span class="std std-ref">nvidia::inferenceserver::client::InferGrpcContext</span></a>, <a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1InferHttpContext.html#classnvidia_1_1inferenceserver_1_1client_1_1InferHttpContext"><span class="std std-ref">nvidia::inferenceserver::client::InferHttpContext</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Types</p>
+<dl class="type">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext9ResultMapE">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a8540194150819719c190049fab1e125c"></span><em class="property">using </em><code class="descname">ResultMap</code> = std::map&lt;std::string, std::unique_ptr&lt;<a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext6ResultE" title="nvidia::inferenceserver::client::InferContext::Result">Result</a>&gt;&gt;<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext9ResultMapE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContextD0Ev">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a3a996794a2f69c24ab50391fcc36ceec"></span><em class="property">virtual</em> <code class="descname">~InferContext</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContextD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Destroy the inference context. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK6nvidia15inferenceserver6client12InferContext9ModelNameEv">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a6b01d3aece1500914c773fb9d88cb44b"></span><em class="property">const</em> std::string &amp;<code class="descname">ModelName</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK6nvidia15inferenceserver6client12InferContext9ModelNameEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The name of the model being used for this context. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK6nvidia15inferenceserver6client12InferContext12ModelVersionEv">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a88642030870fb82b452a48a1676755d0"></span>int64_t <code class="descname">ModelVersion</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK6nvidia15inferenceserver6client12InferContext12ModelVersionEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The version of the model being used for this context. -1 indicates that the latest (i.e. highest version number) version of that model is being used. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK6nvidia15inferenceserver6client12InferContext12MaxBatchSizeEv">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1ac9bd9ba3234a0c282383cdd939ca16dc"></span>uint64_t <code class="descname">MaxBatchSize</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK6nvidia15inferenceserver6client12InferContext12MaxBatchSizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The maximum batch size supported by the context. A maximum batch size indicates that the context does not support batching and so only a single inference at a time can be performed. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK6nvidia15inferenceserver6client12InferContext6InputsEv">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a7b98f4f0fa2fe0f948f2a06d91ec92f3"></span><em class="property">const</em> std::vector&lt;std::shared_ptr&lt;<a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext5InputE" title="nvidia::inferenceserver::client::InferContext::Input">Input</a>&gt;&gt; &amp;<code class="descname">Inputs</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK6nvidia15inferenceserver6client12InferContext6InputsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The inputs of the model. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK6nvidia15inferenceserver6client12InferContext7OutputsEv">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a4a783616ac9f48e21bd89abb69d0b21a"></span><em class="property">const</em> std::vector&lt;std::shared_ptr&lt;<a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext6OutputE" title="nvidia::inferenceserver::client::InferContext::Output">Output</a>&gt;&gt; &amp;<code class="descname">Outputs</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK6nvidia15inferenceserver6client12InferContext7OutputsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The outputs of the model. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK6nvidia15inferenceserver6client12InferContext8GetInputERKNSt6stringEPNSt10shared_ptrI5InputEE">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1ac8ca982d9c589b2c27c9a279699ac884"></span><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#_CPPv4N6nvidia15inferenceserver6client5ErrorE" title="nvidia::inferenceserver::client::Error">Error</a> <code class="descname">GetInput</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, std::shared_ptr&lt;<a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext5InputE" title="nvidia::inferenceserver::client::InferContext::Input">Input</a>&gt; *<em>input</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK6nvidia15inferenceserver6client12InferContext8GetInputERKNSt6stringEPNSt10shared_ptrI5InputEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get a named input. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#classnvidia_1_1inferenceserver_1_1client_1_1Error"><span class="std std-ref">Error</span></a> object indicating success or failure. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">name</span></code>: The name of the input. </li>
+<li><code class="docutils literal notranslate"><span class="pre">input</span></code>: Returns the <a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input.html#classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input"><span class="std std-ref">Input</span></a> object for ‘name’. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK6nvidia15inferenceserver6client12InferContext9GetOutputERKNSt6stringEPNSt10shared_ptrI6OutputEE">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a0d3e9e6e55f3162c7148574af7aec251"></span><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#_CPPv4N6nvidia15inferenceserver6client5ErrorE" title="nvidia::inferenceserver::client::Error">Error</a> <code class="descname">GetOutput</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, std::shared_ptr&lt;<a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext6OutputE" title="nvidia::inferenceserver::client::InferContext::Output">Output</a>&gt; *<em>output</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK6nvidia15inferenceserver6client12InferContext9GetOutputERKNSt6stringEPNSt10shared_ptrI6OutputEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get a named output. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#classnvidia_1_1inferenceserver_1_1client_1_1Error"><span class="std std-ref">Error</span></a> object indicating success or failure. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">name</span></code>: The name of the output. </li>
+<li><code class="docutils literal notranslate"><span class="pre">output</span></code>: Returns the <a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Output.html#classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Output"><span class="std std-ref">Output</span></a> object for ‘name’. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext13SetRunOptionsERK7Options">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a7cf1746d814561727fd3b07b0f8349f2"></span><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#_CPPv4N6nvidia15inferenceserver6client5ErrorE" title="nvidia::inferenceserver::client::Error">Error</a> <code class="descname">SetRunOptions</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext7OptionsE" title="nvidia::inferenceserver::client::InferContext::Options">Options</a> &amp;<em>options</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext13SetRunOptionsERK7Options" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the options to use for all subsequent <a class="reference internal" href="#classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a4cac8002817c9259851305b14c258f36"><span class="std std-ref">Run()</span></a> invocations. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#classnvidia_1_1inferenceserver_1_1client_1_1Error"><span class="std std-ref">Error</span></a> object indicating success or failure. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">options</span></code>: The options. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext7GetStatEP4Stat">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1aa083c81909e7a6d10725306d231ea0cb"></span><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#_CPPv4N6nvidia15inferenceserver6client5ErrorE" title="nvidia::inferenceserver::client::Error">Error</a> <code class="descname">GetStat</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext4StatE" title="nvidia::inferenceserver::client::InferContext::Stat">Stat</a> *<em>stat</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext7GetStatEP4Stat" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the current statistics of the <a class="reference internal" href="#classnvidia_1_1inferenceserver_1_1client_1_1InferContext"><span class="std std-ref">InferContext</span></a>. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#classnvidia_1_1inferenceserver_1_1client_1_1Error"><span class="std std-ref">Error</span></a> object indicating success or failure. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">stat</span></code>: Returns the <a class="reference internal" href="structnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Stat.html#structnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Stat"><span class="std std-ref">Stat</span></a> object holding the statistics. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext3RunEP9ResultMap">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a4cac8002817c9259851305b14c258f36"></span><em class="property">virtual</em> <a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#_CPPv4N6nvidia15inferenceserver6client5ErrorE" title="nvidia::inferenceserver::client::Error">Error</a> <code class="descname">Run</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext9ResultMapE" title="nvidia::inferenceserver::client::InferContext::ResultMap">ResultMap</a> *<em>results</em><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext3RunEP9ResultMap" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Send a synchronous request to the inference server to perform an inference to produce results for the outputs specified in the most recent call to <a class="reference internal" href="#classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a7cf1746d814561727fd3b07b0f8349f2"><span class="std std-ref">SetRunOptions()</span></a>. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#classnvidia_1_1inferenceserver_1_1client_1_1Error"><span class="std std-ref">Error</span></a> object indicating success or failure. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">results</span></code>: Returns <a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result.html#classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result"><span class="std std-ref">Result</span></a> objects holding inference results as a map from output name to <a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result.html#classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result"><span class="std std-ref">Result</span></a> object. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext8AsyncRunEPNSt10shared_ptrI7RequestEE">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a255a59df29a53d6e45ce86663887615f"></span><em class="property">virtual</em> <a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#_CPPv4N6nvidia15inferenceserver6client5ErrorE" title="nvidia::inferenceserver::client::Error">Error</a> <code class="descname">AsyncRun</code><span class="sig-paren">(</span>std::shared_ptr&lt;<a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext7RequestE" title="nvidia::inferenceserver::client::InferContext::Request">Request</a>&gt; *<em>async_request</em><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext8AsyncRunEPNSt10shared_ptrI7RequestEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Send an asynchronous request to the inference server to perform an inference to produce results for the outputs specified in the most recent call to <a class="reference internal" href="#classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a7cf1746d814561727fd3b07b0f8349f2"><span class="std std-ref">SetRunOptions()</span></a>. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#classnvidia_1_1inferenceserver_1_1client_1_1Error"><span class="std std-ref">Error</span></a> object indicating success or failure. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">async_request</span></code>: Returns a <a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Request.html#classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Request"><span class="std std-ref">Request</span></a> object that can be used to retrieve the inference results for the request. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext18GetAsyncRunResultsEP9ResultMapRKNSt10shared_ptrI7RequestEEb">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a6a9a45e35031ce4b0b50af8bd0c4ee8c"></span><em class="property">virtual</em> <a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#_CPPv4N6nvidia15inferenceserver6client5ErrorE" title="nvidia::inferenceserver::client::Error">Error</a> <code class="descname">GetAsyncRunResults</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext9ResultMapE" title="nvidia::inferenceserver::client::InferContext::ResultMap">ResultMap</a> *<em>results</em>, <em class="property">const</em> std::shared_ptr&lt;<a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext7RequestE" title="nvidia::inferenceserver::client::InferContext::Request">Request</a>&gt; &amp;<em>async_request</em>, bool <em>wait</em><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext18GetAsyncRunResultsEP9ResultMapRKNSt10shared_ptrI7RequestEEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the results of the asynchronous request referenced by ‘async_request’. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#classnvidia_1_1inferenceserver_1_1client_1_1Error"><span class="std std-ref">Error</span></a> object indicating success or failure. Success will be returned only if the request has been completed succesfully. UNAVAILABLE will be returned if ‘wait’ is false and the request is not ready. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">results</span></code>: Returns <a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result.html#classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result"><span class="std std-ref">Result</span></a> objects holding inference results as a map from output name to <a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result.html#classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result"><span class="std std-ref">Result</span></a> object. </li>
+<li><code class="docutils literal notranslate"><span class="pre">async_request</span></code>: <a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Request.html#classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Request"><span class="std std-ref">Request</span></a> handle to retrieve results. </li>
+<li><code class="docutils literal notranslate"><span class="pre">wait</span></code>: If true, block until the request completes. Otherwise, return immediately. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext20GetReadyAsyncRequestEPNSt10shared_ptrI7RequestEEb">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a27512d1f8f7099d20b2e0eaaac90c3f0"></span><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#_CPPv4N6nvidia15inferenceserver6client5ErrorE" title="nvidia::inferenceserver::client::Error">Error</a> <code class="descname">GetReadyAsyncRequest</code><span class="sig-paren">(</span>std::shared_ptr&lt;<a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext7RequestE" title="nvidia::inferenceserver::client::InferContext::Request">Request</a>&gt; *<em>async_request</em>, bool <em>wait</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext20GetReadyAsyncRequestEPNSt10shared_ptrI7RequestEEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get any one completed asynchronous request. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#classnvidia_1_1inferenceserver_1_1client_1_1Error"><span class="std std-ref">Error</span></a> object indicating success or failure. Success will be returned only if a completed request was returned.. UNAVAILABLE will be returned if ‘wait’ is false and no request is ready. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">async_request</span></code>: Returns the <a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Request.html#classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Request"><span class="std std-ref">Request</span></a> object holding the completed request. </li>
+<li><code class="docutils literal notranslate"><span class="pre">wait</span></code>: If true, block until the request completes. Otherwise, return immediately. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Types</p>
+<dl class="type">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext11AsyncReqMapE">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a6e1d2a28514245af5f71557a18be70c6"></span><em class="property">using </em><code class="descname">AsyncReqMap</code> = std::map&lt;uintptr_t, std::shared_ptr&lt;<a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext7RequestE" title="nvidia::inferenceserver::client::InferContext::Request">Request</a>&gt;&gt;<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext11AsyncReqMapE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Functions</p>
+<dl class="function">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext12InferContextERKNSt6stringE7int64_t13CorrelationIDb">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a1ad0ced372d23d1ed5a0af511ab7aa21"></span><code class="descname">InferContext</code><span class="sig-paren">(</span><em class="property">const</em> std::string&amp;, int64_t, CorrelationID, bool<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext12InferContextERKNSt6stringE7int64_t13CorrelationIDb" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext13AsyncTransferEv">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1ae32e8e83bf498b4e91452703dd12cca0"></span><em class="property">virtual</em> void <code class="descname">AsyncTransfer</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext13AsyncTransferEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext16PreRunProcessingERNSt10shared_ptrI7RequestEE">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1ad2c7af868ffbb1a2e24f47d9ae0093a5"></span><em class="property">virtual</em> <a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#_CPPv4N6nvidia15inferenceserver6client5ErrorE" title="nvidia::inferenceserver::client::Error">Error</a> <code class="descname">PreRunProcessing</code><span class="sig-paren">(</span>std::shared_ptr&lt;<a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext7RequestE" title="nvidia::inferenceserver::client::InferContext::Request">Request</a>&gt; &amp;<em>request</em><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext16PreRunProcessingERNSt10shared_ptrI7RequestEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext14IsRequestReadyERKNSt10shared_ptrI7RequestEEb">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1ab7437e029e942557e2d11f8c22ae6d6b"></span><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#_CPPv4N6nvidia15inferenceserver6client5ErrorE" title="nvidia::inferenceserver::client::Error">Error</a> <code class="descname">IsRequestReady</code><span class="sig-paren">(</span><em class="property">const</em> std::shared_ptr&lt;<a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext7RequestE" title="nvidia::inferenceserver::client::InferContext::Request">Request</a>&gt; &amp;<em>async_request</em>, bool <em>wait</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext14IsRequestReadyERKNSt10shared_ptrI7RequestEEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext10UpdateStatERK13RequestTimers">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a11eff835f49b4d9126e1606a3b2c8615"></span><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#_CPPv4N6nvidia15inferenceserver6client5ErrorE" title="nvidia::inferenceserver::client::Error">Error</a> <code class="descname">UpdateStat</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext13RequestTimersE" title="nvidia::inferenceserver::client::InferContext::RequestTimers">RequestTimers</a> &amp;<em>timer</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext10UpdateStatERK13RequestTimers" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Protected Attributes</p>
+<dl class="member">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext23ongoing_async_requests_E">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1aa2dda0b94a39e54ce2d07a3b5b6988b2"></span><a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext11AsyncReqMapE" title="nvidia::inferenceserver::client::InferContext::AsyncReqMap">AsyncReqMap</a> <code class="descname">ongoing_async_requests_</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext23ongoing_async_requests_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext11model_name_E">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1aca65f4b17c14e3c25350c8af3571f86c"></span><em class="property">const</em> std::string <code class="descname">model_name_</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext11model_name_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext14model_version_E">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1aea092ac954441e636316644bd94b5979"></span><em class="property">const</em> int64_t <code class="descname">model_version_</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext14model_version_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext15correlation_id_E">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a1836d4a88fbfa609def01ee59a675f4c"></span><em class="property">const</em> CorrelationID <code class="descname">correlation_id_</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext15correlation_id_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext8verbose_E">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a69b72d3b61b07468f5a13c97f36c5e6a"></span><em class="property">const</em> bool <code class="descname">verbose_</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext8verbose_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext15max_batch_size_E">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1abfc00d0d8175ac030d881365b7030efd"></span>uint64_t <code class="descname">max_batch_size_</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext15max_batch_size_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext11batch_size_E">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a12cc5d7a5db6437fe9fdc4ccc60874a9"></span>uint64_t <code class="descname">batch_size_</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext11batch_size_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext17async_request_id_E">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1aeb3741fc43d18b9cd7abab193f7ffca0"></span>uint64_t <code class="descname">async_request_id_</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext17async_request_id_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext7inputs_E">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a2959c35ac38d06693ee9e3482f4b344b"></span>std::vector&lt;std::shared_ptr&lt;<a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext5InputE" title="nvidia::inferenceserver::client::InferContext::Input">Input</a>&gt;&gt; <code class="descname">inputs_</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext7inputs_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext8outputs_E">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a21c9f59353ef1d4215e033f5a4b5d86a"></span>std::vector&lt;std::shared_ptr&lt;<a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext6OutputE" title="nvidia::inferenceserver::client::InferContext::Output">Output</a>&gt;&gt; <code class="descname">outputs_</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext8outputs_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext14infer_request_E">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1ad65a99fa3c6afcf961de531f4421a73d"></span><a class="reference internal" href="../protobuf_api/api.proto.html#_CPPv4N6nvidia15inferenceserver18InferRequestHeaderE" title="nvidia::inferenceserver::InferRequestHeader">InferRequestHeader</a> <code class="descname">infer_request_</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext14infer_request_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext13sync_request_E">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a6b2d7784bcf85ee225b574f73d6059ca"></span>std::shared_ptr&lt;<a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext7RequestE" title="nvidia::inferenceserver::client::InferContext::Request">Request</a>&gt; <code class="descname">sync_request_</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext13sync_request_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext13context_stat_E">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a5fde4cd588ca640d2b17e1768406eb1c"></span><a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext4StatE" title="nvidia::inferenceserver::client::InferContext::Stat">Stat</a> <code class="descname">context_stat_</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext13context_stat_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext7worker_E">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a39fdbf2a953b23d0005aef8e2618fcaf"></span>std::thread <code class="descname">worker_</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext7worker_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext6mutex_E">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a1baafc5376df1a6e16de58633c93b4cc"></span>std::mutex <code class="descname">mutex_</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext6mutex_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext3cv_E">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a685dfb2b9634c050b2d552f1613d0bc0"></span>std::condition_variable <code class="descname">cv_</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext3cv_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext8exiting_E">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a5f6d75086a6155fba595351c4e7abdd6"></span>bool <code class="descname">exiting_</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext8exiting_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="class">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext5InputE">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input"></span><em class="property">class </em><code class="descname">Input</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext5InputE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>An input to the model. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext5InputD0Ev">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1aeb32510fa7e86063d3341302ff5cc322"></span><em class="property">virtual</em> <code class="descname">~Input</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext5InputD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Destroy the input. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK6nvidia15inferenceserver6client12InferContext5Input4NameEv">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a66b20a9167b8eeb9ddde10430b37fd01"></span><em class="property">virtual</em> <em class="property">const</em> std::string &amp;<code class="descname">Name</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> = 0<a class="headerlink" href="#_CPPv4NK6nvidia15inferenceserver6client12InferContext5Input4NameEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The name of the input. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK6nvidia15inferenceserver6client12InferContext5Input8ByteSizeEv">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a34951a4f1c906bf3c147ee84549d8667"></span><em class="property">virtual</em> int64_t <code class="descname">ByteSize</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> = 0<a class="headerlink" href="#_CPPv4NK6nvidia15inferenceserver6client12InferContext5Input8ByteSizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The size in bytes of this input. This is the size for one instance of the input, not the entire size of a batched input. When the byte-size is not known, for example for non-fixed-sized types like TYPE_STRING or for inputs with variable-size dimensions, this will return -1. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK6nvidia15inferenceserver6client12InferContext5Input13TotalByteSizeEv">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a07c715257ed5ed2feab0982d9c6fd941"></span><em class="property">virtual</em> size_t <code class="descname">TotalByteSize</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> = 0<a class="headerlink" href="#_CPPv4NK6nvidia15inferenceserver6client12InferContext5Input13TotalByteSizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The size in bytes of entire batch of this input. For fixed-sized types this is just <a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input.html#classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a34951a4f1c906bf3c147ee84549d8667"><span class="std std-ref">ByteSize()</span></a> * batch-size, but for non-fixed-sized types like TYPE_STRING it is the only way to get the entire input size. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK6nvidia15inferenceserver6client12InferContext5Input5DTypeEv">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1ab90380c6a46ea973a08f86c5a1bb3ea8"></span><em class="property">virtual</em> <a class="reference internal" href="../protobuf_api/model_config.proto.html#_CPPv4N6nvidia15inferenceserver8DataTypeE" title="nvidia::inferenceserver::DataType">DataType</a> <code class="descname">DType</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> = 0<a class="headerlink" href="#_CPPv4NK6nvidia15inferenceserver6client12InferContext5Input5DTypeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The data-type of the input. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK6nvidia15inferenceserver6client12InferContext5Input6FormatEv">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a9ab3e04fbb0ad181fd74bf7675249fef"></span><em class="property">virtual</em> <a class="reference internal" href="../protobuf_api/model_config.proto.html#_CPPv4N6nvidia15inferenceserver10ModelInputE" title="nvidia::inferenceserver::ModelInput">ModelInput</a>::<a class="reference internal" href="../protobuf_api/model_config.proto.html#_CPPv4N6nvidia15inferenceserver10ModelInput6FormatE" title="nvidia::inferenceserver::ModelInput::Format">Format</a> <code class="descname">Format</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> = 0<a class="headerlink" href="#_CPPv4NK6nvidia15inferenceserver6client12InferContext5Input6FormatEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The format of the input. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK6nvidia15inferenceserver6client12InferContext5Input4DimsEv">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a500ee9536afa9d6286cd23ee1308ebda"></span><em class="property">virtual</em> <em class="property">const</em> DimsList &amp;<code class="descname">Dims</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> = 0<a class="headerlink" href="#_CPPv4NK6nvidia15inferenceserver6client12InferContext5Input4DimsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The dimensions/shape of the input specified in the model configuration. Variable-size dimensions are reported as -1. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext5Input5ResetEv">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a3dee261f7bed6cb3840db299c6b1d246"></span><em class="property">virtual</em> <a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#_CPPv4N6nvidia15inferenceserver6client5ErrorE" title="nvidia::inferenceserver::client::Error">Error</a> <code class="descname">Reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext5Input5ResetEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Prepare this input to receive new tensor values. </p>
+<p>Forget any existing values that were set by previous calls to <a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input.html#classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a414fe9afbb60a48f162bac5439beee4d"><span class="std std-ref">SetRaw()</span></a>. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#classnvidia_1_1inferenceserver_1_1client_1_1Error"><span class="std std-ref">Error</span></a> object indicating success or failure. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK6nvidia15inferenceserver6client12InferContext5Input5ShapeEv">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1aedd9cacfe4e87008521ed63c1eb8e035"></span><em class="property">virtual</em> <em class="property">const</em> std::vector&lt;int64_t&gt; &amp;<code class="descname">Shape</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> = 0<a class="headerlink" href="#_CPPv4NK6nvidia15inferenceserver6client12InferContext5Input5ShapeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the shape for this input that was most recently set by SetShape. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The shape, or empty vector if SetShape has not been called. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext5Input8SetShapeERKNSt6vectorI7int64_tEE">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a0e2c4e3813ebfda6ecef7e23a7f00de5"></span><em class="property">virtual</em> <a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#_CPPv4N6nvidia15inferenceserver6client5ErrorE" title="nvidia::inferenceserver::client::Error">Error</a> <code class="descname">SetShape</code><span class="sig-paren">(</span><em class="property">const</em> std::vector&lt;int64_t&gt; &amp;<em>dims</em><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext5Input8SetShapeERKNSt6vectorI7int64_tEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the shape for this input. </p>
+<p>The shape must be set for inputs that have variable-size dimensions and is optional for other inputs. The shape must be set before calling SetRaw or SetFromString. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#classnvidia_1_1inferenceserver_1_1client_1_1Error"><span class="std std-ref">Error</span></a> object indicating success or failure. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">dims</span></code>: The dimensions of the shape. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext5Input6SetRawEPK7uint8_t6size_t">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a414fe9afbb60a48f162bac5439beee4d"></span><em class="property">virtual</em> <a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#_CPPv4N6nvidia15inferenceserver6client5ErrorE" title="nvidia::inferenceserver::client::Error">Error</a> <code class="descname">SetRaw</code><span class="sig-paren">(</span><em class="property">const</em> uint8_t *<em>input</em>, size_t <em>input_byte_size</em><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext5Input6SetRawEPK7uint8_t6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set tensor values for this input from a byte array. </p>
+<p>The array is not copied and so it must not be modified or destroyed until this input is no longer needed (that is until the <a class="reference internal" href="#classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a4cac8002817c9259851305b14c258f36"><span class="std std-ref">Run()</span></a> call(s) that use the input have completed). For batched inputs this function must be called batch-size times to provide all tensor values for a batch of this input. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#classnvidia_1_1inferenceserver_1_1client_1_1Error"><span class="std std-ref">Error</span></a> object indicating success or failure. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">input</span></code>: The pointer to the array holding the tensor value. </li>
+<li><code class="docutils literal notranslate"><span class="pre">input_byte_size</span></code>: The size of the array in bytes, must match the size expected by the input. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext5Input6SetRawERKNSt6vectorI7uint8_tEE">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a094ec9eece1e10d877db9af69867090e"></span><em class="property">virtual</em> <a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#_CPPv4N6nvidia15inferenceserver6client5ErrorE" title="nvidia::inferenceserver::client::Error">Error</a> <code class="descname">SetRaw</code><span class="sig-paren">(</span><em class="property">const</em> std::vector&lt;uint8_t&gt; &amp;<em>input</em><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext5Input6SetRawERKNSt6vectorI7uint8_tEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set tensor values for this input from a byte vector. </p>
+<p>The vector is not copied and so it must not be modified or destroyed until this input is no longer needed (that is until the <a class="reference internal" href="#classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a4cac8002817c9259851305b14c258f36"><span class="std std-ref">Run()</span></a> call(s) that use the input have completed). For batched inputs this function must be called batch-size times to provide all tensor values for a batch of this input. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#classnvidia_1_1inferenceserver_1_1client_1_1Error"><span class="std std-ref">Error</span></a> object indicating success or failure. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">input</span></code>: The vector holding tensor values. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext5Input13SetFromStringERKNSt6vectorINSt6stringEEE">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a73495802b757c43b67edd334fec341d7"></span><em class="property">virtual</em> <a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#_CPPv4N6nvidia15inferenceserver6client5ErrorE" title="nvidia::inferenceserver::client::Error">Error</a> <code class="descname">SetFromString</code><span class="sig-paren">(</span><em class="property">const</em> std::vector&lt;std::string&gt; &amp;<em>input</em><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext5Input13SetFromStringERKNSt6vectorINSt6stringEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set tensor values for this input from a vector or strings. </p>
+<p>This method can only be used for tensors with STRING data-type. The strings are assigned in row-major order to the elements of the tensor. The strings are copied and so the ‘input’ does not need to be preserved as with <a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input.html#classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a414fe9afbb60a48f162bac5439beee4d"><span class="std std-ref">SetRaw()</span></a>. For batched inputs this function must be called batch-size times to provide all tensor values for a batch of this input. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#classnvidia_1_1inferenceserver_1_1client_1_1Error"><span class="std std-ref">Error</span></a> object indicating success or failure. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">input</span></code>: The vector holding tensor string values. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext7OptionsE">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options"></span><em class="property">class </em><code class="descname">Options</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext7OptionsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Run options to be applied to all subsequent <a class="reference internal" href="#classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a4cac8002817c9259851305b14c258f36"><span class="std std-ref">Run()</span></a> invocations. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext7OptionsD0Ev">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options_1abcaa16202fc4751a7657808cc4d71884"></span><em class="property">virtual</em> <code class="descname">~Options</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext7OptionsD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK6nvidia15inferenceserver6client12InferContext7Options4FlagEN18InferRequestHeader4FlagE">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options_1a23b1ac6a7393c1bad21fc8e7a3373ead"></span><em class="property">virtual</em> bool <code class="descname">Flag</code><span class="sig-paren">(</span><a class="reference internal" href="../protobuf_api/api.proto.html#_CPPv4N6nvidia15inferenceserver18InferRequestHeaderE" title="nvidia::inferenceserver::InferRequestHeader">InferRequestHeader</a>::<a class="reference internal" href="../protobuf_api/api.proto.html#_CPPv4N6nvidia15inferenceserver18InferRequestHeader4FlagE" title="nvidia::inferenceserver::InferRequestHeader::Flag">Flag</a> <em>flag</em><span class="sig-paren">)</span> <em class="property">const</em> = 0<a class="headerlink" href="#_CPPv4NK6nvidia15inferenceserver6client12InferContext7Options4FlagEN18InferRequestHeader4FlagE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the value of a request flag being used for all subsequent inferences. </p>
+<p>Cannot be used with FLAG_NONE. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The true/false value currently set for the flag. If ‘flag’ is FLAG_NONE then return false. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">flag</span></code>: The flag to get the value for. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext7Options7SetFlagEN18InferRequestHeader4FlagEb">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options_1ae12fc02abb1e1f42d1de0e0d4f88c03d"></span><em class="property">virtual</em> void <code class="descname">SetFlag</code><span class="sig-paren">(</span><a class="reference internal" href="../protobuf_api/api.proto.html#_CPPv4N6nvidia15inferenceserver18InferRequestHeaderE" title="nvidia::inferenceserver::InferRequestHeader">InferRequestHeader</a>::<a class="reference internal" href="../protobuf_api/api.proto.html#_CPPv4N6nvidia15inferenceserver18InferRequestHeader4FlagE" title="nvidia::inferenceserver::InferRequestHeader::Flag">Flag</a> <em>flag</em>, bool <em>value</em><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext7Options7SetFlagEN18InferRequestHeader4FlagEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set a request flag to be used for all subsequent inferences. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">flag</span></code>: The flag to set. Cannot be used with FLAG_NONE. </li>
+<li><code class="docutils literal notranslate"><span class="pre">value</span></code>: The true/false value to set for the flag. If ‘flag’ is FLAG_NONE then do nothing. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK6nvidia15inferenceserver6client12InferContext7Options5FlagsEv">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options_1a51f46889d0f436185379def5a99b67fc"></span><em class="property">virtual</em> uint32_t <code class="descname">Flags</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> = 0<a class="headerlink" href="#_CPPv4NK6nvidia15inferenceserver6client12InferContext7Options5FlagsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the value of all request flags being used for all subsequent inferences. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The bitwise-or of flag values as a single uint32_t value. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext7Options8SetFlagsE8uint32_t">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options_1a06defa0f160399a6e81d31bde89cbcc0"></span><em class="property">virtual</em> void <code class="descname">SetFlags</code><span class="sig-paren">(</span>uint32_t <em>flags</em><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext7Options8SetFlagsE8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set all request flags to be used for all subsequent inferences. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">flags</span></code>: The bitwise-or of flag values to set. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK6nvidia15inferenceserver6client12InferContext7Options9BatchSizeEv">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options_1a6546eb56589394cc4222272afcc23d89"></span><em class="property">virtual</em> size_t <code class="descname">BatchSize</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> = 0<a class="headerlink" href="#_CPPv4NK6nvidia15inferenceserver6client12InferContext7Options9BatchSizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The batch size to use for all subsequent inferences. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext7Options12SetBatchSizeE6size_t">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options_1a6f390b31a0a8a265c8e15a77f6f9e7c1"></span><em class="property">virtual</em> void <code class="descname">SetBatchSize</code><span class="sig-paren">(</span>size_t <em>batch_size</em><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext7Options12SetBatchSizeE6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the batch size to use for all subsequent inferences. </p>
+<p><dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">batch_size</span></code>: The batch size. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext7Options12AddRawResultERKNSt10shared_ptrIN12InferContext6OutputEEE">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options_1abb0dceb3499c833684e0dfbe608b3360"></span><em class="property">virtual</em> <a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#_CPPv4N6nvidia15inferenceserver6client5ErrorE" title="nvidia::inferenceserver::client::Error">Error</a> <code class="descname">AddRawResult</code><span class="sig-paren">(</span><em class="property">const</em> std::shared_ptr&lt;<a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver6client12InferContextE" title="nvidia::inferenceserver::client::InferContext">InferContext</a>::<a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext6OutputE" title="nvidia::inferenceserver::client::InferContext::Output">Output</a>&gt; &amp;<em>output</em><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext7Options12AddRawResultERKNSt10shared_ptrIN12InferContext6OutputEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Add ‘output’ to the list of requested RAW results. </p>
+<p><a class="reference internal" href="#classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a4cac8002817c9259851305b14c258f36"><span class="std std-ref">Run()</span></a> will return the output’s full tensor as a result. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#classnvidia_1_1inferenceserver_1_1client_1_1Error"><span class="std std-ref">Error</span></a> object indicating success or failure. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">output</span></code>: The output. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext7Options14AddClassResultERKNSt10shared_ptrIN12InferContext6OutputEEE8uint64_t">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options_1a5b584e6fa3d2867d1ec4ce7a0bfee809"></span><em class="property">virtual</em> <a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#_CPPv4N6nvidia15inferenceserver6client5ErrorE" title="nvidia::inferenceserver::client::Error">Error</a> <code class="descname">AddClassResult</code><span class="sig-paren">(</span><em class="property">const</em> std::shared_ptr&lt;<a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver6client12InferContextE" title="nvidia::inferenceserver::client::InferContext">InferContext</a>::<a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext6OutputE" title="nvidia::inferenceserver::client::InferContext::Output">Output</a>&gt; &amp;<em>output</em>, uint64_t <em>k</em><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext7Options14AddClassResultERKNSt10shared_ptrIN12InferContext6OutputEEE8uint64_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Add ‘output’ to the list of requested CLASS results. </p>
+<p><a class="reference internal" href="#classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a4cac8002817c9259851305b14c258f36"><span class="std std-ref">Run()</span></a> will return the highest ‘k’ values of ‘output’ as a result. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#classnvidia_1_1inferenceserver_1_1client_1_1Error"><span class="std std-ref">Error</span></a> object indicating success or failure. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">output</span></code>: The output. </li>
+<li><code class="docutils literal notranslate"><span class="pre">k</span></code>: Set how many class results to return for the output. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Static Functions</p>
+<dl class="function">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext7Options6CreateEPNSt10unique_ptrI7OptionsEE">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options_1a63d97ebc1993c0034ea6822c1d7600b1"></span><em class="property">static</em> <a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#_CPPv4N6nvidia15inferenceserver6client5ErrorE" title="nvidia::inferenceserver::client::Error">Error</a> <code class="descname">Create</code><span class="sig-paren">(</span>std::unique_ptr&lt;<a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext7OptionsE" title="nvidia::inferenceserver::client::InferContext::Options">Options</a>&gt; *<em>options</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext7Options6CreateEPNSt10unique_ptrI7OptionsEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Create a new <a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options.html#classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Options"><span class="std std-ref">Options</span></a> object with default values. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#classnvidia_1_1inferenceserver_1_1client_1_1Error"><span class="std std-ref">Error</span></a> object indicating success or failure. </dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext6OutputE">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Output"></span><em class="property">class </em><code class="descname">Output</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext6OutputE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>An output from the model. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext6OutputD0Ev">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Output_1a8a685059d16e4a77fb8692dd82de0ba0"></span><em class="property">virtual</em> <code class="descname">~Output</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext6OutputD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Destroy the output. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK6nvidia15inferenceserver6client12InferContext6Output4NameEv">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Output_1a72fd5ea270c62500d6c182c4f2a035ab"></span><em class="property">virtual</em> <em class="property">const</em> std::string &amp;<code class="descname">Name</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> = 0<a class="headerlink" href="#_CPPv4NK6nvidia15inferenceserver6client12InferContext6Output4NameEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The name of the output. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK6nvidia15inferenceserver6client12InferContext6Output5DTypeEv">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Output_1a66c02cfce60941e575c6583ad160896c"></span><em class="property">virtual</em> <a class="reference internal" href="../protobuf_api/model_config.proto.html#_CPPv4N6nvidia15inferenceserver8DataTypeE" title="nvidia::inferenceserver::DataType">DataType</a> <code class="descname">DType</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> = 0<a class="headerlink" href="#_CPPv4NK6nvidia15inferenceserver6client12InferContext6Output5DTypeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The data-type of the output. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK6nvidia15inferenceserver6client12InferContext6Output4DimsEv">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Output_1a21f73c9cf17d65831cdbecf904993d05"></span><em class="property">virtual</em> <em class="property">const</em> DimsList &amp;<code class="descname">Dims</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> = 0<a class="headerlink" href="#_CPPv4NK6nvidia15inferenceserver6client12InferContext6Output4DimsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The dimensions/shape of the output specified in the model configuration. Variable-size dimensions are reported as -1. </dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext7RequestE">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Request"></span><em class="property">class </em><code class="descname">Request</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext7RequestE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Handle to a inference request. </p>
+<p>The request handle is used to get request results if the request is sent by <a class="reference internal" href="#classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a255a59df29a53d6e45ce86663887615f"><span class="std std-ref">AsyncRun()</span></a>. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext7RequestD0Ev">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Request_1a3146daca9aed389d56fcbd71123f7206"></span><em class="property">virtual</em> <code class="descname">~Request</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext7RequestD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Destroy the request handle. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK6nvidia15inferenceserver6client12InferContext7Request2IdEv">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Request_1a796b6c3cac55f00c822f3c1ced007509"></span><em class="property">virtual</em> uint64_t <code class="descname">Id</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> = 0<a class="headerlink" href="#_CPPv4NK6nvidia15inferenceserver6client12InferContext7Request2IdEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The unique identifier of the request. </dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext13RequestTimersE">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1RequestTimers"></span><em class="property">class </em><code class="descname">RequestTimers</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext13RequestTimersE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Timer to record the timestamp for different stages of request handling. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Types</p>
+<dl class="type">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext4KindE">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1RequestTimers_1ad3d72a1b49c1e9ebb2bbeb15e04401f8"></span><em class="property">enum </em><code class="descname">Kind</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext4KindE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The kind of the timer. </p>
+<p><em>Values:</em></p>
+<dl class="enumerator">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext13REQUEST_STARTE">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1RequestTimers_1ad3d72a1b49c1e9ebb2bbeb15e04401f8a2ca0e66d9f91476f9f00f61c5a834cbb"></span><code class="descname">REQUEST_START</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext13REQUEST_STARTE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The start of request handling. </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext11REQUEST_ENDE">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1RequestTimers_1ad3d72a1b49c1e9ebb2bbeb15e04401f8ad793ca80c1d0010ecc2f269b6a4b621a"></span><code class="descname">REQUEST_END</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext11REQUEST_ENDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The end of request handling. </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext10SEND_STARTE">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1RequestTimers_1ad3d72a1b49c1e9ebb2bbeb15e04401f8a4cb619f22003a3f9334144b07c71d1f3"></span><code class="descname">SEND_START</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext10SEND_STARTE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The start of sending request bytes to the server (i.e. first byte). </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext8SEND_ENDE">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1RequestTimers_1ad3d72a1b49c1e9ebb2bbeb15e04401f8a8330cc174bf610d2c3afaa2d68e535b2"></span><code class="descname">SEND_END</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext8SEND_ENDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The end of sending request bytes to the server (i.e. last byte). </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext13RECEIVE_STARTE">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1RequestTimers_1ad3d72a1b49c1e9ebb2bbeb15e04401f8aec6eb4b12033d2b794c2a0f3d31c2930"></span><code class="descname">RECEIVE_START</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext13RECEIVE_STARTE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The start of receiving response bytes from the server (i.e. </p>
+<p>first byte). </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext11RECEIVE_ENDE">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1RequestTimers_1ad3d72a1b49c1e9ebb2bbeb15e04401f8a66feb30d6ad2348be0c107324aceb3b7"></span><code class="descname">RECEIVE_END</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext11RECEIVE_ENDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The end of receiving response bytes from the server (i.e. </p>
+<p>last byte). </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext13RequestTimers13RequestTimersEv">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1RequestTimers_1ac2935983f1de4bd33820357823c36e2f"></span><code class="descname">RequestTimers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext13RequestTimers13RequestTimersEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Construct a timer with zero-ed timestamps. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext13RequestTimers5ResetEv">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1RequestTimers_1aa5ace810b5d34b9f6c3a9ae9a3d21dda"></span><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#_CPPv4N6nvidia15inferenceserver6client5ErrorE" title="nvidia::inferenceserver::client::Error">Error</a> <code class="descname">Reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext13RequestTimers5ResetEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reset all timestamp values to zero. </p>
+<p>Must be called before re-using the timer. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#classnvidia_1_1inferenceserver_1_1client_1_1Error"><span class="std std-ref">Error</span></a> object indicating success or failure. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext13RequestTimers6RecordE4Kind">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1RequestTimers_1ab15f971203dcbd5ed114709318f2232b"></span><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#_CPPv4N6nvidia15inferenceserver6client5ErrorE" title="nvidia::inferenceserver::client::Error">Error</a> <code class="descname">Record</code><span class="sig-paren">(</span><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1RequestTimers.html#_CPPv4N6nvidia15inferenceserver6client12InferContext13RequestTimers4KindE" title="nvidia::inferenceserver::client::InferContext::RequestTimers::Kind">Kind</a> <em>kind</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext13RequestTimers6RecordE4Kind" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Record the current timestamp for a request stage. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#classnvidia_1_1inferenceserver_1_1client_1_1Error"><span class="std std-ref">Error</span></a> object indicating success or failure. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">kind</span></code>: The Kind of the timestamp. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext6ResultE">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result"></span><em class="property">class </em><code class="descname">Result</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext6ResultE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>An inference result corresponding to an output. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Types</p>
+<dl class="type">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext12ResultFormatE">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1a8bb9d36d1808a030dda919af87746dad"></span><em class="property">enum </em><code class="descname">ResultFormat</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext12ResultFormatE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Format in which result is returned. </p>
+<p><em>Values:</em></p>
+<dl class="enumerator">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext3RAWE">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1a8bb9d36d1808a030dda919af87746dadada3b38eab85f839509454eb2f3df8ea6"></span><code class="descname">RAW</code> = 0<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext3RAWE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>RAW format is the entire result tensor of values. </p>
+</dd></dl>
+
+<dl class="enumerator">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext5CLASSE">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1a8bb9d36d1808a030dda919af87746dada9f91171ba1a8902be2821d6ba488dbd4"></span><code class="descname">CLASS</code> = 1<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext5CLASSE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>CLASS format is the top-k highest probability values of the result and the associated class label (if provided by the model). </p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext6ResultD0Ev">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1aa87dddd7be7a18f787946a6548398d3b"></span><em class="property">virtual</em> <code class="descname">~Result</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext6ResultD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Destroy the result. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK6nvidia15inferenceserver6client12InferContext6Result9ModelNameEv">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1a78206cf92579339875ad3a44318a28f7"></span><em class="property">virtual</em> <em class="property">const</em> std::string &amp;<code class="descname">ModelName</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> = 0<a class="headerlink" href="#_CPPv4NK6nvidia15inferenceserver6client12InferContext6Result9ModelNameEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The name of the model that produced this result. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK6nvidia15inferenceserver6client12InferContext6Result12ModelVersionEv">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1a9a81d8a1588920dc784fcb4b2520f566"></span><em class="property">virtual</em> int64_t <code class="descname">ModelVersion</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> = 0<a class="headerlink" href="#_CPPv4NK6nvidia15inferenceserver6client12InferContext6Result12ModelVersionEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The version of the model that produced this result. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK6nvidia15inferenceserver6client12InferContext6Result9GetOutputEv">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1a7687d7d07c181ba27f32654341390a92"></span><em class="property">virtual</em> <em class="property">const</em> std::shared_ptr&lt;<a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext6OutputE" title="nvidia::inferenceserver::client::InferContext::Output">Output</a>&gt; <code class="descname">GetOutput</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> = 0<a class="headerlink" href="#_CPPv4NK6nvidia15inferenceserver6client12InferContext6Result9GetOutputEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The <a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Output.html#classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Output"><span class="std std-ref">Output</span></a> object corresponding to this result. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK6nvidia15inferenceserver6client12InferContext6Result11GetRawShapeEPNSt6vectorI7int64_tEE">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1aeeec1b3448cf681e3ec8ac3c3c589374"></span><em class="property">virtual</em> <a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#_CPPv4N6nvidia15inferenceserver6client5ErrorE" title="nvidia::inferenceserver::client::Error">Error</a> <code class="descname">GetRawShape</code><span class="sig-paren">(</span>std::vector&lt;int64_t&gt; *<em>shape</em><span class="sig-paren">)</span> <em class="property">const</em> = 0<a class="headerlink" href="#_CPPv4NK6nvidia15inferenceserver6client12InferContext6Result11GetRawShapeEPNSt6vectorI7int64_tEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the shape of a raw result. </p>
+<p>The shape does not include the batch dimension. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#classnvidia_1_1inferenceserver_1_1client_1_1Error"><span class="std std-ref">Error</span></a> object indicating success or failure. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">shape</span></code>: Returns the shape. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK6nvidia15inferenceserver6client12InferContext6Result6GetRawE6size_tPPKNSt6vectorI7uint8_tEE">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1af97122884c92553992261c501dbe3095"></span><em class="property">virtual</em> <a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#_CPPv4N6nvidia15inferenceserver6client5ErrorE" title="nvidia::inferenceserver::client::Error">Error</a> <code class="descname">GetRaw</code><span class="sig-paren">(</span>size_t <em>batch_idx</em>, <em class="property">const</em> std::vector&lt;uint8_t&gt; **<em>buf</em><span class="sig-paren">)</span> <em class="property">const</em> = 0<a class="headerlink" href="#_CPPv4NK6nvidia15inferenceserver6client12InferContext6Result6GetRawE6size_tPPKNSt6vectorI7uint8_tEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get a reference to entire raw result data for a specific batch entry. </p>
+<p>Returns error if this result is not RAW format. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#classnvidia_1_1inferenceserver_1_1client_1_1Error"><span class="std std-ref">Error</span></a> object indicating success or failure. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">batch_idx</span></code>: Returns the results for this entry of the batch. </li>
+<li><code class="docutils literal notranslate"><span class="pre">buf</span></code>: Returns the vector of result bytes. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext6Result14GetRawAtCursorE6size_tPPK7uint8_t6size_t">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1a2a13887812b025896d569f041db7e2c8"></span><em class="property">virtual</em> <a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#_CPPv4N6nvidia15inferenceserver6client5ErrorE" title="nvidia::inferenceserver::client::Error">Error</a> <code class="descname">GetRawAtCursor</code><span class="sig-paren">(</span>size_t <em>batch_idx</em>, <em class="property">const</em> uint8_t **<em>buf</em>, size_t <em>adv_byte_size</em><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext6Result14GetRawAtCursorE6size_tPPK7uint8_t6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get a reference to raw result data for a specific batch entry at the current “cursor” and advance the cursor by the specified number of bytes. </p>
+<p>More typically use <a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result.html#classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1a2a13887812b025896d569f041db7e2c8"><span class="std std-ref">GetRawAtCursor&lt;T&gt;()</span></a> method to return the data as a specific type T. Use <a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result.html#classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1adb27437d415b569a3a4b7700c56002bf"><span class="std std-ref">ResetCursor()</span></a> to reset the cursor to the beginning of the result. Returns error if this result is not RAW format. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#classnvidia_1_1inferenceserver_1_1client_1_1Error"><span class="std std-ref">Error</span></a> object indicating success or failure. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">batch_idx</span></code>: Returns results for this entry of the batch. </li>
+<li><code class="docutils literal notranslate"><span class="pre">buf</span></code>: Returns pointer to ‘adv_byte_size’ bytes of data. </li>
+<li><code class="docutils literal notranslate"><span class="pre">adv_byte_size</span></code>: The number of bytes of data to get a reference to. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext6Result14GetRawAtCursorE6size_tP1T">
+<em class="property">template </em>&lt;<em class="property">typename</em> T&gt;<br /><span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1a64d951fd64068b9d2e3da103f47390fe"></span><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#_CPPv4N6nvidia15inferenceserver6client5ErrorE" title="nvidia::inferenceserver::client::Error">Error</a> <code class="descname">GetRawAtCursor</code><span class="sig-paren">(</span>size_t <em>batch_idx</em>, T *<em>out</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext6Result14GetRawAtCursorE6size_tP1T" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Read a value for a specific batch entry at the current “cursor” from the result tensor as the specified type T and advance the cursor. </p>
+<p>Use <a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result.html#classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1adb27437d415b569a3a4b7700c56002bf"><span class="std std-ref">ResetCursor()</span></a> to reset the cursor to the beginning of the result. Returns error if this result is not RAW format. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#classnvidia_1_1inferenceserver_1_1client_1_1Error"><span class="std std-ref">Error</span></a> object indicating success or failure. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">batch_idx</span></code>: Returns results for this entry of the batch. </li>
+<li><code class="docutils literal notranslate"><span class="pre">out</span></code>: Returns the value at the cursor. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK6nvidia15inferenceserver6client12InferContext6Result13GetClassCountE6size_tP6size_t">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1ac50ae04862c58a004547cac5debc7c98"></span><em class="property">virtual</em> <a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#_CPPv4N6nvidia15inferenceserver6client5ErrorE" title="nvidia::inferenceserver::client::Error">Error</a> <code class="descname">GetClassCount</code><span class="sig-paren">(</span>size_t <em>batch_idx</em>, size_t *<em>cnt</em><span class="sig-paren">)</span> <em class="property">const</em> = 0<a class="headerlink" href="#_CPPv4NK6nvidia15inferenceserver6client12InferContext6Result13GetClassCountE6size_tP6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the number of class results for a batch. </p>
+<p>Returns error if this result is not CLASS format. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#classnvidia_1_1inferenceserver_1_1client_1_1Error"><span class="std std-ref">Error</span></a> object indicating success or failure. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">batch_idx</span></code>: The index in the batch. </li>
+<li><code class="docutils literal notranslate"><span class="pre">cnt</span></code>: Returns the number of <a class="reference internal" href="structnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1_1ClassResult.html#structnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1_1ClassResult"><span class="std std-ref">ClassResult</span></a> entries for the batch entry. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext6Result16GetClassAtCursorE6size_tP11ClassResult">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1a0b78337cb9b55608b310f226dd6e8287"></span><em class="property">virtual</em> <a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#_CPPv4N6nvidia15inferenceserver6client5ErrorE" title="nvidia::inferenceserver::client::Error">Error</a> <code class="descname">GetClassAtCursor</code><span class="sig-paren">(</span>size_t <em>batch_idx</em>, <a class="reference internal" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext6Result11ClassResultE" title="nvidia::inferenceserver::client::InferContext::Result::ClassResult">ClassResult</a> *<em>result</em><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext6Result16GetClassAtCursorE6size_tP11ClassResult" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the <a class="reference internal" href="structnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1_1ClassResult.html#structnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1_1ClassResult"><span class="std std-ref">ClassResult</span></a> result for a specific batch entry at the current cursor. </p>
+<p>Use <a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result.html#classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1adb27437d415b569a3a4b7700c56002bf"><span class="std std-ref">ResetCursor()</span></a> to reset the cursor to the beginning of the result. Returns error if this result is not CLASS format. <dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#classnvidia_1_1inferenceserver_1_1client_1_1Error"><span class="std std-ref">Error</span></a> object indicating success or failure. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">batch_idx</span></code>: The index in the batch. </li>
+<li><code class="docutils literal notranslate"><span class="pre">result</span></code>: Returns the <a class="reference internal" href="structnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1_1ClassResult.html#structnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1_1ClassResult"><span class="std std-ref">ClassResult</span></a> value for the batch at the cursor. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext6Result12ResetCursorsEv">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1a304de867ffb5121c21874e11a4e9d34a"></span><em class="property">virtual</em> <a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#_CPPv4N6nvidia15inferenceserver6client5ErrorE" title="nvidia::inferenceserver::client::Error">Error</a> <code class="descname">ResetCursors</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext6Result12ResetCursorsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reset cursor to beginning of result for all batch entries. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#classnvidia_1_1inferenceserver_1_1client_1_1Error"><span class="std std-ref">Error</span></a> object indicating success or failure. </dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext6Result11ResetCursorE6size_t">
+<span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1adb27437d415b569a3a4b7700c56002bf"></span><em class="property">virtual</em> <a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#_CPPv4N6nvidia15inferenceserver6client5ErrorE" title="nvidia::inferenceserver::client::Error">Error</a> <code class="descname">ResetCursor</code><span class="sig-paren">(</span>size_t <em>batch_idx</em><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext6Result11ResetCursorE6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reset cursor to beginning of result for specified batch entry. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#classnvidia_1_1inferenceserver_1_1client_1_1Error"><span class="std std-ref">Error</span></a> object indicating success or failure. </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">batch_idx</span></code>: The index in the batch. </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext6Result14GetRawAtCursorE6size_tPNSt6stringE">
+<em class="property">template </em>&lt;&gt;<br /><span class="target" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1a742f381607b9915cb2fc558511f491c1"></span><a class="reference internal" href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html#_CPPv4N6nvidia15inferenceserver6client5ErrorE" title="nvidia::inferenceserver::client::Error">Error</a> <code class="descname">GetRawAtCursor</code><span class="sig-paren">(</span>size_t <em>batch_idx</em>, std::string *<em>out</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext6Result14GetRawAtCursorE6size_tPNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="class">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext6Result11ClassResultE">
+<span class="target" id="structnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1_1ClassResult"></span><em class="property">struct </em><code class="descname">ClassResult</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext6Result11ClassResultE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The result value for CLASS format results. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext6Result11ClassResult3idxE">
+<span class="target" id="structnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1_1ClassResult_1a8480131c8f15b37e32f19400ec5a3d5d"></span>size_t <code class="descname">idx</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext6Result11ClassResult3idxE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The index of the class in the result vector. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext6Result11ClassResult5valueE">
+<span class="target" id="structnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1_1ClassResult_1af0c1a1ef9932a40cd1fbbea3e5ae7b38"></span>float <code class="descname">value</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext6Result11ClassResult5valueE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The value of the class. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext6Result11ClassResult5labelE">
+<span class="target" id="structnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Result_1_1ClassResult_1a517c52eae642ee9a37102070da66972a"></span>std::string <code class="descname">label</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext6Result11ClassResult5labelE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The label for the class, if provided by the model. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext4StatE">
+<span class="target" id="structnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Stat"></span><em class="property">struct </em><code class="descname">Stat</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext4StatE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Cumulative statistic of the <a class="reference internal" href="#classnvidia_1_1inferenceserver_1_1client_1_1InferContext"><span class="std std-ref">InferContext</span></a>. </p>
+<p><dl class="docutils">
+<dt><strong>Note</strong></dt>
+<dd>For GRPC protocol, ‘cumulative_send_time_ns’ represents the time for marshaling infer request. ‘cumulative_receive_time_ns’ represents the time for unmarshaling infer response. </dd>
+</dl>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext4Stat4StatEv">
+<span class="target" id="structnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Stat_1aa1c18a68160ee9ccb7002fdb40e7b15c"></span><code class="descname">Stat</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext4Stat4StatEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Create a new <a class="reference internal" href="structnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Stat.html#structnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Stat"><span class="std std-ref">Stat</span></a> object with zero-ed statistics. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext4Stat23completed_request_countE">
+<span class="target" id="structnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Stat_1ad76e90f2ef845eb146acab963bbffd1a"></span>size_t <code class="descname">completed_request_count</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext4Stat23completed_request_countE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Total number of requests completed. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext4Stat32cumulative_total_request_time_nsE">
+<span class="target" id="structnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Stat_1abf5e228bd9de072b92cdbfd06b10c8cf"></span>uint64_t <code class="descname">cumulative_total_request_time_ns</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext4Stat32cumulative_total_request_time_nsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Time from the request start until the response is completely received. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext4Stat23cumulative_send_time_nsE">
+<span class="target" id="structnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Stat_1a5b8451d591204705cfb9d8854f132b18"></span>uint64_t <code class="descname">cumulative_send_time_ns</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext4Stat23cumulative_send_time_nsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Time from the request start until the last byte is sent. </p>
+</dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N6nvidia15inferenceserver6client12InferContext4Stat26cumulative_receive_time_nsE">
+<span class="target" id="structnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Stat_1ae113efbf699abdd52d45996dcc7d4689"></span>uint64_t <code class="descname">cumulative_receive_time_ns</code><a class="headerlink" href="#_CPPv4N6nvidia15inferenceserver6client12InferContext4Stat26cumulative_receive_time_nsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Time from receiving first byte of the response until the response is completely received. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input.html" class="btn btn-neutral float-right" title="Class InferContext::Input" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="classnvidia_1_1inferenceserver_1_1client_1_1Error.html" class="btn btn-neutral float-left" title="Class Error" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, NVIDIA Corporation
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    
+
+  <style>
+  a:link, a:visited {
+    color: #76b900;
+  }
+
+  a:hover {
+    color: #8c0;
+  }
+
+  .rst-content dl:not(.docutils) dt {
+    background: rgba(118, 185, 0, 0.1);
+    color: rgba(59,93,0,1);
+    border-top: solid 3px rgba(59,93,0,1);
+  }
+  </style>
+  
+
+</body>
+</html>

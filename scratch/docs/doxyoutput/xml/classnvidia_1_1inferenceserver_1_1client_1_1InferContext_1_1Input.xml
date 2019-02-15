@@ -1,0 +1,269 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>nvidia::inferenceserver::client::InferContext::Input</compoundname>
+    <includes refid="request_8h" local="no">request.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1aeb32510fa7e86063d3341302ff5cc322" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual nvidia::inferenceserver::client::InferContext::Input::~Input</definition>
+        <argsstring>()</argsstring>
+        <name>~Input</name>
+        <briefdescription>
+<para>Destroy the input. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="249" column="1" bodyfile="src/clients/c++/request.h" bodystart="249" bodyend="249"/>
+      </memberdef>
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a66b20a9167b8eeb9ddde10430b37fd01" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>const std::string &amp;</type>
+        <definition>virtual const std::string&amp; nvidia::inferenceserver::client::InferContext::Input::Name</definition>
+        <argsstring>() const =0</argsstring>
+        <name>Name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The name of the input. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="252" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a34951a4f1c906bf3c147ee84549d8667" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>int64_t</type>
+        <definition>virtual int64_t nvidia::inferenceserver::client::InferContext::Input::ByteSize</definition>
+        <argsstring>() const =0</argsstring>
+        <name>ByteSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The size in bytes of this input. This is the size for one instance of the input, not the entire size of a batched input. When the byte-size is not known, for example for non-fixed-sized types like TYPE_STRING or for inputs with variable-size dimensions, this will return -1. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="259" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a07c715257ed5ed2feab0982d9c6fd941" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>size_t</type>
+        <definition>virtual size_t nvidia::inferenceserver::client::InferContext::Input::TotalByteSize</definition>
+        <argsstring>() const =0</argsstring>
+        <name>TotalByteSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The size in bytes of entire batch of this input. For fixed-sized types this is just <ref refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a34951a4f1c906bf3c147ee84549d8667" kindref="member">ByteSize()</ref> * batch-size, but for non-fixed-sized types like TYPE_STRING it is the only way to get the entire input size. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="265" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1ab90380c6a46ea973a08f86c5a1bb3ea8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>DataType</type>
+        <definition>virtual DataType nvidia::inferenceserver::client::InferContext::Input::DType</definition>
+        <argsstring>() const =0</argsstring>
+        <name>DType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The data-type of the input. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="268" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a9ab3e04fbb0ad181fd74bf7675249fef" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>ModelInput::Format</type>
+        <definition>virtual ModelInput::Format nvidia::inferenceserver::client::InferContext::Input::Format</definition>
+        <argsstring>() const =0</argsstring>
+        <name>Format</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The format of the input. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="271" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a500ee9536afa9d6286cd23ee1308ebda" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>const DimsList &amp;</type>
+        <definition>virtual const DimsList&amp; nvidia::inferenceserver::client::InferContext::Input::Dims</definition>
+        <argsstring>() const =0</argsstring>
+        <name>Dims</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The dimensions/shape of the input specified in the model configuration. Variable-size dimensions are reported as -1. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="276" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a3dee261f7bed6cb3840db299c6b1d246" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classnvidia_1_1inferenceserver_1_1client_1_1Error" kindref="compound">Error</ref></type>
+        <definition>virtual Error nvidia::inferenceserver::client::InferContext::Input::Reset</definition>
+        <argsstring>()=0</argsstring>
+        <name>Reset</name>
+        <briefdescription>
+<para>Prepare this input to receive new tensor values. </para>        </briefdescription>
+        <detaileddescription>
+<para>Forget any existing values that were set by previous calls to <ref refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a414fe9afbb60a48f162bac5439beee4d" kindref="member">SetRaw()</ref>. <simplesect kind="return"><para><ref refid="classnvidia_1_1inferenceserver_1_1client_1_1Error" kindref="compound">Error</ref> object indicating success or failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="282" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1aedd9cacfe4e87008521ed63c1eb8e035" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>const std::vector&lt; int64_t &gt; &amp;</type>
+        <definition>virtual const std::vector&lt;int64_t&gt;&amp; nvidia::inferenceserver::client::InferContext::Input::Shape</definition>
+        <argsstring>() const =0</argsstring>
+        <name>Shape</name>
+        <briefdescription>
+<para>Get the shape for this input that was most recently set by SetShape. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The shape, or empty vector if SetShape has not been called. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="288" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a0e2c4e3813ebfda6ecef7e23a7f00de5" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classnvidia_1_1inferenceserver_1_1client_1_1Error" kindref="compound">Error</ref></type>
+        <definition>virtual Error nvidia::inferenceserver::client::InferContext::Input::SetShape</definition>
+        <argsstring>(const std::vector&lt; int64_t &gt; &amp;dims)=0</argsstring>
+        <name>SetShape</name>
+        <param>
+          <type>const std::vector&lt; int64_t &gt; &amp;</type>
+          <declname>dims</declname>
+        </param>
+        <briefdescription>
+<para>Set the shape for this input. </para>        </briefdescription>
+        <detaileddescription>
+<para>The shape must be set for inputs that have variable-size dimensions and is optional for other inputs. The shape must be set before calling SetRaw or SetFromString. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dims</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The dimensions of the shape. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classnvidia_1_1inferenceserver_1_1client_1_1Error" kindref="compound">Error</ref> object indicating success or failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="296" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a414fe9afbb60a48f162bac5439beee4d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classnvidia_1_1inferenceserver_1_1client_1_1Error" kindref="compound">Error</ref></type>
+        <definition>virtual Error nvidia::inferenceserver::client::InferContext::Input::SetRaw</definition>
+        <argsstring>(const uint8_t *input, size_t input_byte_size)=0</argsstring>
+        <name>SetRaw</name>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>input_byte_size</declname>
+        </param>
+        <briefdescription>
+<para>Set tensor values for this input from a byte array. </para>        </briefdescription>
+        <detaileddescription>
+<para>The array is not copied and so it must not be modified or destroyed until this input is no longer needed (that is until the <ref refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a4cac8002817c9259851305b14c258f36" kindref="member">Run()</ref> call(s) that use the input have completed). For batched inputs this function must be called batch-size times to provide all tensor values for a batch of this input. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pointer to the array holding the tensor value. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>input_byte_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The size of the array in bytes, must match the size expected by the input. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classnvidia_1_1inferenceserver_1_1client_1_1Error" kindref="compound">Error</ref> object indicating success or failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="308" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a094ec9eece1e10d877db9af69867090e" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classnvidia_1_1inferenceserver_1_1client_1_1Error" kindref="compound">Error</ref></type>
+        <definition>virtual Error nvidia::inferenceserver::client::InferContext::Input::SetRaw</definition>
+        <argsstring>(const std::vector&lt; uint8_t &gt; &amp;input)=0</argsstring>
+        <name>SetRaw</name>
+        <param>
+          <type>const std::vector&lt; uint8_t &gt; &amp;</type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+<para>Set tensor values for this input from a byte vector. </para>        </briefdescription>
+        <detaileddescription>
+<para>The vector is not copied and so it must not be modified or destroyed until this input is no longer needed (that is until the <ref refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1a4cac8002817c9259851305b14c258f36" kindref="member">Run()</ref> call(s) that use the input have completed). For batched inputs this function must be called batch-size times to provide all tensor values for a batch of this input. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector holding tensor values. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classnvidia_1_1inferenceserver_1_1client_1_1Error" kindref="compound">Error</ref> object indicating success or failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="318" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a73495802b757c43b67edd334fec341d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classnvidia_1_1inferenceserver_1_1client_1_1Error" kindref="compound">Error</ref></type>
+        <definition>virtual Error nvidia::inferenceserver::client::InferContext::Input::SetFromString</definition>
+        <argsstring>(const std::vector&lt; std::string &gt; &amp;input)=0</argsstring>
+        <name>SetFromString</name>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+<para>Set tensor values for this input from a vector or strings. </para>        </briefdescription>
+        <detaileddescription>
+<para>This method can only be used for tensors with STRING data-type. The strings are assigned in row-major order to the elements of the tensor. The strings are copied and so the &apos;input&apos; does not need to be preserved as with <ref refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a414fe9afbb60a48f162bac5439beee4d" kindref="member">SetRaw()</ref>. For batched inputs this function must be called batch-size times to provide all tensor values for a batch of this input. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector holding tensor string values. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classnvidia_1_1inferenceserver_1_1client_1_1Error" kindref="compound">Error</ref> object indicating success or failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/clients/c++/request.h" line="329" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>An input to the model. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/clients/c++/request.h" line="246" column="1" bodyfile="src/clients/c++/request.h" bodystart="246" bodyend="330"/>
+    <listofallmembers>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a34951a4f1c906bf3c147ee84549d8667" prot="public" virt="pure-virtual"><scope>nvidia::inferenceserver::client::InferContext::Input</scope><name>ByteSize</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a500ee9536afa9d6286cd23ee1308ebda" prot="public" virt="pure-virtual"><scope>nvidia::inferenceserver::client::InferContext::Input</scope><name>Dims</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1ab90380c6a46ea973a08f86c5a1bb3ea8" prot="public" virt="pure-virtual"><scope>nvidia::inferenceserver::client::InferContext::Input</scope><name>DType</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a9ab3e04fbb0ad181fd74bf7675249fef" prot="public" virt="pure-virtual"><scope>nvidia::inferenceserver::client::InferContext::Input</scope><name>Format</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a66b20a9167b8eeb9ddde10430b37fd01" prot="public" virt="pure-virtual"><scope>nvidia::inferenceserver::client::InferContext::Input</scope><name>Name</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a3dee261f7bed6cb3840db299c6b1d246" prot="public" virt="pure-virtual"><scope>nvidia::inferenceserver::client::InferContext::Input</scope><name>Reset</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a73495802b757c43b67edd334fec341d7" prot="public" virt="pure-virtual"><scope>nvidia::inferenceserver::client::InferContext::Input</scope><name>SetFromString</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a414fe9afbb60a48f162bac5439beee4d" prot="public" virt="pure-virtual"><scope>nvidia::inferenceserver::client::InferContext::Input</scope><name>SetRaw</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a094ec9eece1e10d877db9af69867090e" prot="public" virt="pure-virtual"><scope>nvidia::inferenceserver::client::InferContext::Input</scope><name>SetRaw</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a0e2c4e3813ebfda6ecef7e23a7f00de5" prot="public" virt="pure-virtual"><scope>nvidia::inferenceserver::client::InferContext::Input</scope><name>SetShape</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1aedd9cacfe4e87008521ed63c1eb8e035" prot="public" virt="pure-virtual"><scope>nvidia::inferenceserver::client::InferContext::Input</scope><name>Shape</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1a07c715257ed5ed2feab0982d9c6fd941" prot="public" virt="pure-virtual"><scope>nvidia::inferenceserver::client::InferContext::Input</scope><name>TotalByteSize</name></member>
+      <member refid="classnvidia_1_1inferenceserver_1_1client_1_1InferContext_1_1Input_1aeb32510fa7e86063d3341302ff5cc322" prot="public" virt="virtual"><scope>nvidia::inferenceserver::client::InferContext::Input</scope><name>~Input</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
