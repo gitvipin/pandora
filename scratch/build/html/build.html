@@ -242,7 +242,11 @@ Version select: <select onChange="window.location.href = this.value" onFocus="th
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#building-the-client-libraries-and-examples">Building the Client Libraries and Examples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#building-the-documentation">Building the Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-the-documentation">Building the Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#html-documentation">HTML Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pdf-documentation">PDF Documentation</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="test.html">Testing</a><ul>
@@ -542,6 +546,8 @@ $ pip3 install --user --upgrade tensorrtserver-*.whl numpy pillow
 <p>The inference server documentation is found in the docs/ directory and
 is based on <a class="reference external" href="http://www.sphinx-doc.org">Sphinx</a>. <a class="reference external" href="http://www.doxygen.org/">Doxygen</a> integrated with <a class="reference external" href="https://github.com/svenevs/exhale">Exhale</a> is used for C++ API
 docuementation.</p>
+<div class="section" id="html-documentation">
+<h3>HTML Documentation<a class="headerlink" href="#html-documentation" title="Permalink to this headline">¶</a></h3>
 <p>To build the docs install the required dependencies:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ apt-get update
 $ apt-get install -y --no-install-recommends doxygen
@@ -559,7 +565,10 @@ directory:</p>
 $ make clean html
 </pre></div>
 </div>
-<p>To build the PDF version of documentation <cite>LaTEX &lt;https://www.tug.org/texlive/quickinstall.html&gt;</cite>
+</div>
+<div class="section" id="pdf-documentation">
+<h3>PDF Documentation<a class="headerlink" href="#pdf-documentation" title="Permalink to this headline">¶</a></h3>
+<p>To build the PDF version of documentation <cite>LaTEX &lt;https://www.tug.org/texlive/quickinstall.html&gt;_</cite>
 needs to be installed first. Additional requirements of python modules
 can be met by simply running the following commands in docs directory:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ pip install -r requirements.txt
@@ -571,12 +580,12 @@ directory:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$make clean latexpdf
 </pre></div>
 </div>
-<p>Corrections and enhancements in Documentation are always welcome however it is advised that before
-creating a pull request for the changes these are validated locally. A simple way to do it is to run web server
-inside <em>docs/build/html</em> directory with following command and navigate through the modified documentation in the browser
-at <a class="reference external" href="http://localhost:8000">http://localhost:8000</a></p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ python -m SimpleHTTPServer          # run inside docs/build/html
+<p>Before creating a pull request for merging changes in documentation one can validate the same locally. It can be done
+by running simple HTTP server in <em>docs/build</em> diretory with command below and navigating to the documentation pages in
+the browser at <a class="reference external" href="http://localhost:8000">http://localhost:8000</a></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ python -m SimpleHTTPServer
 </pre></div>
+</div>
 </div>
 </div>
 </div>
