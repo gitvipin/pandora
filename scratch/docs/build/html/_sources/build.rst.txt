@@ -127,9 +127,9 @@ directory::
 PDF Documentation
 ^^^^^^^^^^^^^^^^^
 
-To build the PDF version of documentation `LaTEX <https://www.tug.org/texlive/quickinstall.html>`_
-needs to be installed first. Additional requirements of python modules
-can be met by simply running the following commands in docs directory::
+To build the PDF version of documentation `LaTEX <https://www.tug.org/texlive/quickinstall.html>`_ needs
+to be installed first. Additional requirements of python modules can be met by simply running the following
+commands in docs directory::
 
   $ pip install -r requirements.txt
 
