@@ -247,6 +247,7 @@ Version select: <select onChange="window.location.href = this.value" onFocus="th
 <li class="toctree-l3"><a class="reference internal" href="#pdf-documentation">PDF Documentation</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#updating-documentation">Updating Documentation</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="test.html">Testing</a><ul>
@@ -568,7 +569,7 @@ $ make clean html
 </div>
 <div class="section" id="pdf-documentation">
 <h3>PDF Documentation<a class="headerlink" href="#pdf-documentation" title="Permalink to this headline">¶</a></h3>
-<p>To build the PDF version of documentation <a class="reference external" href="https://www.tug.org/texlive/quickinstall.html">LaTEX</a> needs
+<p>To build the PDF version of documentation, <a class="reference external" href="https://www.tug.org/texlive/quickinstall.html">LaTEX</a> needs
 to be installed first. Additional requirements of python modules can be met by simply running the following
 commands in docs directory:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ pip install -r requirements.txt
@@ -580,12 +581,15 @@ directory:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$make clean latexpdf
 </pre></div>
 </div>
+</div>
+</div>
+<div class="section" id="updating-documentation">
+<h2>Updating Documentation<a class="headerlink" href="#updating-documentation" title="Permalink to this headline">¶</a></h2>
 <p>Before creating a pull request for merging changes in documentation one can validate the same locally. It can be done
 by running simple HTTP server in <em>docs/build</em> diretory with command below and navigating to the documentation pages in
 the browser at <a class="reference external" href="http://localhost:8000">http://localhost:8000</a>.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ python -m SimpleHTTPServer
 </pre></div>
-</div>
 </div>
 </div>
 </div>
