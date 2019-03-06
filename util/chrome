@@ -1,0 +1,5 @@
+#!/bin/bash
+#
+# A simple script to launch chrome in a mode to not warn about expired certificates.
+
+/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --ignore-certificate-errors &
