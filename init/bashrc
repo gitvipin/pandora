@@ -109,4 +109,5 @@ PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]\w\[\e[1;
 export PS1
 
 source ~/.aliases
+source ~/.aliases_local
 alias s='screen -rx vipin'
