@@ -1,0 +1,26 @@
+#!/usr/bin/expect -f
+
+# flogin - refers to the "Fast Login"
+# This script let's you login to a server without having you
+# enter password again and again.
+#
+# USAGE:
+#   <path_to_this_script> <server_ip_address_in_quotes>
+# e.g.
+#   flogin "10.1.2.3"
+#
+# WARNING: You are exposing your password in a script.
+# Better use password less SSH.
+
+
+set server [lindex $argv 0]
+set user "root"
+set pwd "default_passed\r"
+if { $server == "my_server"} {
+    set pwd "different_passwd\r"
+    # Similarly you can change login as well for a specific server
+}
+spawn ssh $user@$server
+expect "assword:"
+send $pwd
+interact
