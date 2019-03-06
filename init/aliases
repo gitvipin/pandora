@@ -1,0 +1,146 @@
+#!/bin/bash
+
+# chmod 0600 "$HOME/.ssh/automation_rsa"
+# chmod 0600 "$HOME/.ssh/automation_rsa.pub"
+# eval `keychain --eval id_rsa automation_rsa`
+
+PYTHONSTARTUP=~/.init.py
+export PYTHONSTARTUP
+export PYTHONPATH=~/VIPIN/debug/
+export RIAK=http://127.0.0.1:8098/
+
+
+alias r='source ~/.bashrc2' # refresh .bashrc
+alias val='vi ~/.bashrc2'  # vi aliases
+alias lal='cat ~/.bashrc2'  # vi aliases
+alias vpl='vi + /tmp/python.log'  # vi aliases
+alias rmpl='rm  /tmp/python.log'  # vi aliases
+alias sgc='update-alternatives --config gcc'  # Switch GCC
+
+# Setup related
+alias p8='pep8 ' # Pep8
+alias ap8='autopep8 -i -a -a' #autopep8
+alias l='ls -lrt'
+alias diffy='diff -y'
+alias agk='eval $(ssh-agent) ; ssh-add' # add git key
+
+
+# Work related
+# alias pee=`python -c 'import zipfile ; x = zipfile.ZipFile("./scale_rpc.egg"); x.extractall()'` # python extract egg files
+alias pee='sh -x ~/utils/pee.sh '
+# get list of python modules
+# alias psgm='python -c 'import pip ; mods = sorted(["%s==%s" % (i.key, i.version) for i in pip.get_installed_distributions()]) ; print "\n".join(mods)''
+alias pps='python debug.py -p'
+# ssh to machines
+alias rn1='ssh root@10.34.81.68'
+alias rn2='ssh root@10.34.81.72'
+alias rn3='ssh root@10.34.81.228'
+
+
+alias rut='python ~/utils/run_test.py '
+alias rutc='python  ~/utils/unit_test_command.py '  # Get python unit test commands based on filename
+alias rut1='python -m unittest discover -p test_ping.py <dir_path>'
+
+
+# Git related
+alias grs='git fetch origin; git pull origin master; git rebase origin/master' # git resync sandbox
+alias gpm='git pull origin master'  # git pull master
+alias gcb='git checkout -b '    # git create a local branch
+alias gbd='git branch -d '      # git delete the local branch
+alias gbD='git branch -D '      # git delete the local branch
+alias gpr='git push ' #git push review
+alias glb='git branch -vv'      # git list branches
+alias gsb='git checkout '    # git switch to branch
+alias glc='git cherry -v master '    # git list local commits
+alias glc2='git log origin/master..HEAD'
+alias glf='git show --name-only '    # git list files in commit
+alias ggg='git grep -nH '       # Git grep
+alias gtm='git branch --track  `git branch | grep \* | cut -d '' '' -f2` origin/master' #track local branch to master
+alias gdm='git diff origin/master '         # git diff with master
+alias grf='git show commit_sha1 -- file_nme.ext | git apply -R'     # git revert changes in file. even when it is in commit. Use git checkout -- <filename> if it is not part of commit yet.
+alias gch='git log --pretty=short -u -L 42,47:pre-commit'   # git show change history for file 'pre-commit' from line # 42 to 47
+alias guf='git reset --soft HEAD^ ; git reset HEAD path/to/unwanted_file ;git commit -c ORIG_HEAD ' # git uncommit file : Remove file from a git commit (local/unpushed) without undoing the changes. Source : http://stackoverflow.com/questions/12481639/remove-files-from-git-commit
+alias gs='git status'
+alias ggit='git ls-files file_name --error-unmatch; echo $?' # Checks if file is tracked in git
+alias gcu='git clean -d -x -f'  # git clean untracked files. Replace "-f" with "-n" for "dry run"
+
+# Riak related
+# Riak write data : 'default' is default bucket type , food is bucket and favourite is key
+alias rst='curl -i http://127.0.0.1:8098/stats'         # riak status check
+alias rwd='curl -XPUT  $RIAK/types/default/buckets/food/keys/favourite -d "pizza"'
+alias rrd='curl -XGET $RIAK/types/default/buckets/food/keys/favourite'    # riak read data
+alias rlb='curl $RIAK/types/default/buckets?buckets=true'     # Riak list buckets
+alias rlk='curl $RIAK/types/vifmetadata/buckets/vifmetadata/keys?keys=true'   # Riak list keys
+alias rbp='curl $RIAK/types/vifmetadata/buckets/vifmetadata/props | python -m json.tool' # Riak print bucket(vipin , here) properties
+alias rcs='curl http://10.172.72.8:8098/search/schema/computeutilization'    # Riak curl schema, change IP address to one of the riak nodes
+alias rns='for i in {7,8,9,10,11,43,45,71,84,86,97}; do echo 10.172.72.$i;time curl -i http://10.172.72.$i:8098/stats;done' #riak node status
+alias rgdm='curl $RIAK/types/vifmetadata/buckets/vifmetadata/datatypes/1d14f248-85bb-4d48-bc84-24063e64bbbf_1472777312'
+alias rsoc='cd /etc/nginx/sites-enabled/ ; rm 001-riak; ln -s 001_riak_one_cloud 001-riak ; service nginx restart; cd -' # riak switch to one cloud
+alias rslb='cd /etc/nginx/sites-enabled/ ; rm 001-riak; ln -s 001_riak_load_balancers 001-riak ; service nginx restart; cd -' # riak switch to one cloud
+alias rslr='cd /etc/nginx/sites-enabled/ ; rm 001-riak; ln -s local_riak 001-riak ; service nginx restart; cd -'  # riak switch to local riak
+alias rscb='cd /etc/nginx/sites-enabled/ ; rm 001-riak; ln -s 001_riak_cluster_b 001-riak ; service nginx restart; cd -'  # riak switch to local riak
+alias rwr=' ls -lrt /etc/nginx/sites-enabled/001-riak' # riak list which riak are we using
+
+# GDB related
+alias gti='info threads' #GDB info threads
+alias gst='thread ' #GDB switch to thread <id>
+alias gat='thread apply all py-list' #GDB apply to thread
+
+# RabbitMQ Server
+alias rmqs='service rabbitmq-sever status ' # rabbitmq server status
+alias rmqv='rabbitmqctl status'             # rabbitmq version
+alias rmqlq='sudo rabbitmqctl list_queues'   # rabbitmq list queues
+alias rmqle='sudo rabbitmqctl list_exchanges'   # rabbitmq list exchanges
+alias rmqlb='sudo rabbitmqctl list_bindings'   # rabbitmq list bindings
+alias rmql_unack='sudo rabbitmqctl list_queues name messages_ready messages_unacknowledged'   # rabbitmq list unacknowledged messages
+
+# Linux commands
+alias dte='date +%s -d ' # Date to epoch USAGE: dte "2016-09-26 17:16:12"
+alias etd='date -d @' # Epoch to Date :  etd<epoch_time> ==> PS : no spaces
+alias ppj='cat  /tmp/scale_cfg.json | python -m json.tool | tee /tmp/scale_cfg.json' # pretty / petty print JSON/json file
+alias zipf='tar -zcvf archive-name.tar.gz directory-name'   # Zip folder to a gz
+alias p23='2to3 '
+alias py3env='export PYTHONSTARTUP=""; virtualenv -p /root/INSTALL/Python_3_5_1/install/bin/python3 .env ; source .env/bin/activate'
+alias py3ext='deactivate ; rm -rf .env'
+
+# Linux System commands
+alias lpt='pstree ' # List process tree for a given process id : e.g. pstree 5234
+alias lcp='ps h --ppid  ' # List child processes for a given process ID process tree for a given process id : e.g. pstree 5234
+alias dtp='dot -Tpng InputFile.dot -o OutputFile.png' # Convert Dot file to PNG
+# strace -s PID ; gets you system calls a process gets. shows the call stuck on if process is stuck.
+alias pkl='dpkg -l "*nvidia*"'	# list all NVIDIA related packages installed on system
+# alias pkl='rpm -qa "*nvidia*"'	# list all NVIDIA related packages installed on system
+
+
+
+# VMWare tools specific
+alias vmets='vmware-toolbox-cmd timesync enable'  # Enable time synchronization with Host VM
+alias vmcns='/etc/init.d/ntpd status'   # status of NTP daemon that synchronizes with NTP server
+alias vmdts='ntpq -p'                   # display time synchronization stats
+# vscphere client port address : 20.0.0.10:9443
+
+#Scale Framework debugging
+
+# AWS specific changes
+
+# Go to places
+alias g2d='cd ~/VIPIN/debug'
+alias g2s='cd ~/VIPIN/SCRATCH'
+
+alias pyflakes='/usr/local/bin/pyflakes'
+
+#Personal
+alias cancer='python ~/VIPIN/horo.py'
+
+# KNOWLEDGE BASE
+# sudo update-alternatives --config editor 	# Change default editor 
+# sudo visudo					# Change superuser permissions
+
+# Kafka commands and notes.
+alias zkstart='zkServer.sh start'	# start zookeeper
+alias zkstop='zkServer.sh stop'		# stop zookeeper
+alias zkcli='zkCli.sh'			# start zookeeper console
+alias kfkstart='kafka-server-start.sh config/server.properties'		# kafka start
+alias kfkstop='kafka-server-stop.sh config/server.properties'		# kafka stop
+alias kfklt='kafka-topics.sh --list --zookeeper localhost:2181'		# list kafka topics
+alias kfkct='kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic <topic_name>'	# create kafka topics

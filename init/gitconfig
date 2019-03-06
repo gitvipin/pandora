@@ -1,0 +1,49 @@
+[user]
+	name = Vipin Sharma
+	email = sh.vipin@gmail.com
+[core]
+	editor = vi
+[merge]
+	tool = vimdiff
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+    whitespace = red reverse
+
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+[alias]
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit
+[status]
+    showuntrackedfiles = no
+
+[core]
+    editor = vim
+
+[alias]
+        stat = status -s -uno
+        logs = log --name-only
+        update = pull --rebase
+
+[alias]
+        stat = status -s -uno
+        logs = log --name-only
+        update = pull --rebase
+[push]
+	default = simple
+[credential]
+	helper = cache --timeout=3600

@@ -1,0 +1,11 @@
+#!/usr/bin/expect -f
+# Automatically SSH to machines without typing the passwords
+# again and again.
+# USAGE :
+# runner <IP_ADDRESS>
+
+set server [lindex $argv 0]
+spawn ssh root@$server
+expect "assword:"
+send "!cisco\r"
+interact
