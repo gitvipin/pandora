@@ -10,9 +10,9 @@ export PYTHONPATH=~/VIPIN/debug/
 export RIAK=http://127.0.0.1:8098/
 
 
-alias r='source ~/.bashrc2' # refresh .bashrc
-alias val='vi ~/.bashrc2'  # vi aliases
-alias lal='cat ~/.bashrc2'  # vi aliases
+alias r='source ~/.aliases' # refresh .bashrc
+alias val='vi ~/.aliases'  # vi aliases
+alias lal='cat ~/.aliases'  # vi aliases
 alias vpl='vi + /tmp/python.log'  # vi aliases
 alias rmpl='rm  /tmp/python.log'  # vi aliases
 alias sgc='update-alternatives --config gcc'  # Switch GCC
