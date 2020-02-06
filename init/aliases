@@ -44,6 +44,7 @@ alias rut1='python -m unittest discover -p test_ping.py <dir_path>'
 
 # Git related
 alias grou='git config --get remote.origin.url'         # git show remote origin URL
+alias grou='git config user.email <email>'         # git set user email for repository
 alias grs='git fetch origin; git pull origin master; git rebase origin/master' # git resync sandbox
 alias gpm='git pull origin master'  # git pull master
 alias gcb='git checkout -b '    # git create a local branch
