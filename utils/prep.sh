@@ -20,7 +20,7 @@ ln -s ~/pandora/init/bashrc .bashrc
 ln -s ~/pandora/init/screenrc .screenrc
 ln -s ~/pandora/init/gitconfig .gitconfig
 ln -s ~/pandora/init/aliases .aliases
-ln -s ~/pandora/init/init.py .
+ln -s ~/pandora/init/init.py ~/.init.py
 ln -s ~/pandora/init/login .
 
 touch ~/.aliases_local
