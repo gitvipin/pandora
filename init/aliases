@@ -21,7 +21,8 @@ alias sgc='update-alternatives --config gcc'  # Switch GCC
 alias p8='pep8 ' # Pep8
 alias ap8='autopep8 -i -a -a' #autopep8
 alias l='ls -lrt'
-alias diffy='diff -y'
+alias diffy='diff -y'       # compare two files line by line
+alias diffd='diff -qr'      # diff dirs, listing only different filenames. Add -x ('-x ".git"') to exclude subdirectories. 
 alias agk='eval $(ssh-agent) ; ssh-add' # add git key
 
 
@@ -66,6 +67,7 @@ alias gs='git status'
 alias ggit='git ls-files file_name --error-unmatch; echo $?' # Checks if file is tracked in git
 alias gcu='git clean -d -x -f'  # git clean untracked files. Replace "-f" with "-n" for "dry run"
 alias gmr='git remote add repo2 https://github.com/gitvipin/repo2.git ; git pull repo2 ; git cherry-pick <commit>'  # git pull / merge changes from other repo with history
+alias gca='git commit --amend --author="Vipin Sharma<abc@gmail.com>" '  # git commit ammend
 
 # Riak related
 # Riak write data : 'default' is default bucket type , food is bucket and favourite is key
