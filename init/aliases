@@ -115,6 +115,7 @@ alias dtp='dot -Tpng InputFile.dot -o OutputFile.png' # Convert Dot file to PNG
 # strace -s PID ; gets you system calls a process gets. shows the call stuck on if process is stuck.
 alias pkl='dpkg -l "*nvidia*"'	# list all NVIDIA related packages installed on system
 # alias pkl='rpm -qa "*nvidia*"'	# list all NVIDIA related packages installed on system
+alias ntpu='ntpdate -u ntp-b.nist.gov'   # sync your clock to NTP server
 
 
 
@@ -135,7 +136,7 @@ alias g2s='cd ~/VIPIN/SCRATCH'
 alias pyflakes='/usr/local/bin/pyflakes'
 
 #Personal
-alias cancer='python ~/VIPIN/horo.py'
+alias cancer='python ~/pandora/utils/horo.py'
 
 # KNOWLEDGE BASE
 # sudo update-alternatives --config editor 	# Change default editor 
