@@ -66,6 +66,7 @@ alias gs='git status'
 alias ggit='git ls-files file_name --error-unmatch; echo $?' # Checks if file is tracked in git
 alias gcu='git clean -d -x -f'  # git clean untracked files. Replace "-f" with "-n" for "dry run"
 alias gmr='git remote add repo2 https://github.com/gitvipin/repo2.git ; git pull repo2 ; git cherry-pick <commit>'  # git pull / merge changes from other repo with history
+alias gru='git remote add upstream https://github.com/original-repo/goes-here.git; git fetch upstream ; git rebase upstream/master ; git push origin master --force'  # git rebase a forked repository from parent repository. push goes to your forked repository and not the parent (obviously!!).
 
 # Riak related
 # Riak write data : 'default' is default bucket type , food is bucket and favourite is key
