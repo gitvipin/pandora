@@ -21,7 +21,8 @@ alias sgc='update-alternatives --config gcc'  # Switch GCC
 alias p8='pep8 ' # Pep8
 alias ap8='autopep8 -i -a -a' #autopep8
 alias l='ls -lrt'
-alias diffy='diff -y'
+alias diffy='diff -y'       # compare two files line by line
+alias diffd='diff -qr'      # diff dirs, listing only different filenames. Add -x ('-x ".git"') to exclude subdirectories. 
 alias agk='eval $(ssh-agent) ; ssh-add' # add git key
 
 
@@ -44,7 +45,7 @@ alias rut1='python -m unittest discover -p test_ping.py <dir_path>'
 
 # Git related
 alias grou='git config --get remote.origin.url'         # git show remote origin URL
-alias grou='git config user.email <email>'         # git set user email for repository
+alias gsue='git config user.email <email>'         # git set user email for repository
 alias grs='git fetch origin; git pull origin master; git rebase origin/master' # git resync sandbox
 alias gpm='git pull origin master'  # git pull master
 alias gcb='git checkout -b '    # git create a local branch
@@ -66,6 +67,7 @@ alias gs='git status'
 alias ggit='git ls-files file_name --error-unmatch; echo $?' # Checks if file is tracked in git
 alias gcu='git clean -d -x -f'  # git clean untracked files. Replace "-f" with "-n" for "dry run"
 alias gmr='git remote add repo2 https://github.com/gitvipin/repo2.git ; git pull repo2 ; git cherry-pick <commit>'  # git pull / merge changes from other repo with history
+alias gca='git commit --amend --author="Vipin Sharma<abc@gmail.com>" '  # git commit ammend
 alias gru='git remote add upstream https://github.com/original-repo/goes-here.git; git fetch upstream ; git rebase upstream/master ; git push origin master --force'  # git rebase a forked repository from parent repository. push goes to your forked repository and not the parent (obviously!!).
 
 # Riak related
@@ -114,6 +116,7 @@ alias dtp='dot -Tpng InputFile.dot -o OutputFile.png' # Convert Dot file to PNG
 # strace -s PID ; gets you system calls a process gets. shows the call stuck on if process is stuck.
 alias pkl='dpkg -l "*nvidia*"'	# list all NVIDIA related packages installed on system
 # alias pkl='rpm -qa "*nvidia*"'	# list all NVIDIA related packages installed on system
+alias ntpu='ntpdate -u ntp-b.nist.gov'   # sync your clock to NTP server
 
 
 
@@ -134,7 +137,7 @@ alias g2s='cd ~/VIPIN/SCRATCH'
 alias pyflakes='/usr/local/bin/pyflakes'
 
 #Personal
-alias cancer='python ~/VIPIN/horo.py'
+alias cancer='python ~/pandora/utils/horo.py'
 
 # KNOWLEDGE BASE
 # sudo update-alternatives --config editor 	# Change default editor 
