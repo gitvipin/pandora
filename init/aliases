@@ -65,9 +65,10 @@ alias gch='git log --pretty=short -u -L 42,47:pre-commit'   # git show change hi
 alias guf='git reset --soft HEAD^ ; git reset HEAD path/to/unwanted_file ;git commit -c ORIG_HEAD ' # git uncommit file : Remove file from a git commit (local/unpushed) without undoing the changes. Source : http://stackoverflow.com/questions/12481639/remove-files-from-git-commit
 alias gs='git status'
 alias ggit='git ls-files file_name --error-unmatch; echo $?' # Checks if file is tracked in git
-alias gcu='git clean -d -x -f'  # git clean untracked files. Replace "-f" with "-n" for "dry run"
+alias gcu='git clean -d -x -f'  # git clean untracked files.
+alias glu='git clean -d -x -n'  # git list untracked files.
 alias gmr='git remote add repo2 https://github.com/gitvipin/repo2.git ; git pull repo2 ; git cherry-pick <commit>'  # git pull / merge changes from other repo with history
-alias gca='git commit --amend --author="Vipin Sharma<abc@gmail.com>" '  # git commit ammend
+alias gca='git commit --amend --author="Vipin Sharma<sh dot me@gmail.com>" '  # git commit ammend
 alias gru='git remote add upstream https://github.com/original-repo/goes-here.git; git fetch upstream ; git rebase upstream/master ; git push origin master --force'  # git rebase a forked repository from parent repository. push goes to your forked repository and not the parent (obviously!!).
 
 # Riak related
