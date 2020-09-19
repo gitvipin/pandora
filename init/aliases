@@ -70,6 +70,8 @@ alias glu='git clean -d -x -n'  # git list untracked files.
 alias gmr='git remote add repo2 https://github.com/gitvipin/repo2.git ; git pull repo2 ; git cherry-pick <commit>'  # git pull / merge changes from other repo with history
 alias gca='git commit --amend --author="Vipin Sharma<sh dot me@gmail.com>" '  # git commit ammend
 alias gru='git remote add upstream https://github.com/original-repo/goes-here.git; git fetch upstream ; git rebase upstream/master ; git push origin master --force'  # git rebase a forked repository from parent repository. push goes to your forked repository and not the parent (obviously!!).
+alias gct='git tag '  # Create Tag on branch. Usage : git tag <tagname> -a . -a option will let you add more details to tag.
+alias gpt='git push origin --tags'  # push tag to origin
 
 # Riak related
 # Riak write data : 'default' is default bucket type , food is bucket and favourite is key
