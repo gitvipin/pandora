@@ -120,6 +120,7 @@ alias dtp='dot -Tpng InputFile.dot -o OutputFile.png' # Convert Dot file to PNG
 alias pkl='dpkg -l "*nvidia*"'	# list all NVIDIA related packages installed on system
 # alias pkl='rpm -qa "*nvidia*"'	# list all NVIDIA related packages installed on system
 alias ntpu='ntpdate -u ntp-b.nist.gov'   # sync your clock to NTP server
+alias lnif='find . -type f ! -exec grep -q "PATTERN" {} \; -print'   # List files that don't have PATTERN
 
 
 
