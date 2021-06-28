@@ -72,6 +72,7 @@ alias gca='git commit --amend --author="Vipin Sharma<sh dot me@gmail.com>" '  # 
 alias gru='git remote add upstream https://github.com/original-repo/goes-here.git; git fetch upstream ; git rebase upstream/master ; git push origin master --force'  # git rebase a forked repository from parent repository. push goes to your forked repository and not the parent (obviously!!).
 alias gct='git tag '  # Create Tag on branch. Usage : git tag <tagname> -a . -a option will let you add more details to tag.
 alias gpt='git push origin --tags'  # push tag to origin
+alias gfh='git log --follow -- ' # Get git file history for a file. If a commit has only deletions then it will not come in change history (git blame) to find it, run this comman. USAGE : $gfh <filename>
 
 # Riak related
 # Riak write data : 'default' is default bucket type , food is bucket and favourite is key
