@@ -12,7 +12,9 @@ export RIAK=http://127.0.0.1:8098/
 
 alias r='source ~/.aliases' # refresh .bashrc
 alias val='vi ~/.aliases'  # vi aliases
-alias lal='cat ~/.aliases'  # vi aliases
+alias lal='cat ~/.aliases'  # list aliases
+alias val2='vi ~/.aliases_local'  # vi local aliases
+alias lal2='cat ~/.aliases_local'  # list local aliases
 alias vpl='vi + /tmp/python.log'  # vi aliases
 alias rmpl='rm  /tmp/python.log'  # vi aliases
 alias sgc='update-alternatives --config gcc'  # Switch GCC
