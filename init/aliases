@@ -24,7 +24,7 @@ alias p8='pep8 ' # Pep8
 alias ap8='autopep8 -i -a -a' #autopep8
 alias l='ls -lrt'
 alias diffy='diff -y'       # compare two files line by line
-alias diffd='diff -qr'      # diff dirs, listing only different filenames. Add -x ('-x ".git"') to exclude subdirectories. 
+alias diffd='diff -qr'      # diff dirs, listing only different filenames. Add -x ('-x ".git"') to exclude subdirectories.
 alias agk='eval $(ssh-agent) ; ssh-add' # add git key
 
 
@@ -147,7 +147,7 @@ alias pyflakes='/usr/local/bin/pyflakes'
 alias cancer='python ~/pandora/utils/horo.py'
 
 # KNOWLEDGE BASE
-# sudo update-alternatives --config editor 	# Change default editor 
+# sudo update-alternatives --config editor 	# Change default editor
 # sudo visudo					# Change superuser permissions
 
 # Python related
@@ -163,3 +163,29 @@ alias kfklt='kafka-topics.sh --list --zookeeper localhost:2181'		# list kafka to
 alias kfkct='kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic <topic_name>'	# create kafka topics
 alias kfkwrt='kafka-console-producer.sh --broker-list localhost:9092 --topic ' # $<topic_name> # write to Kafka topic
 alias kfkrd='kafka_2.11-1.1.0 bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic <$test> --from-beginning' # $<topic_name> #  read from  Kafka topic
+
+# Docker container
+alias doc='docker container ' # prefix for docker container commands.
+alias die='uip apt-transport-https ca-certificates curl software-properties-common' # Install docker prerequisite
+alias ddk='curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -' # docker : download keys
+alias dcg='sudo groupadd '  # docker create group ; USAGE ; dcg <groupname> ; Example : dcg docket
+alias dau='sudo usermod -aG ' # add user to a group : USAGE : dau <groupname> <usernam> : EXAMPLE : dau docker vipin
+alias dip='docker image pull ' # docker pull image ; USAGE : dip <package-name> ; EXAMPLE : dip nginx:latest
+alias dli='docker images' # docker list images ; USAGE : dli
+alias drc='docker container run -itd --name my_app -p 5649:80 nginx:latest' # docker run container ; -p maps port host_port:container_port
+alias dsc='docker container stop ' # <container_name> ## docker stop container.
+alias drm='docker container rm ' # <container_name> ## docker remove containr
+alias dkill='docker container kill --signal=SIGTERM ' # <container_name> ## Kills docker container
+alias dps='docker ps -a'  # Docker list running containers
+alias dbi='docker build -t <img_name> <dir>' # USAGE : docker build -t my_docker_image . # NOTES : image will be listed in image list
+alias dgs='docker exec -it <cotainer_name> bash' # docker get shell . This gets into the bash shell of container and from there on as good as SSH into a machine.
+
+
+# Kubernetes
+
+# Linux / Ubuntu
+alias urp='apt-get remove ' # Ubuntu remove package , USAGE : urp <pacjage-name> , Example : urp nginx-common
+alias uip='apt-get install ' # Ubuntu install package , USAGE : uip <package-name> , Example : uip nginx-common
+
+
+
